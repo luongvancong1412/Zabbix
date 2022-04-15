@@ -88,8 +88,7 @@ Zabbix:
   - Giám sát trang web
   - Thu thập dữ liệu từ các điểm cuối (end-points) API bên ngoài
 
-
-![](https://assets.zabbix.com/img/icons/features_Collect_from_any_source.svg)
+![Imgur](https://i.imgur.com/nu9BlVX.png)
 
 - Tuỳ chỉnh thu thập dữ liệu:
   - Sử dụng phương pháp đẩy và kéo để thu thập dữ liệu
