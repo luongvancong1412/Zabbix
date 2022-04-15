@@ -34,7 +34,8 @@
   - Zabbix 5.0 LTS (12/5/2020), 
   - Zabbix 5.4 (17/5/2021), 
   - Zabbix 6.0 LTS (8/02/2022)
-  - Đang phát triển Zabbix 6.2
+
+- Đang phát triển Zabbix 6.2
 
 ## 2.2 Vòng đời phát triển
 
@@ -66,90 +67,87 @@ Zabbix:
 
 <h3>Thu thập dữ liệu</h3>
 
-- kiểm tra tính khả dụng và hiệu suất
-- hỗ trợ SNMP (cả theo dõi và bỏ phiếu), IPMI, JMX, giám sát VMware
-- kiểm tra tùy chỉnh
-- thu thập dữ liệu mong muốn ở các khoảng thời gian tùy chỉnh
-được thực hiện bởi máy chủ / proxy và bởi các đại lý
+- Kiểm tra tính khả dụng và hiệu suất
+- Hỗ trợ SNMP, IPMI, JMX, giám sát VMware
+- Kiểm tra tùy chỉnh
+- Thu thập dữ liệu mong muốn ở các khoảng thời gian tùy chỉnh
+- Được thực hiện bởi server/proxy và bởi các Agent
 
 <h3>Định nghĩa ngưỡng linh hoạt</h3>
 
-- bạn có thể xác định các ngưỡng sự cố rất linh hoạt, được gọi là trình kích hoạt, tham chiếu các giá trị từ cơ sở dữ liệu phụ trợ
+- Có thể xác định các ngưỡng sự cố rất linh hoạt, được gọi là trình kích hoạt (triggers), tham chiếu các giá trị từ cơ sở dữ liệu phụ trợ (backend database)
 
 <h3>Cảnh báo có thể cấu hình cao</h3>
 
-- gửi thông báo có thể được tùy chỉnh cho lịch trình báo cáo, người nhận, loại phương tiện
-- các thông báo có thể trở nên có ý nghĩa và hữu ích bằng cách sử dụng các biến macro
-- các hành động tự động bao gồm các lệnh từ xa
+- Có thể được tùy chỉnh gửi thông báo cho lịch trình báo cáo, người nhận, loại phương tiện (media type)
 
 <h3>Vẽ đồ thị thời gian thực</h3>
 
-- các mục được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp
+- Các mục (items) được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp (built-in graphing functionality)
 
 <h3>Khả năng giám sát web</h3>
 
-- Zabbix có thể theo dõi đường dẫn của những cú nhấp chuột mô phỏng trên một trang web và kiểm tra chức năng cũng như thời gian phản hồi
+- Zabbix có thể theo dõi đường dẫn (path) của những cú click chuột trên một trang web và kiểm tra chức năng, thời gian phản hồi
 
 <h3>Các tùy chọn hình ảnh hóa mở rộng</h3>
 
-- khả năng tạo các biểu đồ tùy chỉnh có thể kết hợp nhiều mục vào một chế độ xem duy nhất
-- bản đồ mạng
-- trình chiếu trong tổng quan kiểu bảng điều khiển
-báo cáo
-- chế độ xem cấp cao (kinh doanh) của các tài nguyên được giám sát
+- Khả năng tạo các biểu đồ tùy chỉnh có thể kết hợp nhiều mục vào một chế độ xem duy nhất
+- Bản đồ mạng (network maps)
+- Trình chiếu tổng quan kiểu bảng điều khiển
+- Báo cáo
+- Chế độ xem high-level (business) của các tài nguyên được giám sát
 
 <h3>Lưu trữ dữ liệu lịch sử</h3>
 
-- dữ liệu được lưu trữ trong cơ sở dữ liệu
-- lịch sử có thể định cấu hình
-- quy trình dọn phòng tích hợp sẵn
+- Dữ liệu được lưu trữ trong cơ sở dữ liệu
+- Lịch sử có thể định cấu hình
+- Tích hợp sẵn quy trình dọn dẹp
 
 <h3>Cấu hình dễ dàng</h3>
 
-- thêm các thiết bị được giám sát làm máy chủ
-- máy chủ được chọn để theo dõi, một khi trong cơ sở dữ liệu
-- áp dụng các mẫu cho các thiết bị được giám sát
+- Thêm các thiết bị được giám sát làm máy chủ (host)
+- Hosts được chọn để theo dõi, một khi trong cơ sở dữ liệu
+- Áp dụng các mẫu (templates) cho các thiết bị được giám sát
 
-<h3>Sử dụng các mẫu</h3>
+<h3>Sử dụng các template</h3>
 
-- nhóm các séc trong các mẫu
-- các mẫu có thể kế thừa các mẫu khác
+- Grouping checks in templates (Nhóm lại các check trong các template)
+- Các template có thể kế thừa từ các template khác
 
-<h3>Khám phá mạng</h3>
+<h3>Network discovery</h3>
 
-- tự động khám phá các thiết bị mạng
-- tự động đăng ký đại lý
-- khám phá hệ thống tệp, giao diện mạng và SNMP OID
+- Tự động khám phá các thiết bị mạng
+- Tự động đăng ký Agent
+- Khám phá file system, network interfaces và SNMP OIDs
 
 <h3>Giao diện web nhanh</h3>
 
-- một giao diện người dùng dựa trên web trong PHP
-- có thể truy cập từ mọi nơi
-- bạn có thể nhấp vào theo cách của bạn qua
-- sổ ghi chép đánh giá
+- Sử dụng PHP xây dựng một giao diện người dùng dựa trên web
+- Có thể truy cập từ mọi nơi
+- audit log
 
 <h3>API Zabbix</h3>
 
-- Zabbix API cung cấp giao diện có thể lập trình cho Zabbix để thao tác hàng loạt, tích hợp phần mềm của bên thứ 3 và các mục đích khác.
+- Zabbix API cung cấp giao diện lập trình cho Zabbix để thao tác hàng loạt, tích hợp phần mềm của bên thứ 3 (3rd party software integration) và các mục đích khác.
 
 <h3>Hệ thống quyền</h3>
 
-- xác thực người dùng an toàn
-- một số người dùng nhất định có thể bị giới hạn ở một số chế độ xem nhất định
+- Xác thực người dùng an toàn
+- Phân quyền người dùng
 
-<h3>Tác nhân có đầy đủ tính năng và dễ dàng mở rộng</h3>
+<h3>Agent có đầy đủ tính năng và dễ dàng mở rộng</h3>
 
-- triển khai trên các mục tiêu giám sát
-- có thể được triển khai trên cả Linux và Windows
+- Triển khai trên các mục tiêu giám sát
+- Có thể được triển khai trên cả Linux và Windows
 
-<h3>Daemon nhị phân</h3>
+<h3>Binary daemons</h3>
 
-- được viết bằng C, cho hiệu suất và diện tích bộ nhớ nhỏ
-dễ dàng di chuyển
+- Được viết bằng C, cho hiệu suất và diện tích bộ nhớ nhỏ
+- Dễ dàng di chuyển
 
 <h3>Sẵn sàng cho các môi trường phức tạp</h3>
 
-- giám sát từ xa dễ dàng bằng cách sử dụng proxy Zabbix
+- Giám sát từ xa dễ dàng bằng cách sử dụng proxy Zabbix
 
 
 # Tài liệu tham khảo
