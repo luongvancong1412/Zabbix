@@ -77,6 +77,7 @@ Zabbix:
   - Scalability (Khả năng mở rộng)
 
 <h3>Thu thập dữ liệu</h3>
+
 - Thu thập dữ liệu từ bất kỳ nguồn nào
   - Thiết bị mạng
   - Cloud services, Virtual machines
@@ -87,7 +88,8 @@ Zabbix:
   - Giám sát trang web
   - Thu thập dữ liệu từ các điểm cuối (end-points) API bên ngoài
 
-![Imgur](https://assets.zabbix.com/img/icons/features_Collect_from_any_source.svg)
+
+![](https://assets.zabbix.com/img/icons/features_Collect_from_any_source.svg)
 
 - Tuỳ chỉnh thu thập dữ liệu:
   - Sử dụng phương pháp đẩy và kéo để thu thập dữ liệu
@@ -103,7 +105,7 @@ Zabbix:
     - Thu thập và lọc các mục (entry) trong file log
     - Truy xuất số lượng mục nhập (entry) trong file log
 - Được thực hiện bởi server/proxy và bởi các Agent
-![Imgur](https://assets.zabbix.com/img/icons/features_Custom_metric_collection.svg)
+![](https://assets.zabbix.com/img/icons/features_Custom_metric_collection.svg)
 
 
 <h3>Định nghĩa ngưỡng linh hoạt</h3>
