@@ -104,7 +104,7 @@ Zabbix:
     - Thu thập và lọc các mục (entry) trong file log
     - Truy xuất số lượng mục nhập (entry) trong file log
 - Được thực hiện bởi server/proxy và bởi các Agent
-![](https://assets.zabbix.com/img/icons/features_Custom_metric_collection.svg)
+![Imgur](https://i.imgur.com/7LprwW7.png)
 
 
 <h3>Định nghĩa ngưỡng linh hoạt</h3>
