@@ -8,6 +8,31 @@
 - [Event](#event)
 - [Event tag](#event-tag)
 - [Event correlation](#event-correlation)
+- [Problem](#problem)
+- [Problem update](#problem-update)
+- [Action](#action)
+- [Escalation](#escalation)
+- [Media](#media)
+- [Notification](#notification)
+- [Remote command](#remote-command)
+- [Template](#template)
+- [Web scenario](#web-scenario)
+- [frontend](#frontend)
+- [Dashboard](#dashboard)
+- [Widget](#widget)
+- [Zabbix API](#zabbix-api)
+- [Zabbix server](#zabbix-server)
+- [Zabbix proxy](#zabbix-proxy)
+- [Zabbix agent](#zabbix-agent)
+- [Zabbix agent 2](#zabbix-agent-2)
+- [Encryption](#encryption)
+- [Network discovery](#network-discovery)
+- [Low-level discovery](#low-level-discovery)
+- [Low-level discovery rule](#low-level-discovery-rule)
+- [Item prototype](#item-prototype)
+- [Trigger prototype](#trigger-prototype)
+- [Agent autoregistration](#agent-autoregistration)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 Một số thuật ngữ thường được sử dụng trong Zabbix
 
@@ -48,114 +73,147 @@ Một số thuật ngữ thường được sử dụng trong Zabbix
 
 # Event tag
 
-- Một điểm đánh dấu được xác định trước cho event. Nó có thể được sử dụng trong tương quan sự kiện, tạo chi tiết quyền,...
+- Một điểm đánh dấu, dấu hiệu được xác định trước cho event. Nó có thể được sử dụng trong tương quan sự kiện, tạo chi tiết quyền,...
 (*a pre-defined marker for the event. It may be used in event correlation, permission granulation, etc.*)
 
 # Event correlation
 
-- a method of correlating problems to their resolution flexibly and precisely.
+- Một phương pháp giải quyết vấn đề một cách linh hoạt và chính xác.
+(*a method of correlating problems to their resolution flexibly and precisely.*)
 
-For example, you may define that a problem reported by one trigger may be resolved by another trigger, which may even use a different data collection method.
+- Ví dụ: bạn có thể xác định rằng sự cố được báo cáo bởi một trigger có thể được giải quyết bởi một trigger khác, thậm chí có thể sử dụng một phương pháp thu thập dữ liệu khác.
+(*For example, you may define that a problem reported by one trigger may be resolved by another trigger, which may even use a different data collection method.*)
 
-problem
+# Problem
 
-- a trigger that is in "Problem" state.
+- trigger ở trạng thái "Sự cố".
+(*a trigger that is in "Problem" state.*)
 
-problem update
+# Problem update
 
-- problem management options provided by Zabbix, such as adding comment, acknowledging, changing severity or closing manually.
+- Các option quản lý Problem do Zabbix cung cấp ví dụ như thêm nhận xét, xác nhận, thay đổi mức độ nghiêm trọng hoặc đóng theo cách thủ công.
+(*problem management options provided by Zabbix, such as adding comment, acknowledging, changing severity or closing manually.*)
 
-action
+# Action
 
-- a predefined means of reacting to an event.
+- Một phương pháp được xác định trước để phản ứng với sự kiện.
+(*a predefined means of reacting to an event.*)
 
-An action consists of operations (e.g. sending a notification) and conditions (when the operation is carried out)
+- Một hành động bao gồm 
+  - Các hoạt động (e.g. gửi thông báo)
+  - Và các điều kiện ( khi hoạt động được thực hiện)
+(*An action consists of operations (e.g. sending a notification) and conditions (when the operation is carried out)*)
 
-escalation
+# Escalation
+-  một kịch bản tùy chỉnh để thực hiện các hoạt động trong một hành động; một chuỗi gửi thông báo/thực hiện lệnh từ xa.
+- (*a custom scenario for executing operations within an action; a sequence of sending notifications/executing remote commands.*)
 
-- a custom scenario for executing operations within an action; a sequence of sending notifications/executing remote commands.
+# Media
+- Phương tiện gửi thông báo; kênh giao hàng
+(*a means of delivering notifications; delivery channel.*)
 
-media
+# Notification
 
-- a means of delivering notifications; delivery channel.
+- Một thông báo gửi đến người dùng về 1 sự kiện qua kênh media đã chọn
+(*a message about some event sent to a user via the chosen media channel.*)
 
-notification
+# Remote command
 
-- a message about some event sent to a user via the chosen media channel.
+- Một lệnh viết trước được thực thi tự động trên một host được giám sát.
+(*a pre-defined command that is automatically executed on a monitored host upon some condition.*)
 
-remote command
+# Template
 
-- a pre-defined command that is automatically executed on a monitored host upon some condition.
+- Một tập hợp các thực thể (items, triggers, đồ thị, quy tắc khám phá cấp thấp, kịch bản web) có thể áp dụng cho 1 hoặc một số máy chủ.
+(*a set of entities (items, triggers, graphs, low-level discovery rules, web scenarios) ready to be applied to one or several hosts.*)
 
-template
+- Công việc của các template là
+  - Tăng tốc độ triển khai các nhiệm vụ giám sát trên máy chủ lưu trữ;
+  - Giúp việc áp dụng các thay đổi hàng loạt vào các nhiệm vụ giám sát dễ dàng hơn. Các template được liên kết trực tiếp với các máy chủ riêng lẻ.
+(*The job of templates is to speed up the deployment of monitoring tasks on a host; also to make it easier to apply mass changes to monitoring tasks. Templates are linked directly to individual hosts.*)
 
-- a set of entities (items, triggers, graphs, low-level discovery rules, web scenarios) ready to be applied to one or several hosts.
+# Web scenario
 
-The job of templates is to speed up the deployment of monitoring tasks on a host; also to make it easier to apply mass changes to monitoring tasks. Templates are linked directly to individual hosts.
+- Là một hoặc 1 số request HTTP để kiểm tra tính khả dụng (availability) của một website.
+(*one or several HTTP requests to check the availability of a web site.*)
 
-web scenario
+# frontend
+- Là giao diện web được cung cấp bởi Zabbix
+(*the web interface provided with Zabbix.*)
 
-- one or several HTTP requests to check the availability of a web site.
+# Dashboard
+- Bảng điều khiển or trang tổng quan
+- là phần có thể tuỳ chỉnh của giao diện web, hiển thị tóm tắt và hình ảnh hoá thông tin quan trọng được gọi là widget
+(*customizable section of the web interface displaying summaries and vizualizations of important information in visual units called widgets.*)
 
-frontend
+# Widget
 
-- the web interface provided with Zabbix.
+- Đơn vị hiển thị trực quan thông tin của 1 loại và nguồn ( 1 tóm tắt, 1 bản đồ, 1 đồ thị, ...) nhất định được sử dụng trong dasdboard
+- (*visual unit displaying information of a certain kind and source (a summary, a map, a graph, the clock, etc), used in the dashboard.*)
 
-dashboard
+# Zabbix API
 
-- customizable section of the web interface displaying summaries and vizualizations of important information in visual units called widgets.
+- Zabbix API cho phép bạn sử dụng giao thức JSON RPC để tạo, cập nhật và tìm nạp các đối tượng Zabbix (như máy chủ, mục, đồ thị và các đối tượng khác) hoặc thực hiện bất kỳ tác vụ tùy chỉnh nào khác.
+- (*Zabbix API allows you to use the JSON RPC protocol to create, update and fetch Zabbix objects (like hosts, items, graphs and others) or perform any other custom tasks.*)
 
-widget
+# Zabbix server
+- Một quy trình trung tâm của phần mềm Zabbix thực hiện giám sát, tương tác với các proxy và Agent của Zabbix, tính toán các triggers, gửi thông báo; 
+- Một kho dữ liệu trung tâm.
+- (*a central process of Zabbix software that performs monitoring, interacts with Zabbix proxies and agents, calculates triggers, sends notifications; a central repository of data.*)
 
-- visual unit displaying information of a certain kind and source (a summary, a map, a graph, the clock, etc), used in the dashboard.
+# Zabbix proxy
+- Một quy trình có thể thu thập dữ liệu thay mặt cho server Zabbix, làm giảm tải một số quá trình xử lý của server.
+- (*a process that may collect data on behalf of Zabbix server, taking some processing load off of the server.*)
 
-Zabbix API
+# Zabbix agent
+- một quy trình được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ của thiết bị đó.
+- (*a process deployed on monitoring targets to actively monitor local resources and applications.*)
 
-- Zabbix API allows you to use the JSON RPC protocol to create, update and fetch Zabbix objects (like hosts, items, graphs and others) or perform any other custom tasks.
+# Zabbix agent 2
 
-Zabbix server
+- Agent thế hệ mới, chủ động theo dõi cácc tài nguyên và ứng dụng cục bộ, cho phép sử dụng các plugin để giám sát
+- (*a new generation of Zabbix agent to actively monitor local resources and applications, allowing to use custom plugins for monitoring.*)
 
-- a central process of Zabbix software that performs monitoring, interacts with Zabbix proxies and agents, calculates triggers, sends notifications; a central repository of data.
+- Nếu trong tài liệu viết Agent Zabbix thì đó là viết tắt của cả 2 (Agent Zabbix và Agent Zabbix 2) khi chúng hoạt động giống nhau.
+- Chỉ viết Agent Zabbix 2 khi chức năng nó khác nhau.
 
-Zabbix proxy
+# Encryption
+- Mã hoá
+- Mã hoá thông tin liên lạc giữa các thành phần Zabbix (server, proxy, Agent, zabbix_sender và zabbix_get) sử dụng giao thức Transport Layer Security (TLS).
+- (*support of encrypted communications between Zabbix components (server, proxy, agent, zabbix_sender and zabbix_get utilities) using Transport Layer Security (TLS) protocol.*)
 
-- a process that may collect data on behalf of Zabbix server, taking some processing load off of the server.
+# Network discovery
 
-Zabbix agent
+- Tự động khám phá, tìm kiếm các thiết bị mạng
+- (*automated discovery of network devices.*)
 
-- a process deployed on monitoring targets to actively monitor local resources and applications.
+# Low-level discovery
 
-Zabbix agent 2
+- Tự động khám phá, tìm kiếm các thực thể cấp thấp trên một thiết bị cụ thể (ví dụ: file system, network interface, v.v.).
+- (*automated discovery of low-level entities on a particular device (e.g. file systems, network interfaces, etc).*)
 
-- a new generation of Zabbix agent to actively monitor local resources and applications, allowing to use custom plugins for monitoring.
+# Low-level discovery rule
 
- Because Zabbix agent 2 shares much functionality with Zabbix agent, the term "Zabbix agent" in documentation stands for both - Zabbix agent and Zabbix agent 2, if the functional behavior is the same. Zabbix agent 2 is only specifically named where its functionality differs.
-encryption
+- Tập hợp các định nghĩa để tự động khám phá các thực thể cấp thấp trên một thiết bị.
+- (*set of definitions for automated discovery of low-level entities on a device.*)
 
-- support of encrypted communications between Zabbix components (server, proxy, agent, zabbix_sender and zabbix_get utilities) using Transport Layer Security (TLS) protocol.
+# Item prototype
 
-network discovery
+- Là  1 biến chỉ với tham số có chỉ số nhất định , sẵn sàng cho việc low-level discovery . Sau khi low-level discovery, các biến sẽ tự động được thay thế bằng các tham số thực được phát hiện và tự động bắt đầu thu thập dữ liệu.
+- (*a metric with certain parameters as variables, ready for low-level discovery. After low-level discovery the variables are automatically substituted with the real discovered parameters and the metric automatically starts gathering data.*)
 
-- automated discovery of network devices.
+# Trigger prototype
+- Là một trigger với các tham số nhất định dưới dạng biến, sẵn sàng cho việc low-level discovery . Sau khi low-level discovery, các biến sẽ tự động được thay thế bằng các tham số thực được phát hiện và trigger tự động bắt đầu đánh giá dữ liệu.
+- (*a trigger with certain parameters as variables, ready for low-level discovery. After low-level discovery the variables are automatically substituted with the real discovered parameters and the trigger automatically starts evaluating data.*)
 
-low-level discovery
-
-- automated discovery of low-level entities on a particular device (e.g. file systems, network interfaces, etc).
-
-low-level discovery rule
-
-- set of definitions for automated discovery of low-level entities on a device.
-
-item prototype
-
-- a metric with certain parameters as variables, ready for low-level discovery. After low-level discovery the variables are automatically substituted with the real discovered parameters and the metric automatically starts gathering data.
-
-trigger prototype
-
-- a trigger with certain parameters as variables, ready for low-level discovery. After low-level discovery the variables are automatically substituted with the real discovered parameters and the trigger automatically starts evaluating data.
-
+- Nguyên mẫu của một số thực thể Zabbix khác cũng được sử dụng trong low-level discovery - nguyên mẫu biểu đồ, nguyên mẫu host, nguyên mẫu nhóm host.
 Prototypes of some other Zabbix entities are also in use in low-level discovery - graph prototypes, host prototypes, host group prototypes.
 
-agent autoregistration
+# Agent autoregistration
 
-- automated process whereby a Zabbix agent itself is registered as a host and started to monitor.
+- Quy trình Agent Zabbix tự động đăng ký làm máy chủ lưu trữ và bắt đầu giám sát.
+- (*automated process whereby a Zabbix agent itself is registered as a host and started to monitor.*)
+
+# Tài liệu tham khảo
+
+1. https://www.zabbix.com/documentation/current/en/manual/definitions
