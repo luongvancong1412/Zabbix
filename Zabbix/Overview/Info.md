@@ -45,11 +45,13 @@ Trong mỗi năm rưỡi (1,5) Zabbix sẽ phát hành:
   - Các bản phát hành Zabbix LTS hỗ trợ cho khách hàng trong 5 năm
   - 3 năm Full Support - hỗ trợ khắc phục các vấn đề chung, quan trọng và bảo mật
   - Thêm 2 năm Limited Support - chỉ hỗ trợ các vấn đề quan trọng và bảo mật
+
 ![Imgur](https://i.imgur.com/iCVaHBU.png)
 
 - **Zabbix Standard**:
   - Các bản phát hành Zabbix Standard hỗ trợ cho khách hàng trong sáu tháng Full Support (các vấn đề chung, quan trọng và bảo mật) cho đến khi phát hành ổn định Zabbix tiếp theo.
   - Thêm một (1) tháng Limited Support (chỉ các vấn đề quan trọng và bảo mật).
+
 ![Imgur](https://i.imgur.com/IkVegnI.png)
 
 <h3>Các bản phát hành được hỗ trợ hiện tại</h3>
