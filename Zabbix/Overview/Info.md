@@ -8,6 +8,8 @@
   - [2.2 Vòng đời phát triển](#22-vòng-đời-phát-triển)
 - [3. Các tính năng của Zabbix](#3-các-tính-năng-của-zabbix)
 - [4. Architecture](#4-architecture)
+- [5. Ưu điểm của Zabbix](#5-ưu-điểm-của-zabbix)
+- [6. Những điều cần phải cải thiện](#6-những-điều-cần-phải-cải-thiện)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1. Zabbix là gì
@@ -69,7 +71,6 @@ Zabbix:
   - Problem Detection (Phát hiện vấn đề)
   - Alerting (Cảnh báo)
   - Data Visualization (Trực quan hoá dữ liệu)
-  - Single Pane of Glass (Tạo bản sao)
   - Business Monitoring (Giám sát kinh doanh)
   - Integrations (Tích hợp)
   - Security (Bảo vệ)
@@ -103,7 +104,6 @@ Zabbix:
   - Theo dõi file log:
     - Thu thập và lọc các mục (entry) trong file log
     - Truy xuất số lượng mục nhập (entry) trong file log
-- Được thực hiện bởi server/proxy và bởi các Agent
 ![Imgur](https://i.imgur.com/7LprwW7.png)
 
 
@@ -118,6 +118,8 @@ Zabbix:
 <h3>Vẽ đồ thị thời gian thực</h3>
 
 - Các mục (items) được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp (built-in graphing functionality)
+
+![Imgur](https://i.imgur.com/seA19wH.png)
 
 <h3>Khả năng giám sát web</h3>
 
@@ -185,32 +187,45 @@ Zabbix:
 
 # 4. Architecture
 
+![Imgur](https://i.imgur.com/In7vhDD.png)
+
 <h3>Server</h3>
 
-Máy chủ Zabbix là thành phần trung tâm mà các đại lý báo cáo thông tin và thống kê về tính khả dụng và tính toàn vẹn. Máy chủ là kho lưu trữ trung tâm, trong đó tất cả dữ liệu cấu hình, thống kê và hoạt động được lưu trữ.
+- Server Zabbix là thành phần trung tâm mà các Agent báo cáo thông tin và thống kê về tính khả dụng và tính toàn vẹn. 
+- Server là kho lưu trữ trung tâm, trong đó tất cả dữ liệu cấu hình, thống kê và hoạt động được lưu trữ.
+- Nếu xảy ra lỗi, server Zabbix sẽ cảnh báo người quản trị.
 
 <h3>Database storage</h3>
 
-Tất cả thông tin cấu hình cũng như dữ liệu do Zabbix thu thập đều được lưu trữ trong cơ sở dữ liệu.
+- Nơi lưu trữ tất cả thông tin cấu hình, dữ liệu do Zabbix thu thập
 
 <h3>Web interface</h3>
 
-Để dễ dàng truy cập Zabbix từ mọi nơi và từ bất kỳ nền tảng nào, giao diện dựa trên web được cung cấp. Giao diện là một phần của máy chủ Zabbix và thường (nhưng không nhất thiết) chạy trên cùng một máy vật lý với máy chạy máy chủ.
+- Để dễ dàng truy cập Zabbix từ mọi nơi và từ bất kỳ nền tảng nào qua web interface. 
+- Interface là một phần của máy chủ Zabbix và thường (nhưng không nhất thiết) chạy trên cùng một máy vật lý với máy server.
 
 <h3>Proxy</h3>
 
-Zabbix proxy có thể thu thập dữ liệu hiệu suất và tính khả dụng thay mặt cho máy chủ Zabbix. Proxy là một phần tùy chọn của việc triển khai Zabbix; tuy nhiên, nó có thể rất có lợi khi phân phối tải của một máy chủ Zabbix duy nhất.
+- Zabbix proxy có thể thu thập dữ liệu hiệu suất và tính khả dụng thay mặt cho máy chủ Zabbix. 
+- Tất cả các dữ liệu thu thập được sẽ được chuyển tiếp đến server Zabbix.
+- Proxy là một phần tùy chọn của việc triển khai Zabbix
 
 <h3>Agent</h3>
 
-Các đại lý Zabbix được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ và báo cáo dữ liệu thu thập được cho máy chủ Zabbix. Kể từ Zabbix 4.4, có hai loại tác nhân có sẵn: tác nhân Zabbix (nhẹ, được hỗ trợ trên nhiều nền tảng, được viết bằng C) và tác nhân Zabbix 2 (cực kỳ linh hoạt, có thể mở rộng dễ dàng với các plugin, được viết bằng Go).
+- Các Agent Zabbix được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ và báo cáo dữ liệu thu thập được cho máy chủ Zabbix. 
+- Kể từ Zabbix 4.4, có hai loại Agent có sẵn: 
+  - Agent Zabbix (nhẹ, được hỗ trợ trên nhiều nền tảng, được viết bằng C) 
+  - và Agent Zabbix 2 (cực kỳ linh hoạt, có thể mở rộng dễ dàng với các plugin, được viết bằng Go).
 
-<h3>Data flow</h3>
+# 5. Ưu điểm của Zabbix
 
-Ngoài ra, điều quan trọng là phải lùi lại một bước và xem xét luồng dữ liệu tổng thể trong Zabbix. Để tạo một mục thu thập dữ liệu, trước tiên bạn phải tạo một máy chủ lưu trữ. Di chuyển đến đầu kia của quang phổ Zabbix, trước tiên bạn phải có một vật phẩm để tạo trình kích hoạt. Bạn phải có một trình kích hoạt để tạo một hành động. Vì vậy, nếu bạn muốn nhận được cảnh báo rằng tải CPU của bạn quá cao trên Máy chủ X , trước tiên bạn phải tạo một mục nhập máy chủ cho Máy chủ X , tiếp theo là một mục để theo dõi CPU của nó, sau đó một trình kích hoạt sẽ kích hoạt nếu CPU quá cao, tiếp theo bằng một hành động gửi cho bạn một email. Mặc dù đó có vẻ như là rất nhiều bước, nhưng với việc sử dụng khuôn mẫu thì thực sự không phải vậy. Tuy nhiên, do thiết kế này có thể tạo ra một thiết lập rất linh hoạt.
+# 6. Những điều cần phải cải thiện
 
 # Tài liệu tham khảo
 
 1. [What is Zabbix](https://www.zabbix.com/documentation/current/en/manual/introduction/about)
 2. [Zabbix Life Cycle & Release Policy](https://www.zabbix.com/life_cycle_and_release_policy)
 3. [Explore Zabbix features](https://www.zabbix.com/features#problem_detection)
+4. https://docero.tips/download/mastering-zabbix-kq6wy3qq87?hash=7b049164e2754d557b9550a095c754f2
+5. https://media.oiipdf.com/pdf/1bdda601-c6a3-40be-9d51-92af5d8a6704.pdf
+6. 
