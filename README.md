@@ -14,3 +14,8 @@
   - [1.1. Zabbix là gì?](Zabbix/Overview/Info.md#1-zabbix-là-gì)
   - [1.2. Lịch sử phát triển và các phiên bản](Zabbix/Overview/Info.md#2-lịch-sử-phát-triển-và-các-phiên-bản)
   - [1.3. Các tính năng](Zabbix/Overview/Info.md#3-các-tính-năng-của-zabbix)
+  - 1.4
+  - 1.5
+  - 1.6
+- [2. Thuật ngữ thường được sử dụng](Zabbix/Thuat-ngu.md)
+- ...
