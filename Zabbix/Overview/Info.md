@@ -9,7 +9,7 @@
 - [3. Các tính năng của Zabbix](#3-các-tính-năng-của-zabbix)
 - [4. Architecture](#4-architecture)
 - [5. Ưu điểm của Zabbix](#5-ưu-điểm-của-zabbix)
-- [6. Những điều cần phải cải thiện](#6-những-điều-cần-phải-cải-thiện)
+- [6. Những điều cải thiện](#6-những-điều-cải-thiện)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1. Zabbix là gì
@@ -67,15 +67,11 @@ Trong mỗi năm rưỡi (1,5) Zabbix sẽ phát hành:
 Zabbix:
 - Một giải pháp giám sát mạng tích hợp cao
 - Cung cấp nhiều tính năng trong một gói duy nhất:
-  - Metric Collection (Thu thập dữ liệu)
-  - Problem Detection (Phát hiện vấn đề)
-  - Alerting (Cảnh báo)
-  - Data Visualization (Trực quan hoá dữ liệu)
-  - Business Monitoring (Giám sát kinh doanh)
-  - Integrations (Tích hợp)
-  - Security (Bảo vệ)
-  - Deployment (Triển khai)
-  - Scalability (Khả năng mở rộng)
+  - Giám sát lên đến hàng nghìn nút
+  - Giám sát file log
+  - Tạo báo cáo qua email, điện thoại,...
+  - Quản lý mẫu (template)
+  - Vẽ đồ thị thời gian thực
 
 <h3>Thu thập dữ liệu</h3>
 
@@ -193,15 +189,17 @@ Zabbix:
 
 - Server Zabbix là thành phần trung tâm mà các Agent báo cáo thông tin và thống kê về tính khả dụng và tính toàn vẹn. 
 - Server là kho lưu trữ trung tâm, trong đó tất cả dữ liệu cấu hình, thống kê và hoạt động được lưu trữ.
+- Sử dụng để giám sát, nhận dữ liệu theo lịch, xử lý, phân tích vào thông báo dữ liệu.
 - Nếu xảy ra lỗi, server Zabbix sẽ cảnh báo người quản trị.
 
 <h3>Database storage</h3>
 
 - Nơi lưu trữ tất cả thông tin cấu hình, dữ liệu do Zabbix thu thập
+- Ví dụ: MySQL, SQLite, Oracle hoặc PostgreSQL
 
 <h3>Web interface</h3>
 
-- Để dễ dàng truy cập Zabbix từ mọi nơi và từ bất kỳ nền tảng nào qua web interface. 
+- Để dễ dàng truy cập Zabbix từ mọi nơi và từ bất kỳ nền tảng nào qua web interface PHP. 
 - Interface là một phần của máy chủ Zabbix và thường (nhưng không nhất thiết) chạy trên cùng một máy vật lý với máy server.
 
 <h3>Proxy</h3>
@@ -212,15 +210,40 @@ Zabbix:
 
 <h3>Agent</h3>
 
-- Các Agent Zabbix được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ và báo cáo dữ liệu thu thập được cho máy chủ Zabbix. 
+- Các Agent Zabbix được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng máy khách 
+- Báo cáo dữ liệu thu thập được cho máy chủ Zabbix. 
 - Kể từ Zabbix 4.4, có hai loại Agent có sẵn: 
   - Agent Zabbix (nhẹ, được hỗ trợ trên nhiều nền tảng, được viết bằng C) 
   - và Agent Zabbix 2 (cực kỳ linh hoạt, có thể mở rộng dễ dàng với các plugin, được viết bằng Go).
 
 # 5. Ưu điểm của Zabbix
+- Giám sát cả Server và thiết bị mạng
+- Cấu hình thông qua giao diện web dễ dàng
+- Hỗ trợ máy chủ Linux, 
+- Thông báo sự cố qua email, ...
+- Biểu đồ theo dõi và báo cáo
+- Mã nguồn mở
 
-# 6. Những điều cần phải cải thiện
+# 6. Những điều cải thiện
+- Thiết kế lại hoàn toàn phần Services
+  - Cải thiện hiện thị trạng thái và mức SLA hiện tại của các dịch vụ
+![Imgur](https://i.imgur.com/nmXD7ut.png)
 
+- Theo dõi trạng thái nút cụm trong tiện ích con `System information`
+![Imgur](https://i.imgur.com/TfXh1kg.png)
+
+- Cập nhật thêm nhiều mẫu mới (Templates)
+![Imgur](https://i.imgur.com/dP9vTOq.png)
+
+- Thiết kế lại Audit log cho phép cấp độ chi tiết mới, tuỳ chọn lọc được cải thiện
+![Imgur](https://i.imgur.com/qeOalHR.png)
+
+- Tiện ích mới cung cấp nhiều cách để hiển thị các chỉ số và cơ sở hạ tầng đã thu thập:
+![Imgur](https://i.imgur.com/WN9QjO5.png)
+
+- Cải thiện hiệu suất
+  - Cải thiện hiệu suất proxy Zabbix, sử dụng bộ nhớ, máy chủ và giao diện người dùng.
+  - Giảm kích thước bảng lịch sử
 # Tài liệu tham khảo
 
 1. [What is Zabbix](https://www.zabbix.com/documentation/current/en/manual/introduction/about)
@@ -228,4 +251,4 @@ Zabbix:
 3. [Explore Zabbix features](https://www.zabbix.com/features#problem_detection)
 4. https://docero.tips/download/mastering-zabbix-kq6wy3qq87?hash=7b049164e2754d557b9550a095c754f2
 5. https://media.oiipdf.com/pdf/1bdda601-c6a3-40be-9d51-92af5d8a6704.pdf
-6. 
+6. https://www.theseus.fi/bitstream/handle/10024/120834/Mikhail_Sharin.pdf?sequence=1&isAllowed=y
