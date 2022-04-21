@@ -14,8 +14,15 @@
   - [1.1. Zabbix là gì?](Zabbix/Overview/Info.md#1-zabbix-là-gì)
   - [1.2. Lịch sử phát triển và các phiên bản](Zabbix/Overview/Info.md#2-lịch-sử-phát-triển-và-các-phiên-bản)
   - [1.3. Các tính năng](Zabbix/Overview/Info.md#3-các-tính-năng-của-zabbix)
-  - 1.4
-  - 1.5
-  - 1.6
+  - [1.4. Architecture](Zabbix/Overview/Info.md#4-architecture)
+  - [1.5. Ưu điểm](Zabbix/Overview/Info.md#5-ưu-điểm-của-zabbix)
+  - [1.6. Những cải thiện](Zabbix/Overview/Info.md#6-những-điều-cải-thiện)
 - [2. Thuật ngữ thường được sử dụng](Zabbix/Thuat-ngu.md)
+- [3. Zabbix processes]()
+- [4. Cài đặt](Zabbix/install)
+  - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
+  - 4.2
+  - 4.3
+  - ...
+- [5. Quickstart]()
 - ...
