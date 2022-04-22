@@ -2,8 +2,12 @@
 
 <h2>Mục lục</h2>
 
+- [1. Tổng quan](#1-tổng-quan)
+- [2. Các thao tác quản lý](#2-các-thao-tác-quản-lý)
+- [3. Server process types - Các loại quy trình máy chủ](#3-server-process-types---các-loại-quy-trình-máy-chủ)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
-# Tổng quan
+# 1. Tổng quan
 - Server Zabbix là process central của phần mềm Zabbix thực hiện việc:
   - Polling (thăm dò) và trapping of data (bẫy dữ liệu)
   - Tính toán các trigger
@@ -17,7 +21,7 @@ Hoạt động của một máy chủ Zabbix cơ bản được chia thành ba t
 - Web frontend
 - Database storage
 
-# Các thao tác quản lý
+# 2. Các thao tác quản lý
 
 <h3> Nếu được cài đặt dưới dạng gói </h3>
 
@@ -84,99 +88,80 @@ STT|Option| Mô tả|Mục tiêu|
 |12|log_level_decrease [= < target >]|Giảm log level, ảnh hưởng đến tất cả các quá trình nếu không chỉ định mục tiêu.Không được hỗ trợ trên hệ thống ** BSD *.|
 
 
-Ví dụ về việc sử dụng kiểm soát thời gian chạy để tải lại bộ đệm cấu hình máy chủ:
 
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R config_cache_reload
-Ví dụ về việc sử dụng điều khiển thời gian chạy để thu thập thông tin chẩn đoán:
-
-Gather all available diagnostic information in the server log file:
-shell> zabbix_server -R diaginfo
-Gather history cache statistics in the server log file:
-shell> zabbix_server -R diaginfo=historycache
-Ví dụ về việc sử dụng điều khiển thời gian chạy để tải lại bộ đệm SNMP:
-
-shell> zabbix_server -R snmp_cache_reload  
-Ví dụ về việc sử dụng kiểm soát thời gian chạy để kích hoạt việc thực thi quản gia:
-
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R housekeeper_execute
-Ví dụ về việc sử dụng kiểm soát thời gian chạy để thay đổi cấp độ nhật ký:
-
-Increase log level of all processes:
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R log_level_increase
-Increase log level of second poller process:
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R log_level_increase=poller,2
-Increase log level of process with PID 1234:
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R log_level_increase=1234
-Decrease log level of all http poller processes:
-shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R log_level_decrease="http poller"
 Ví dụ về việc đặt độ trễ chuyển đổi dự phòng HA tối thiểu là 10 giây:
+```
+zabbix_server -R ha_set_failover_delay=10s
+```
 
-shell> zabbix_server -R ha_set_failover_delay=10s
-Xử lý người dùng
-Máy chủ Zabbix được thiết kế để chạy với tư cách người dùng không phải root. Nó sẽ chạy như bất kỳ người dùng không phải root nào mà nó được khởi động. Vì vậy, bạn có thể chạy máy chủ với tư cách là bất kỳ người dùng không phải root nào mà không gặp bất kỳ sự cố nào.
+<h3>Process user</h3>
 
-Nếu bạn cố gắng chạy nó dưới dạng 'root', nó sẽ chuyển sang người dùng 'zabbix' được mã hóa cứng, người dùng này phải có trên hệ thống của bạn. Bạn chỉ có thể chạy máy chủ dưới dạng 'root' nếu bạn sửa đổi tham số 'AllowRoot' trong tệp cấu hình máy chủ cho phù hợp.
+- Máy chủ Zabbix được thiết kế để có thể chạy với người dùng thông thường không cần user root.
 
-Nếu máy chủ và tác nhân Zabbix được chạy trên cùng một máy, bạn nên sử dụng người dùng khác để chạy máy chủ chứ không phải để chạy tác nhân. Mặt khác, nếu cả hai đều được chạy với cùng một người dùng, thì tác nhân có thể truy cập tệp cấu hình máy chủ và bất kỳ người dùng cấp Quản trị viên nào trong Zabbix đều có thể dễ dàng truy xuất, chẳng hạn như mật khẩu cơ sở dữ liệu.
+- Nếu bạn cố gắng chạy nó dưới dạng 'root', nó sẽ chuyển sang người dùng 'zabbix'
+- Có thể chạy máy chủ dưới dạng 'root' nếu bạn sửa đổi tham số 'AllowRoot' trong tệp cấu hình máy chủ.
 
-Tập tin cấu hình
-Xem các tùy chọn tệp cấu hình để biết chi tiết về cách định cấu hình zabbix_server.
+- Nếu Server và Agent Zabbix được chạy trên cùng một máy, nên sử dụng người dùng khác để chạy server chứ không phải để chạy Agent. 
+- Mặt khác, nếu cả hai đều được chạy với cùng một người dùng, thì Agent có thể truy cập tệp cấu hình server và bất kỳ người dùng cấp Quản trị viên nào trong Zabbix đều có thể dễ dàng truy xuất, chẳng hạn như mật khẩu cơ sở dữ liệu.
 
-Tập lệnh khởi động
-Các tập lệnh được sử dụng để tự động khởi động / dừng các quy trình Zabbix trong quá trình khởi động / tắt máy của hệ thống. Các tập lệnh nằm trong thư mục misc / init.d.
+# 3. Server process types - Các loại quy trình máy chủ
+- alert manager- người quản lý hàng đợi cảnh báo
+- alert syncer- cảnh báo DB writer
+- alerter- quy trình gửi thông báo
+- availability manager- quy trình cập nhật tính khả dụng của máy chủ
+- configuration syncer- quy trình quản lý bộ nhớ đệm trong bộ nhớ của dữ liệu cấu hình
+- discoverer- quy trình khám phá các thiết bị
+- escalator- quy trình escalation các hành động
+- history poller- quy trình xử lý các kiểm tra được tính toán và kiểm tra nội bộ yêu cầu kết nối cơ sở dữ liệu
+- history syncer- lịch sử DB writer
+- housekeeper- quy trình xóa dữ liệu lịch sử cũ
+- http poller- poller ​​giám sát web
+- icmp pinger- poller kiểm tra icmpping
+- ipmi manager- poller quản lý ​​IPMI
+- ipmi poller- poller kiểm tra IPMI
+- java poller- poller để kiểm tra Java
+- lld manager- quy trình quản lý của các nhiệm vụ khám phá low-level
+- lld worker- worker process của các nhiệm vụ khám phá low-level
+- odbc poller- poller để kiểm tra ODBC
+- poller- người thăm dò bình thường để kiểm tra thụ động
+- preprocessing manager- người quản lý các nhiệm vụ tiền xử lý
+- preprocessing worker- quy trình xử lý trước dữ liệu
+- problem housekeeper- quy trình để loại bỏ các vấn đề của các trình kích hoạt đã xóa
+- proxy poller- poller ​​cho proxy thụ động
+- report manager- người quản lý các nhiệm vụ tạo báo cáo theo lịch trình
+- report writer- quy trình tạo báo cáo được lập lịch
+- self-monitoring- quy trình thu thập số liệu thống kê máy chủ nội bộ
+- snmp trapper- bẫy cho bẫy SNMP
+- task manager- quy trình thực hiện từ xa các tác vụ do các thành phần khác yêu cầu (ví dụ: đóng vấn đề, xác nhận vấn đề, kiểm tra giá trị mục ngay bây giờ, chức năng lệnh từ xa)
+- timer- hẹn giờ để xử lý các bảo trì
+- trapper- trapper để kiểm tra hoạt động, bẫy, giao tiếp proxy
+- unreachable poller- người thăm dò ý kiến ​​cho các thiết bị không kết nối được
+- vmware collector- Bộ thu thập dữ liệu VMware chịu trách nhiệm thu thập dữ liệu từ các dịch vụ VMware
 
-Các loại quy trình máy chủ
-alert manager- người quản lý hàng đợi cảnh báo
-alert syncer- nhà văn DB cảnh báo
-alerter- quy trình gửi thông báo
-availability manager- quy trình cập nhật tính khả dụng của máy chủ
-configuration syncer- quy trình quản lý bộ nhớ đệm trong bộ nhớ của dữ liệu cấu hình
-discoverer- quy trình khám phá các thiết bị
-escalator- quy trình leo thang các hành động
-history poller- quy trình xử lý các kiểm tra được tính toán và kiểm tra nội bộ yêu cầu kết nối cơ sở dữ liệu
-history syncer- nhà văn DB lịch sử
-housekeeper- quy trình xóa dữ liệu lịch sử cũ
-http poller- người thăm dò ý kiến ​​giám sát web
-icmp pinger- người thăm dò để kiểm tra icmpping
-ipmi manager- Người quản lý cuộc thăm dò ý kiến ​​IPMI
-ipmi poller- người thăm dò để kiểm tra IPMI
-java poller- người thăm dò để kiểm tra Java
-lld manager- quy trình quản lý của các nhiệm vụ khám phá cấp thấp
-lld worker- quy trình công nhân của các nhiệm vụ khám phá cấp thấp
-odbc poller- người thăm dò để kiểm tra ODBC
-poller- người thăm dò bình thường để kiểm tra thụ động
-preprocessing manager- người quản lý các nhiệm vụ tiền xử lý
-preprocessing worker- quy trình xử lý trước dữ liệu
-problem housekeeper- quy trình để loại bỏ các vấn đề của các trình kích hoạt đã xóa
-proxy poller- thăm dò ý kiến ​​cho proxy thụ động
-report manager- người quản lý các nhiệm vụ tạo báo cáo theo lịch trình
-report writer- quy trình tạo báo cáo được lập lịch
-self-monitoring- quy trình thu thập số liệu thống kê máy chủ nội bộ
-snmp trapper- bẫy cho bẫy SNMP
-task manager- quy trình thực hiện từ xa các tác vụ do các thành phần khác yêu cầu (ví dụ: đóng vấn đề, xác nhận vấn đề, kiểm tra giá trị mục ngay bây giờ, chức năng lệnh từ xa)
-timer- hẹn giờ để xử lý các bảo trì
-trapper- trapper để kiểm tra hoạt động, bẫy, giao tiếp proxy
-unreachable poller- người thăm dò ý kiến ​​cho các thiết bị không kết nối được
-vmware collector- Bộ thu thập dữ liệu VMware chịu trách nhiệm thu thập dữ liệu từ các dịch vụ VMware
-Tệp nhật ký máy chủ có thể được sử dụng để quan sát các loại quy trình này.
+- Tệp nhật ký máy chủ có thể được sử dụng để quan sát các loại quy trình này.
 
-Nhiều loại quy trình máy chủ Zabbix khác nhau có thể được giám sát bằng cách sử dụng mục nội bộ zabbix [ process, <type>, <mode>, <state>] .
+Nhiều loại quy trình máy chủ Zabbix khác nhau có thể được giám sát bằng cách sử dụng mục nội bộ zabbix `[ process, <type>, <mode>, <state>]` .
 
-Nền tảng được hỗ trợ
-Do các yêu cầu bảo mật và tính chất quan trọng của nhiệm vụ của hoạt động máy chủ, UNIX là hệ điều hành duy nhất có thể cung cấp một cách nhất quán hiệu suất cần thiết, khả năng chịu lỗi và khả năng phục hồi. Zabbix hoạt động trên các phiên bản dẫn đầu thị trường.
+<h3>Nền tảng được hỗ trợ</h3>
 
 Máy chủ Zabbix được thử nghiệm trên các nền tảng sau:
 
-Linux
-Solaris
-AIX
-HP-UX
-Mac OS X
-FreeBSD
-OpenBSD
-NetBSD
-Máy chủ mở SCO
-Tru64 / OSF1
- Zabbix cũng có thể hoạt động trên các hệ điều hành giống Unix khác.
-Ngôn ngữ
-Lưu ý rằng máy chủ yêu cầu ngôn ngữ UTF-8 để một số mục văn bản có thể được diễn giải chính xác. Hầu hết các hệ thống giống Unix hiện đại đều có ngôn ngữ UTF-8 làm mặc định, tuy nhiên, có một số hệ thống có thể cần phải đặt cụ thể.
+- Linux
+- Solaris
+- AIX
+- HP-UX
+- Mac OS X
+- FreeBSD
+- OpenBSD
+- NetBSD
+- SCO Open Server
+- Tru64 / OSF1
+
+>Zabbix cũng có thể hoạt động trên các hệ điều hành giống Unix khác.
+ 
+<h3>Ngôn ngữ</h3>
+- Server yêu cầu ngôn ngữ UTF-8
+
+# Tài liệu tham khảo
+
+1. https://www.zabbix.com/documentation/current/en/manual/concepts/server
