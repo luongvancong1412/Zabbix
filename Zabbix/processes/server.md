@@ -78,15 +78,12 @@ STT|Option| Mô tả|Mục tiêu|
 6|secret_reload|Tải lại secrets từ Vault.	||
 7|service_cache_reload|Tải lại service manager cache.||	
 8|snmp_cache_reload|Tải lại SNMP cache, clear SNMP properties - các thuộc tính SNMP (engine time - thời gian động cơ, engine boots - khởi động động cơ,engine id - id động cơ, credentials - thông tin đăng nhập) cho all host.||	
-housekeeper_execute	Bắt đầu thủ tục dọn phòng. Bỏ qua nếu thủ tục dọn phòng hiện đang được thực hiện.	
-trigger_housekeeper_execute	Bắt đầu quy trình dọn phòng kích hoạt. Bỏ qua nếu quy trình quản lý nội bộ kích hoạt hiện đang được thực hiện.	
-log_level_increase [= < target >]	Tăng mức độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
-Không được hỗ trợ trên hệ thống ** BSD *.	loại quy trình - Tất cả các quy trình thuộc loại được chỉ định (ví dụ: thăm dò ý kiến)
-Xem tất cả các loại quy trình máy chủ .
-loại quy trình, N - Loại quy trình và số (ví dụ: poller, 3)
-pid - Định danh quy trình (1 đến 65535). Đối với các giá trị lớn hơn, chỉ định mục tiêu là 'loại quy trình, N'.
-log_level_decrease [= < target >]	Giảm cấp độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
-Không được hỗ trợ trên hệ thống ** BSD *.
+9|housekeeper_execute|	Bắt đầu thủ tục housekeeping.|	
+10|trigger_housekeeper_execute|	Bắt đầu trigger housekeeping procedure.|
+11|log_level_increase [= < target >]|Tăng log level, ảnh hưởng đến tất cả các quá trình (processses) nếu không chỉ định mục tiêu. Không được hỗ trợ trên hệ thống ** BSD *.|process type - Tất cả các quy trình thuộc loại được chỉ định (ví dụ: poller). See all server process types. Process type, N - Loại quy trình và số (ví dụ: poller,3). pid - Định danh quy trình (1 đến 65535). Đối với các giá trị lớn hơn, chỉ định mục tiêu là 'Process type, N'.|
+|12|log_level_decrease [= < target >]|Giảm log level, ảnh hưởng đến tất cả các quá trình nếu không chỉ định mục tiêu.Không được hỗ trợ trên hệ thống ** BSD *.|
+
+
 Ví dụ về việc sử dụng kiểm soát thời gian chạy để tải lại bộ đệm cấu hình máy chủ:
 
 shell> zabbix_server -c /usr/local/etc/zabbix_server.conf -R config_cache_reload
