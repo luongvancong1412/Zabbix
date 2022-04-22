@@ -100,6 +100,7 @@ Zabbix:
   - Theo dõi file log:
     - Thu thập và lọc các mục (entry) trong file log
     - Truy xuất số lượng mục nhập (entry) trong file log
+
 ![Imgur](https://i.imgur.com/7LprwW7.png)
 
 
@@ -107,11 +108,11 @@ Zabbix:
 
 - Có thể xác định các ngưỡng sự cố rất linh hoạt, được gọi là trình kích hoạt (triggers), tham chiếu các giá trị từ cơ sở dữ liệu phụ trợ (backend database)
 
-<h3>Cảnh báo có thể cấu hình cao</h3>
+<h3>Cấu hình cảnh báo</h3>
 
 - Có thể được tùy chỉnh gửi thông báo cho lịch trình báo cáo, người nhận, loại phương tiện (media type)
 
-<h3>Vẽ đồ thị thời gian thực</h3>
+<h3>Đồ thị thời gian thực</h3>
 
 - Các mục (items) được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp (built-in graphing functionality)
 
@@ -219,7 +220,7 @@ Zabbix:
 # 5. Ưu điểm của Zabbix
 - Giám sát cả Server và thiết bị mạng
 - Cấu hình thông qua giao diện web dễ dàng
-- Hỗ trợ máy chủ Linux, 
+- Hỗ trợ máy chủ Linux,...
 - Thông báo sự cố qua email, ...
 - Biểu đồ theo dõi và báo cáo
 - Mã nguồn mở

@@ -50,6 +50,27 @@ sudo systemctl restart apache2
 
 
 ## 2.3 Cài đặt MariaDB
+- Cài đặt gói Mariadb:
+```
+sudo apt install wget
+```
+```
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+```
+```
+echo "b9e90cde27affc2a44f9fc60e302ccfcacf71f4ae02071f30d570e6048c28597 mariadb_repo_setup" \
+    | sha256sum -c -
+```
+```
+chmod +x mariadb_repo_setup
+```
+```
+sudo ./mariadb_repo_setup \
+   --mariadb-server-version="mariadb-10.5"
+```
+```
+sudo apt update
+```
 - Cài đặt MariaDB:
 ```
 sudo apt -y install mariadb-server
@@ -144,7 +165,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 
 - Đăng nhập thành công:
 
-![Imgur](https://i.imgur.com/U91cfEs.png)
+![Imgur](https://i.imgur.com/FiM3Cct.png)
 
 # Tài liệu tham khảo
 
@@ -152,4 +173,4 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 2. https://www.zabbix.com/documentation/6.0/en/manual/installation/frontend
 3. https://www.server-world.info/en/note?os=Ubuntu_20.04&p=zabbix50&f=2
 4. https://www.zabbix.com/download?zabbix=6.0&os_distribution=ubuntu&os_version=20.04_focal&db=mysql&ws=apache
-5. 
+5. [Install mariadb 10.5](https://mariadb.com/docs/deploy/topologies/single-node/community-server-10-5/)
