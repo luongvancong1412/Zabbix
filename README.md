@@ -18,7 +18,10 @@
   - [1.5. Ưu điểm](Zabbix/Overview/Info.md#5-ưu-điểm-của-zabbix)
   - [1.6. Những cải thiện](Zabbix/Overview/Info.md#6-những-điều-cải-thiện)
 - [2. Thuật ngữ thường được sử dụng](Zabbix/Thuat-ngu.md)
-- [3. Zabbix processes]()
+- [3. Zabbix processes](Zabbix/processes)
+  - [3.1 Server](Zabbix/processes/server.md)
+  - [3.2 Agent](Zabbix/processes/agent.md)
+  - ...
 - [4. Cài đặt](Zabbix/install)
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
   - 4.2
