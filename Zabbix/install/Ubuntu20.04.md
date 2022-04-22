@@ -21,7 +21,7 @@
 ```
 sudo apt -y update
 ```
-- Cài đặt Apache:
+- Cài đặt Apache2:
 ```
 sudo apt -y install apache2
 ```
@@ -35,7 +35,7 @@ sudo apt -y install php php-cgi libapache2-mod-php php-common php-pear php-mbstr
 ```
 sudo a2enconf php7.4-cgi
 ```
-
+- Sửa file: `/etc/php/7.4/apache2/php.ini`
 ```
 vi /etc/php/7.4/apache2/php.ini
 ```
@@ -50,26 +50,31 @@ sudo systemctl restart apache2
 
 
 ## 2.3 Cài đặt MariaDB
-- Cài đặt gói Mariadb:
+- Cài đặt gói wget:
 ```
-sudo apt install wget
+sudo apt -y install wget
 ```
+- Thêm repo mariadb:
 ```
 wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
 ```
+- Kiểm tra chữ ký:
 ```
 echo "b9e90cde27affc2a44f9fc60e302ccfcacf71f4ae02071f30d570e6048c28597 mariadb_repo_setup" \
     | sha256sum -c -
 ```
+- Thêm quyền thực thi cho repo: `mariadb_repo_setup`
 ```
 chmod +x mariadb_repo_setup
 ```
+- Chọn phiên bản mariadb-10.5:
 ```
 sudo ./mariadb_repo_setup \
    --mariadb-server-version="mariadb-10.5"
 ```
+- Update:
 ```
-sudo apt update
+sudo apt -y update
 ```
 - Cài đặt MariaDB:
 ```
@@ -99,23 +104,25 @@ create user zabbix@localhost identified by 'zabbix';
 grant all privileges on zabbix.* to zabbix@localhost;
 quit
 ```
-
-- Import Cơ sở dữ liệu cho zabbix:
+- Giải nén file: `/usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz`
 ```
 cd /usr/share/doc/zabbix-sql-scripts/mysql/
 sudo gzip -d server.sql.gz
-sudo mysql zabbix < server.sql.gz
+```
+- Import Cơ sở dữ liệu cho zabbix:
+```
+sudo mysql zabbix < server.sql
 ```
 
 - Chỉnh sửa tệp `/etc/zabbix/zabbix_server.conf`:
 ```
 sudo vi /etc/zabbix/zabbix_server.conf
 ```
-- Sửa dòng: 100
+- Kiểm tra dòng: 100
 ```
 DBName=zabbix
 ```
-- Sửa dòng:
+- Kiểm tra dòng:
 ```
 DBUser=zabbix
 ```
