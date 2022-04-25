@@ -1,7 +1,9 @@
 <h1> Zabbix </h1>
 
-![Imgur](https://i.imgur.com/3zAIpt7.png)
 
+<p align="center">
+  ![Imgur](https://i.imgur.com/3zAIpt7.png)
+</p>
 - Zabbix là một phần mềm mã nguồn mở giám sát các mạng và ứng dụng, được phát hành lần đầu tiên vào năm 2001 bởi Alexei Vladishev. 
 - Nó được thiết kế để giúp quản trị viên mạng giám sát và theo dõi tình trạng của các dịch vụ mạng, server và phần cứng mạng khác nhằm đảm bảo hệ thống luôn luôn được ổn định.
 
