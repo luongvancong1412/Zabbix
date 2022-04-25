@@ -131,7 +131,7 @@ zabbix_server -R ha_set_failover_delay=10s
 - report manager- người quản lý các nhiệm vụ tạo báo cáo theo lịch trình
 - report writer- quy trình tạo báo cáo được lập lịch
 - self-monitoring- quy trình thu thập số liệu thống kê máy chủ nội bộ
-- snmp trapper- bẫy cho bẫy SNMP
+- snmp trapper- bẫy cho SNMP
 - task manager- quy trình thực hiện từ xa các tác vụ do các thành phần khác yêu cầu (ví dụ: đóng vấn đề, xác nhận vấn đề, kiểm tra giá trị mục ngay bây giờ, chức năng lệnh từ xa)
 - timer- hẹn giờ để xử lý các bảo trì
 - trapper- trapper để kiểm tra hoạt động, bẫy, giao tiếp proxy
