@@ -28,9 +28,13 @@
 - Trong trường hợp có lỗi , máy chủ Zabbix có thể chủ động cảnh báo cho quản trị viên của máy cụ thể đã báo cáo lỗi.
 
 - Các Agent Zabbix cực kỳ hiệu quả vì sử dụng các lệnh gọi hệ thống tự nhiên (native system calls) để thu thập thông tin thống kê.
+- Sử dụng tốt trên các máy tính có tài nguyên thấp
 
 # 2. Check passive và check active
+
 - Các Agent Zabbix có thể thực hiện check: `passive` và `active`.
+
+![Imgur](https://i.imgur.com/PCKG48A.png)
 
 - Trong check passive , Server Zabbix (hoặc proxy) yêu cầu dữ liệu, Agent phản hồi lại yêu cầu dữ liệu đó.
 
@@ -39,6 +43,52 @@
 - Việc kiểm tra passive hay active đượ cấu hình bằng cách chọn loại item giám sát:
   - *Zabbix agent* - Nếu check passive
   - *Zabbix agent (active)* - Nếu check active
+
+<h3> List of checks được Agent hỗ trợ</h3>
+
+**Network**
+- Packets/bytes transferred (*Các gói/byte được chuyển*)
+- Errors/dropped packets (*Gói bị lỗi/Xoá*)
+- Collisions (*Xung đột*)
+
+**CPU**
+- Load average (Tải trung bình)
+- CPU idle/usage (CPU nhàn rỗi/sử dụng)
+- CPU utilization data per individual process (Dữ liệu CPU sử dụng cho mỗi process)
+
+**Memory**	
+- Free/used memory (Bộ nhớ trống/đã sử dụng)
+- Swap/pagefile utilization (Sử dụng Hoán đổi/tệp trang)
+
+**Disk**	
+- Space free/used (Dung lượng trống/Đã sử dụng)
+- Read and write I/O (Đọc và ghi I/O)
+
+**Service**
+- Process status
+- Process memory usage
+- Service status (ssh, ntp, ldap, smtp, ftp, http, pop, nntp, imap)
+- Windows service status
+- DNS resolution (Phân giải DNS)
+- TCP connectivity (Kết nối TCP)
+- TCP response time (Thời gian phản hồi)
+
+**File**
+- File size/time (Kích thước/Thời gian tệp)
+- File exists (File tồn tại)
+- Checksum
+- MD5 hash (băm MD5)
+- RegExp search
+
+**Log**
+- Text log (Nhật ký văn bản)
+- Windows eventlog (Nhật ký sự kiện windows)
+
+**Other**
+- System uptime (Thời gian hoạt động hệ thống)
+- System time (Giờ hệ thống)
+- Users connected (Người dùng đã kết nối)
+- Performance counter (Windows) - Bộ đếm hiệu suất
 
 # 3. Nền tảng hỗ trợ
 - Linux
@@ -50,6 +100,8 @@
 - Mac OS X
 - Solaris: 9, 10, 11
 - Windows: tất cả các phiên bản desktop và server kể từ bản XP
+
+![Imgur](https://i.imgur.com/kQoDA3p.png)
 # 4. Agent trên các hệ thống UNIX-like
 - Agent trên các hệ thống giống UNIX được chạy trên server đang được giám sát.
 
@@ -182,6 +234,10 @@ shell> zabbix_agentd -R log_level_decrease="active checks"
 
 Tệp log Agent có thể được sử dụng để quan sát các loại quy trình này.
 
+- Một Zabbix agent chạy trong Linux: `ps u -C zabbix_agentd`
+
+![Imgur](https://i.imgur.com/E4pfm1E.png)
+
 # 9. Process user 
 - Có thể chạy Agent với tư cách là bất kỳ người dùng không phải root nào mà không gặp bất kỳ vấn đề nào.
 - Vì Agent Zabbix trên UNIX được thiết kế để chạy với tư cách người dùng không phải root.
@@ -200,3 +256,4 @@ Tệp log Agent có thể được sử dụng để quan sát các loại quy t
 # Tài liệu tham khảo
 
 1. https://www.zabbix.com/documentation/current/en/manual/concepts/agent
+2. https://www.zabbix.com/zabbix_agent

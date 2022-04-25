@@ -27,6 +27,8 @@
   - [3.1 Server](Zabbix/processes/server.md)
   - [3.2 Agent](Zabbix/processes/agent.md)
   - [3.3 Agent 2](Zabbix/processes/agent2.md)
+  - [3.4 Proxy](Zabbix/processes/proxy.md)
+  - ...
 - [4. Cài đặt](Zabbix/install)
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
   - 4.2
