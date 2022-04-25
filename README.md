@@ -1,5 +1,10 @@
 <h1> Zabbix </h1>
 
+![Imgur](https://i.imgur.com/3zAIpt7.png)
+
+- Zabbix là một phần mềm mã nguồn mở giám sát các mạng và ứng dụng, được phát hành lần đầu tiên vào năm 2001 bởi Alexei Vladishev. 
+- Nó được thiết kế để giúp quản trị viên mạng giám sát và theo dõi tình trạng của các dịch vụ mạng, server và phần cứng mạng khác nhằm đảm bảo hệ thống luôn luôn được ổn định.
+
 <h2>Summary</h2>
 
 [I. Network Monitor](Network-Monitor/Network-monitor.md)
@@ -21,7 +26,7 @@
 - [3. Zabbix processes](Zabbix/processes)
   - [3.1 Server](Zabbix/processes/server.md)
   - [3.2 Agent](Zabbix/processes/agent.md)
-  - ...
+  - [3.3 Agent 2](Zabbix/processes/agent2.md)
 - [4. Cài đặt](Zabbix/install)
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
   - 4.2
