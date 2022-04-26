@@ -1,4 +1,4 @@
-<h1> Zabbix 6.0 LTS: install</h1>
+<h1> Giám sát server Centos 7</h1>
 
 <h2> Mục lục</h2>
 
