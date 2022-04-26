@@ -31,8 +31,7 @@
   - ...
 - [4. Cài đặt](Zabbix/install)
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
-  - 4.2
-  - 4.3
+  - [4.2 Cài đặt Agent](Zabbix/install/Agent.md)
   - ...
 - [5. Quickstart]()
 - ...

@@ -15,6 +15,12 @@
 
 # 1. Mô hình mạng
 
+![Imgur](https://i.imgur.com/CualjCH.png)
+
+<h3> IP Planning: </h3>
+
+![Imgur](https://i.imgur.com/IVmEum8.png)
+
 # 2. Cài đặt Zabbix Server
 ## 2.1 Cài đặt Apache
 - Tiến hành Update:
@@ -173,6 +179,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 - Đăng nhập thành công:
 
 ![Imgur](https://i.imgur.com/FiM3Cct.png)
+
 
 # Tài liệu tham khảo
 
