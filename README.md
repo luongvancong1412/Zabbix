@@ -30,8 +30,9 @@
   - [3.4 Proxy](Zabbix/processes/proxy.md)
   - ...
 - [4. Cài đặt](Zabbix/install)
-  - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/Ubuntu20.04.md)
-  - [4.2 Cài đặt Agent](Zabbix/install/Agent.md)
+  - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/1-Server-Ubuntu20.04.md)
+  - [4.2 Cài đặt Agent trên Ubuntu 18.04](Zabbix/install/2-Agent-Ubuntu18.04.md)
+  - [4.3 Cài đặt Agent trên Centos 7](Zabbix/install/3-Agent-Centos7.md)
   - ...
 - [5. Quickstart]()
 - ...
