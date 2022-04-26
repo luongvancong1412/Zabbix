@@ -47,7 +47,7 @@ ServerActive=192.168.77.130
 ```
 - Sửa dòng 175:
 ```
-Hostname=Node01
+Hostname=Node02_centos7
 ```
 
 - Trong đó:
@@ -59,7 +59,11 @@ Hostname=Node01
 ```
 sudo systemctl restart zabbix_agent
 ```
-
+- Mở port:
+```
+firewall-cmd --zone=public --add-port=10050/tcp --permanent
+firewall-cmd --reload
+```
 3. Thêm host giám sát trên Zabbix server:
 > Truy cập web server zabbix:
 
@@ -71,58 +75,20 @@ sudo systemctl restart zabbix_agent
 
 ![Imgur](https://i.imgur.com/RPgUZXA.png)
 
-- Nhập Host name, Visible name và chọn Templates phù hợp:
+- Nhập Host name, Visible name và chọn Templates phù hợp. Nhập thông tin Agent (IP máy cần giám sát), xong chọn `Add`:
 
-![Imgur](https://i.imgur.com/Cin4BuJ.png)
+![Imgur](https://i.imgur.com/XZ27b1j.png)
 
-- Chọn Select:
 
-![Imgur](https://i.imgur.com/MkQoMem.png)
 
-- Chọn Openrating systems:
 
-![Imgur](https://i.imgur.com/EGQSx0K.png)
-
-- Sau khi chọn Template, Group thích hợp. Tiếp tục điền Interface:
-
-![Imgur](https://i.imgur.com/GDiXuvE.png)
-
-- Chọn Agent:
-
-![Imgur](https://i.imgur.com/QfCd2Q5.png)
-
-- Nhập thông tin Agent (IP máy cần giám sát), xong chọn `Add`:
-
-![Imgur](https://i.imgur.com/YCqiuu8.png)
 
 - Add thành công:
 
-![Imgur](https://i.imgur.com/xLb4jIB.png)
-
-> Bổ sung cài đặt Agent trên Ubuntu 20.04
-- Cài đặt repo zabbix:
-```
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu20.04_all.deb
-sudo dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb
-sudo apt -y update
-```
-- Cài đặt Agent:
-```
-sudo apt install -y zabbix-agent
-```
-- Start Agent:
-```
-Sudo systemctl restart zabbix-agent
-Sudo systemctl enable zabbix-agent
-```
-
-
+![Imgur](https://i.imgur.com/tgjXilS.png)
 
 
 # Tài liệu tham khảo
 
-1. https://www.server-world.info/en/note?os=Ubuntu_20.04&p=zabbix50&f=1
-2. https://www.zabbix.com/documentation/6.0/en/manual/installation/frontend
-3. https://www.server-world.info/en/note?os=Ubuntu_20.04&p=zabbix50&f=2
-4. https://www.zabbix.com/download?zabbix=6.0&os_distribution=ubuntu&os_version=20.04_focal&db=mysql&ws=apache
-5. [Install mariadb 10.5](https://mariadb.com/docs/deploy/topologies/single-node/community-server-10-5/)
+1. https://www.zabbix.com/download?zabbix=6.0&os_distribution=centos&os_version=7&db=&ws=
+2. https://www.server-world.info/en/note?os=Ubuntu_20.04&p=zabbix50&f=7
