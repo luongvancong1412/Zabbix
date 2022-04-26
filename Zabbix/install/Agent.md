@@ -6,6 +6,7 @@
 - [Centos 7](#centos-7)
 - [Ubuntu 18.04](#ubuntu-1804)
 - [Ubuntu 20.04](#ubuntu-2004)
+- [Window](#window)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # Centos 7
@@ -60,6 +61,8 @@ sudo apt install -y zabbix-agent
 Sudo systemctl restart zabbix-agent
 Sudo systemctl enable zabbix-agent
 ```
+
+# Window
 
 # Tài liệu tham khảo
 
