@@ -40,8 +40,8 @@ sudo apt install -y zabbix-agent
 ```
 - Start Agent:
 ```
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent
+sudo systemctl restart zabbix-agent
+sudo systemctl enable zabbix-agent
 ```
 
 # Ubuntu 20.04
@@ -57,8 +57,8 @@ sudo apt install -y zabbix-agent
 ```
 - Start Agent:
 ```
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent
+Sudo systemctl restart zabbix-agent
+Sudo systemctl enable zabbix-agent
 ```
 
 # Tài liệu tham khảo
