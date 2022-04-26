@@ -2,13 +2,18 @@
 
 <h2> Mục lục </h2>
 
-- [Tổng quan](#tổng-quan)
-- [Quản lý proxy](#quản-lý-proxy)
-  - [Nếu được cài đặt dưới dạng gói](#nếu-được-cài-đặt-dưới-dạng-gói)
-  - [Khởi động thủ công](#khởi-động-thủ-công)
-  - [](#)
+- [1. Tổng quan](#1-tổng-quan)
+- [2. Quản lý proxy](#2-quản-lý-proxy)
+  - [2.1 Start, stop, restart](#21-start-stop-restart)
+  - [2.2 Khởi động thủ công](#22-khởi-động-thủ-công)
+  - [2.2 Running control](#22-running-control)
+  - [2.3 Process user](#23-process-user)
+- [3. Các loại quy trình proxy](#3-các-loại-quy-trình-proxy)
+- [4. Nền tảng được hỗ trợ](#4-nền-tảng-được-hỗ-trợ)
+- [5. Ngôn ngữ](#5-ngôn-ngữ)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
-# Tổng quan
+# 1. Tổng quan
 - Zabbix proxy là:
   - Một quy trình thu thập dữ liệu giám sát từ một hoặc nhiều thiết bị được giám sát
   - và gửi thông tin đến máy chủ Zabbix.
@@ -26,9 +31,9 @@
     - MySQL
     - PostgreSQL.
 
-# Quản lý proxy
+# 2. Quản lý proxy
 
-## Nếu được cài đặt dưới dạng gói
+## 2.1 Start, stop, restart
 
 - `Khởi động` proxy trên hầu hết các hệ thống `GNU/Linux` bằng cách thực thi:
 ```
@@ -45,9 +50,7 @@ shell> service zabbix-proxy restart
 shell> service zabbix-proxy status
 ```
 
-## Khởi động thủ công
-
-- Nếu cách trên không hoạt động, bạn phải khởi động nó theo cách thủ công. 
+## 2.2 Khởi động thủ công
 - Tìm đường dẫn đến tệp `zabbix_proxy` và thực hiện:
 ```
 shell> zabbix_proxy
@@ -69,87 +72,96 @@ shell> zabbix_proxy --help
 shell> zabbix_proxy -V
 ```
 
-## 
+## 2.2 Running control
 Tùy chọn kiểm soát thời gian chạy:
 
-Lựa chọn	Sự miêu tả	Mục tiêu
-config_cache_reload	Tải lại bộ đệm cấu hình. Bỏ qua nếu bộ nhớ cache hiện đang được tải.
-Proxy Zabbix đang hoạt động sẽ kết nối với máy chủ Zabbix và yêu cầu dữ liệu cấu hình.	
-Diaginfo [= < target >]	Thu thập thông tin chẩn đoán trong tệp nhật ký proxy.	historycache -
-xử lý trước số liệu thống kê bộ đệm lịch sử -
-khóa thống kê trình quản lý tiền xử lý - danh sách mutexes (trống trên hệ thống ** BSD *)
-snmp_cache_reload	Tải lại bộ đệm SNMP, xóa các thuộc tính SNMP (thời gian động cơ, khởi động động cơ, id động cơ, thông tin đăng nhập) cho tất cả các máy chủ.	
-housekeeper_execute	Bắt đầu thủ tục dọn phòng. Bỏ qua nếu thủ tục dọn phòng hiện đang được thực hiện.	
-log_level_increase [= < target >]	Tăng mức độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
-Không được hỗ trợ trên hệ thống ** BSD *.	loại quy trình - Tất cả các quy trình thuộc loại được chỉ định (ví dụ: thăm dò ý kiến)
-Xem tất cả các loại quy trình proxy .
-loại quy trình, N - Loại quy trình và số (ví dụ: poller, 3)
-pid - Định danh quy trình (1 đến 65535). Đối với các giá trị lớn hơn, chỉ định mục tiêu là 'loại quy trình, N'.
-log_level_decrease [= < target >]	Giảm cấp độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
-Không được hỗ trợ trên hệ thống ** BSD *.
-Ví dụ về việc sử dụng điều khiển thời gian chạy để tải lại bộ đệm ẩn cấu hình proxy:
+Option|	Mô tả	|
+|---|---|
+config_cache_reload|Tải lại bộ đệm cấu hình. 	
+Diaginfo [= < target >]|	Thu thập thông tin chẩn đoán trong tệp nhật ký proxy.
+snmp_cache_reload	|Tải lại bộ đệm SNMP, xóa các thuộc tính SNMP (thời gian động cơ, khởi động động cơ, id động cơ, thông tin đăng nhập) cho tất cả các máy chủ.	
+housekeeper_execute|	Bắt đầu thủ tục dọn phòng.
+log_level_increase [= < target >]	|Tăng mức độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
+log_level_decrease [= < target >]|	Giảm cấp độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.|
 
+Ví dụ:
+- Tải lại bộ đệm ẩn cấu hình proxy:
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R config_cache_reload
-Ví dụ về việc sử dụng điều khiển thời gian chạy để thu thập thông tin chẩn đoán:
+```
+- Thu thập thông tin chẩn đoán:
 
 Gather all available diagnostic information in the proxy log file:
+```
 shell> zabbix_proxy -R diaginfo
 Gather history cache statistics in the proxy log file:
 shell> zabbix_proxy -R diaginfo=historycache
-Ví dụ về việc sử dụng điều khiển thời gian chạy để tải lại bộ đệm SNMP:
-
-shell> zabbix_proxy -R snmp_cache_reload  
-Ví dụ về việc sử dụng kiểm soát thời gian chạy để kích hoạt việc thực thi quản gia
-
+```
+- Tải lại bộ đệm SNMP:
+```
+shell> zabbix_proxy -R snmp_cache_reload 
+```
+- Kích hoạt việc thực thi quản gia
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R housekeeper_execute
-Ví dụ về việc sử dụng kiểm soát thời gian chạy để thay đổi cấp độ nhật ký:
+```
+- Thay đổi cấp độ nhật ký:
 
 Increase log level of all processes:
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R log_level_increase
+```
 Increase log level of second poller process:
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R log_level_increase=poller,2
+```
 Increase log level of process with PID 1234:
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R log_level_increase=1234
+```
 Decrease log level of all http poller processes:
+```
 shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R log_level_decrease="http poller"
-Xử lý người dùng
-Zabbix proxy được thiết kế để chạy với tư cách người dùng không phải root. Nó sẽ chạy như bất kỳ người dùng không phải root nào mà nó được khởi động. Vì vậy, bạn có thể chạy proxy với tư cách là bất kỳ người dùng không phải root nào mà không gặp bất kỳ sự cố nào.
+```
+## 2.3 Process user
+- Zabbix proxy được thiết kế để chạy với tư cách `người dùng không thông thường` không phải `root`. 
+- Nếu bạn cố gắng chạy nó dưới dạng `root`, nó sẽ chuyển sang người dùng `zabbix`.
+- Chỉ có thể chạy proxy với tư cách là `root` nếu bạn sửa đổi tham số `AllowRoot` trong tệp cấu hình proxy.
 
-Nếu bạn cố gắng chạy nó dưới dạng 'root', nó sẽ chuyển sang người dùng 'zabbix' được mã hóa cứng, người dùng này phải có trên hệ thống của bạn. Bạn chỉ có thể chạy proxy với tư cách là 'root' nếu bạn sửa đổi tham số 'AllowRoot' trong tệp cấu hình proxy cho phù hợp.
+# 3. Các loại quy trình proxy
+- availability manager
+- configuration syncer
+- data sender
+- discoverer
+- heartbeat sender
+- history poller
+- history syncer
+- housekeeper
+- http poller
+- icmp pinger
+- ipmi manager
+- ipmi poller
+- java poller
+- odbc poller
+- poller
+- preprocessing manager
+- preprocessing worker
+- self-monitoring
+- snmp trapper
+- task manager
+- trapper
+- unreachable poller
+- vmware collector
+- Tệp nhật ký proxy có thể được sử dụng để quan sát các loại quy trình này.
 
-Tập tin cấu hình
-Xem các tùy chọn tệp cấu hình để biết chi tiết về cách định cấu hình zabbix_proxy.
+- Có thể giám sát nhiều loại quy trình proxy Zabbix bằng cách sử dụng item nội bộ zabbix [ process, < type>, < mode>, < state>] .
 
-Các loại quy trình proxy
-availability manager- quy trình cập nhật tính khả dụng của máy chủ
-configuration syncer- quy trình quản lý bộ nhớ đệm trong bộ nhớ của dữ liệu cấu hình
-data sender- người gửi dữ liệu proxy
-discoverer- quy trình khám phá các thiết bị
-heartbeat sender- người gửi nhịp tim proxy
-history poller- quy trình xử lý các kiểm tra được tính toán, tổng hợp và nội bộ yêu cầu kết nối cơ sở dữ liệu
-history syncer- nhà văn DB lịch sử
-housekeeper- quy trình xóa dữ liệu lịch sử cũ
-http poller- người thăm dò ý kiến ​​giám sát web
-icmp pinger- người thăm dò để kiểm tra icmpping
-ipmi manager- Người quản lý cuộc thăm dò ý kiến ​​IPMI
-ipmi poller- người thăm dò để kiểm tra IPMI
-java poller- người thăm dò để kiểm tra Java
-odbc poller- người thăm dò để kiểm tra ODBC
-poller- người thăm dò bình thường để kiểm tra thụ động
-preprocessing manager- người quản lý các nhiệm vụ tiền xử lý
-preprocessing worker- quy trình xử lý trước dữ liệu
-self-monitoring- quy trình thu thập số liệu thống kê máy chủ nội bộ
-snmp trapper- bẫy cho bẫy SNMP
-task manager- quy trình thực hiện từ xa các tác vụ do các thành phần khác yêu cầu (ví dụ: đóng vấn đề, xác nhận vấn đề, kiểm tra giá trị mục ngay bây giờ, chức năng lệnh từ xa)
-trapper- trapper để kiểm tra hoạt động, bẫy, giao tiếp proxy
-unreachable poller- người thăm dò ý kiến ​​cho các thiết bị không kết nối được
-vmware collector- Bộ thu thập dữ liệu VMware chịu trách nhiệm thu thập dữ liệu từ các dịch vụ VMware
-Tệp nhật ký proxy có thể được sử dụng để quan sát các loại quy trình này.
+# 4. Nền tảng được hỗ trợ
+- Zabbix proxy chạy trên cùng danh sách các nền tảng được hỗ trợ như máy chủ Zabbix.
 
-Có thể giám sát nhiều loại quy trình proxy Zabbix bằng cách sử dụng mục nội bộ zabbix [ process, <type>, <mode>, <state>] .
+# 5. Ngôn ngữ
+- proxy yêu cầu ngôn ngữ UTF-8
 
-Nền tảng được hỗ trợ
-Zabbix proxy chạy trên cùng danh sách các nền tảng được hỗ trợ # máy chủ như máy chủ Zabbix.
+# Tài liệu tham khảo
 
-Ngôn ngữ
-Lưu ý rằng proxy yêu cầu ngôn ngữ UTF-8 để một số mục văn bản có thể được diễn giải chính xác. Hầu hết các hệ thống giống Unix hiện đại đều có ngôn ngữ UTF-8 làm mặc định, tuy nhiên, có một số hệ thống có thể cần phải đặt cụ thể.
+1. https://www.zabbix.com/documentation/current/en/manual/concepts/proxy
