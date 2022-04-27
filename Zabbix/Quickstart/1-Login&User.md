@@ -8,6 +8,7 @@
 - [2. Quản lý người dùng](#2-quản-lý-người-dùng)
   - [2.1 Thêm người dùng](#21-thêm-người-dùng)
   - [2.2 Phân quyền](#22-phân-quyền)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1. Đăng nhập
 ## 1.1 Đăng nhập giao diện web:
@@ -38,5 +39,11 @@
 
 ## 2.1 Thêm người dùng
 - Thêm người dùng mới, chọn: `Create user`
-- 
+
+<img src=https://i.imgur.com/ogVem8a.png align=center>
+
 ## 2.2 Phân quyền
+
+# Tài liệu tham khảo
+
+1. https://www.zabbix.com/documentation/current/en/manual/quickstart/login
