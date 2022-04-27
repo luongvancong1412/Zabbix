@@ -16,14 +16,17 @@ Bài này viết về cách thiết lập một máy chủ mới (new host).
 
 - Để thêm một host mới, Chọn `Create host` .
 
-<img src=https://i.imgur.com/RPgUZXA.png align=center>
 
+<p align="center">
+  <img src=https://i.imgur.com/RPgUZXA.png >
+</p>
 
 
 - Cửa sổ cấu hình host xuất hiện.
 
-<img src=https://i.imgur.com/QrlpngA.png align=center>
-
+<p align="center">
+<img src=https://i.imgur.com/QrlpngA.png>
+</p>
 
 - Các trường bắt buộc được đánh dấu bằng dấu hoa thị `*` màu đỏ.
 
@@ -52,7 +55,7 @@ Một số trường cần thiết:
 
 <h3> Trường Availability </h3>
 
-<img src=https://i.imgur.com/eZ3L3Vv.png width=20% align="right">
+<img src=https://i.imgur.com/eZ3L3Vv.png width=10% align="right">
 
 - Cột Tính khả dụng (`Availability`) chứa các `cảnh báo` về tính khả dụng của host trên mỗi interface. 
 - Được hiển thị bằng biểu tượng `ZBX`:
