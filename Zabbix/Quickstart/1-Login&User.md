@@ -32,7 +32,9 @@
   - Khi đăng nhập thành công, địa chỉ IP của lần đăng nhập không thành công sẽ được hiển thị
 
 <img src=https://i.imgur.com/PvhtglN.png width=60% align="left">
-
+<p width=60% align="left">
+  <img src="https://i.imgur.com/PvhtglN.png">
+</p>
 # 2. Quản lý người dùng
 - Xem thông tin user, chọn: `Administration` $\to$ `Users`
 
