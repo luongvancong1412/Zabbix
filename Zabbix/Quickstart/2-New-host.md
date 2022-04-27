@@ -55,16 +55,20 @@ Cuối cùng, chọn  `Add` để hoàn tất. Host mới sẽ được hiển t
 <img src=https://i.imgur.com/NddV6xh.png>
 </p>
 
-<h3> Trường Availability </h3> <img src=https://i.imgur.com/eZ3L3Vv.png width=5% align="right">
+<h3> Trường Availability </h3> <img src=https://i.imgur.com/eZ3L3Vv.png width=10% align="right">
 
 - Cột Tính khả dụng (`Availability`) chứa các `cảnh báo` về tính khả dụng của host trên mỗi interface. 
 - Được hiển thị bằng biểu tượng `ZBX`:
 
-Availability| Mô tả|
+<br>
+<br>
+<br>
+
+|**Availability**| **Mô tả**|
 |:---:|---|
-|![Imgur](https://i.imgur.com/WCLuTqW.png)|Trạng thái `host chưa được thiết lập`; `chưa có kiểm tra số liệu` nào xảy ra|
-|![Imgur](https://i.imgur.com/5dWlcNB.png)|`Host` khả dụng (`Available`), kiểm tra số liệu (`metric check`) đã thành công (`successful`)|
-|![Imgur](https://i.imgur.com/X3gKIb1.png)|`Host` không khả dụng (`Unavailable`), kiểm tra số liệu `không thành công` (di chuyển con trỏ chuột qua biểu tượng để xem thông báo lỗi).<br>Có thể có một số lỗi với giao tiếp, có thể do thông tin xác thực `interface` không chính xác.<br>Kiểm tra xem `Zabbix server` có `đang chạy` hay `không` và thử `làm mới trang` sau.|
+|![Imgur](https://i.imgur.com/WCLuTqW.png)|Trạng thái `host chưa được thiết lập`;<br>`Chưa có kiểm tra số liệu` nào xảy ra|
+|![Imgur](https://i.imgur.com/5dWlcNB.png)|`Host` khả dụng (`Available`);<br>Kiểm tra số liệu (`metric check`) đã thành công (`successful`)|
+|![Imgur](https://i.imgur.com/X3gKIb1.png)|`Host` không khả dụng (`Unavailable`);<br>Kiểm tra số liệu `không thành công` (di chuyển con trỏ chuột qua biểu tượng để xem thông báo lỗi).<br>Có thể có một số lỗi với giao tiếp (có thể do thông tin xác thực `interface` không chính xác).<br>Kiểm tra xem `Zabbix server` có `đang chạy` hay `không` và thử `làm mới trang` sau.|
 
 
 # Tài liệu tham khảo
