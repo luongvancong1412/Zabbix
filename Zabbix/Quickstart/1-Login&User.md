@@ -42,18 +42,23 @@
 ## 2.1 Thêm người dùng
 - Thêm người dùng mới, chọn: `Create user`
 
-<img src=https://i.imgur.com/0RSqPgM.png align=center>
-
-<img src=https://i.imgur.com/mq9cWUN.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/0RSqPgM.png>
+<img src=https://i.imgur.com/mq9cWUN.png>
+</p>
 
 - Tất cả các trường bắt buộc bắt đầu bằng dấu `*` màu đỏ.
 - Nhập: `Username`, `Name`, `Group`, `Password`, `Password (one again)`, `Time zone` .
 
-<img src=https://i.imgur.com/mq9cWUN.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/mq9cWUN.png>
+</p>
 
 <h3>Sang tab Media</h3>
 
-<img src=https://i.imgur.com/KvwLpf9.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/KvwLpf9.png>
+</p>
 
 - Chọn `Type` Email (Có thể chọn type khác)
 - Nhập địa chỉ email cho người dùng.
@@ -61,29 +66,40 @@
 - Cũng có thể tuỳ chỉnh mức độ nghiêm trọng của trigger, tuy nhiên nên để all.
 - Nhấn vào `Add` để thêm `Media`, sau đó chuyển sang tab `Permissions`:
 
-<img src=https://i.imgur.com/7BRMeiE.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/7BRMeiE.png>
+</p>
 
 - Tab Permissions có 1 trường bắt buộc: `Role`. 
 
-<img src=https://i.imgur.com/BpL2YDD.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/BpL2YDD.png>
+</p>
 
 - Bấm Add để thêm người dùng. Người dùng mới sẽ xuất hiện trọng danh sách người dùng.
 
-<img src=https://i.imgur.com/QwKt6i0.png align=center>
-
+<p align="center">
+<img src=https://i.imgur.com/QwKt6i0.png>
+</p>
 
 ## 2.2 Thêm quyền
 Theo mặc định, user mới không có quyền truy cập máy chủ. Để cấp Groups (trong trường hợp này là 'quản trị viên Zabbix'). Trong biểu mẫu thuộc tính nhóm, hãy chuyển đến tab Quyền .
 
-<img src=https://i.imgur.com/0SOioFZ.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/0SOioFZ.png>
+</p>
 
 Người dùng này phải có quyền truy cập chỉ đọc vào nhóm máy chủ Linux , vì vậy hãy nhấp vào Chọn bên cạnh trường lựa chọn nhóm người dùng.
 
-<img src=https://i.imgur.com/ljihJCl.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/ljihJCl.png>
+</p>
 
 - Trong cửa sổ bật lên này, hãy đánh dấu hộp kiểm bên cạnh `Linux servers`, sau đó nhấp vào `Select` . Máy chủ Linux sẽ được hiển thị trong trường lựa chọn.
 
-<img src=https://i.imgur.com/AzECYfm.png align=center>
+<p align="center">
+<img src=https://i.imgur.com/AzECYfm.png>
+</p>
 
 - Nhấp vào nút `Read` để đặt cấp độ quyền và sau đó Add để thêm Group vào danh sách quyền. Trong biểu mẫu thuộc tính nhóm người dùng, bấm `Update` .
 
