@@ -20,7 +20,7 @@
 
 ## 1.2 Tránh Brute Force Attacks 
 
-<img src=https://i.imgur.com/EWnNq0d.png width=50% align="right">
+<img src=https://i.imgur.com/EWnNq0d.png width=30% align="right">
 
 
 - *Kiểu tấn công **brute force** là kiểu tấn công được dùng cho tất cả các loại mã hóa. Brute force hoạt động bằng cách thử tất cả các chuỗi mật khẩu có thể để tìm ra mật khẩu.* (Theo wikipedia)
