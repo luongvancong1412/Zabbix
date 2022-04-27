@@ -33,7 +33,7 @@
 
 <img src=https://i.imgur.com/PvhtglN.png width=60% align="left">
 
-<br>
+<br></br>
 
 # 2. Quản lý người dùng
 - Xem thông tin user, chọn: `Administration` $\to$ `Users`
