@@ -34,7 +34,7 @@
     <img src=https://i.imgur.com/PvhtglN.png width=60%>
 
 # 2. Quản lý người dùng
-- Xem thông tin user, chọn: `Administration` $\to$ `Users`
+- Xem thông tin user, chọn: Administration $\to$ Users
 
 ## 2.1 Thêm người dùng
 - Thêm người dùng mới, chọn: `Create user`
