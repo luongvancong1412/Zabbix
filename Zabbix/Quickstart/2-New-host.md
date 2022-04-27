@@ -37,23 +37,25 @@ Bài này viết về cách thiết lập một máy chủ mới (new host).
   - Cho phép sử dụng `chữ` và `số`, `dấu cách`, `dấu chấm`, `dấu gạch ngang` và `dấu gạch dưới`.
 
 - **Groups:**
-- Select `một` hoặc `một số nhóm` hiện có bằng cách click vào nút Select hoặc `nhập tên nhóm không tồn tại` để tạo `nhóm mới`.
+  - Select `một` hoặc `một số nhóm` hiện có bằng cách click vào nút Select hoặc `nhập tên nhóm không tồn tại` để tạo `nhóm mới`.
 
 > Note: *Trong Zabbix, tất cả **các quyền truy cập** (access permission) được chỉ định cho **host groups**, không phải **host riêng lẻ**. Vì vậy **một host** phải **thuộc** ít nhất **một nhóm**.*
 
 - **Interface: IP address**
-
-- Nhập địa chỉ IP của host cần giám sát. 
-- Và nó phải được cấu hình trong  file config agent với directive là `Server`.
-
-
-- Các tùy chọn khác để mặc định.
-
-- Cuối cùng, chọn  `Add` để hoàn tất. Host mới sẽ được hiển thị trong danh sách host.
+  - Nhập địa chỉ IP của host cần giám sát. 
+  - Và nó phải được cấu hình trong  file config agent với directive là `Server`.
 
 
+- **Các tùy chọn khác** để mặc định.
 
-<h3> Trường Availability </h3> <img src=https://i.imgur.com/eZ3L3Vv.png width=10% align="right">
+
+Cuối cùng, chọn  `Add` để hoàn tất. Host mới sẽ được hiển thị trong danh sách host.
+
+<p align="center">
+<img src=https://i.imgur.com/NddV6xh.png>
+</p>
+
+<h3> Trường Availability </h3> <img src=https://i.imgur.com/eZ3L3Vv.png width=5% align="right">
 
 - Cột Tính khả dụng (`Availability`) chứa các `cảnh báo` về tính khả dụng của host trên mỗi interface. 
 - Được hiển thị bằng biểu tượng `ZBX`:
