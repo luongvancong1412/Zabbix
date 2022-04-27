@@ -31,7 +31,8 @@
   - `5 lần` đăng nhập `sai liên tiếp`, sẽ bị `chặn trong 30s` (Kể cả khi đã nhập đúng vẫn không đăng nhập được trong 30s này)
   - Khi đăng nhập thành công, địa chỉ IP của lần đăng nhập không thành công sẽ được hiển thị
 
-![Imgur](https://i.imgur.com/PvhtglN.png)
+<img src=https://i.imgur.com/PvhtglN.png width=60% align="left">
+
 # 2. Quản lý người dùng
 - Xem thông tin user, chọn: `Administration` $\to$ `Users`
 
