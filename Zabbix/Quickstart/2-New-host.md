@@ -60,9 +60,11 @@ Bài này viết về cách thiết lập một máy chủ mới (new host).
 
 Availability| Mô tả|
 |:---:|---|
-|
+|![Imgur](https://i.imgur.com/WCLuTqW.png)|Trạng thái `host chưa được thiết lập`; `chưa có kiểm tra số liệu` nào xảy ra|
+|![Imgur](https://i.imgur.com/5dWlcNB.png)|`Host` khả dụng (`Available`), kiểm tra số liệu (`metric check`) đã thành công (`successful`)|
+|![Imgur](https://i.imgur.com/X3gKIb1.png)|`Host` không khả dụng (`Unavailable`), kiểm tra số liệu `không thành công` (di chuyển con trỏ chuột qua biểu tượng để xem thông báo lỗi).<br>Có thể có một số lỗi với giao tiếp, có thể do thông tin xác thực `interface` không chính xác.<br>Kiểm tra xem `Zabbix server` có `đang chạy` hay `không` và thử `làm mới trang` sau.|
 
 
-- trạng thái máy chủ chưa được thiết lập; chưa có kiểm tra số liệu nào xảy ra
-icon_zbx_green.png- máy chủ lưu trữ có sẵn, kiểm tra số liệu đã thành công
-icon_zbx_red.png- máy chủ lưu trữ không khả dụng, kiểm tra số liệu không thành công (di chuyển con trỏ chuột qua biểu tượng để xem thông báo lỗi). Có thể có một số lỗi với giao tiếp, có thể do thông tin xác thực giao diện không chính xác. Kiểm tra xem máy chủ Zabbix có đang chạy hay không và thử làm mới trang sau.
+# Tài liệu tham khảo
+
+1. https://www.zabbix.com/documentation/current/en/manual/quickstart/host
