@@ -20,7 +20,7 @@
 - Khi một mẫu được link với một host, host đó sẽ kế thừa tất cả các thực thể của mẫu. Vì vậy, về cơ bản, một loạt các check được chuẩn bị trước có thể được áp dụng rất nhanh chóng.
 
 # 2. Thêm mẫu
-- Để tạo một mẫu, chọn Configuration → Templates , click vào Create template.
+- Để tạo một mẫu, chọn `Configuration` → `Templates` , click vào Create template.
 
 <img>
 
