@@ -13,13 +13,33 @@
 - `Không có` item, sẽ không có `dữ liệu` - vì một `item` xác định một chỉ số `duy nhất` hoặc `loại dữ liệu` cần thu thập từ host.
 
 # 2. Thêm item
-- Tất cả các item được nhóm xung quanh các host. Đó là lý do tại sao để cấu hình một item mẫu, vào Configuration → Hosts và tìm host vừa tạo hoặc host đã tạo.
+- Tất cả các item được nhóm xung quanh các host. Đó là lý do tại sao để cấu hình một item mẫu, vào `Configuration` → `Hosts` và tìm host vừa tạo hoặc host đã tạo.
+
+<p align="center">
+<img src=https://i.imgur.com/SSOtKG4.png>
+</p>
 
 - Click vào liên kết item trong hàng của `host` cần thêm item, sau đó click vào `Create item`.
+
+<p align="center">
+<img src=https://i.imgur.com/zFQg3AV.png>
+</p>
+
+
+
+<p align="center">
+<img src=https://i.imgur.com/7t1LK46.png>
+</p>
+
 
 - Tất cả các trường `bắt buộc` được đánh dấu bằng dấu hoa thị `*` màu đỏ.
 
 Đối với `item` mẫu, thông tin cơ bản cần thiết là: Name, Key và Type of information
+
+<p align="center">
+<img src=https://i.imgur.com/Sccv6KG.png>
+</p>
+
 
 <h3> Name</h3>
 
@@ -45,14 +65,23 @@
 - Click vào `Details` phía trên danh sách để `xem chi tiết` những gì thực hiện.
 
 
+<p align="center">
+<img src=https://i.imgur.com/c082cVU.png>
+</p>
+
+
 
 
 # 3. Xem dữ liệu
 - Để xem một item `có thu thập dữ liệu không`, Chuyển đến `Monitoring` → `Latest data` , chọn `host` vừa thêm trong filter và  click vào `Apply`.
 
+https://i.imgur.com/GbuFT02.png
+
 - Theo mặc định cần 60s (chu kỳ) server đọc các thay đổi cấu hình và chọn các item mới để thực thi (execute).
 
 - Nếu không thấy giá trị nào trong cột `Change`, có thể cho đến giờ bạn chỉ nhận được một giá trị. Chờ 30s để giá trị khác đến.
+
+https://i.imgur.com/j92Ylo0.png
 
 - Nếu bạn không thấy thông tin về item như trong ảnh chụp màn hình, hãy đảm bảo rằng:
 
@@ -66,6 +95,15 @@
 - `Simple graphs` có sẵn cho bất kỳ item được giám sát nào mà không cần bất kỳ cấu hình bổ sung nào.
 
 - Để xem biểu đồ, chuyển đến Monitoring → Latest data và click vào liên kết `Graph` bên cạnh item.
+
+<p align="center">
+<img src=https://i.imgur.com/wnnjrqc.png>
+</p>
+
+<p align="center">
+<img src=https://i.imgur.com/R9GEjV6.png>
+</p>
+
 
 
 # Tài liệu tham khảo
