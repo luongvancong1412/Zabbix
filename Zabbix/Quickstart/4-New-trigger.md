@@ -25,7 +25,7 @@ Các trường cơ bản cần chú ý là: `Name`, `Experssion`
 <h3>Name</h3>
 
 - Nhập `CPU load too high on 'New host' for 3 minutes`
-- Đây sẽ là tên Trigger được hiển thị trong danh sách và các nơi khác.
+- Đây sẽ là `tên Trigger` được hiển thị trong danh sách và các nơi khác.
 
 <p align="center">
 <img src=https://i.imgur.com/vUUuezV.png>
@@ -43,8 +43,9 @@ Các trường cơ bản cần chú ý là: `Name`, `Experssion`
 <img src=https://i.imgur.com/hR5hXWt.png>
 </p>
 
-- Đây là biểu thức kích hoạt (trigger expression). Item key ở đây (system.cpu.load) được sử dụng để tham chiếu đến item
-- Biểu thức cụ thể này về cơ bản nói rằng ngưỡng sự cố bị vượt quá khi giá trị trung bình tải của CPU trong 3 phút vượt quá 2. Bạn có thể tìm hiểu thêm về `cú pháp của biểu thức kích hoạt` (link).
+- Đây là biểu thức kích hoạt (`trigger expression`). `Item key` ở đây (`system.cpu.load`) được sử dụng để tham chiếu đến `item`
+- Biểu thức cụ thể này về cơ bản nói rằng `ngưỡng sự cố bị vượt quá` khi `giá trị trung bình tải của CPU` `trong 3 phút` `vượt quá 2`. 
+- Bạn có thể tìm hiểu thêm về `cú pháp của biểu thức kích hoạt` ([syntax of trigger expressions](https://www.zabbix.com/documentation/current/en/manual/config/triggers/expression)).
 
 <p align="center">
 <img src=https://i.imgur.com/vmErIcY.png>
@@ -65,7 +66,9 @@ Cuối cùng, click vào `Add` . `Trigger` mới sẽ xuất hiện trong danh s
 <img src=https://i.imgur.com/3FislEP.png>
 </p>
 
-Nhấp nháy trong cột trạng thái cho biết trạng thái kích hoạt thay đổi gần đây, trạng thái đã diễn ra trong 30 phút qua.
+Nhấp nháy trong cột trạng thái cho biết trạng thái kích hoạt thay đổi gần đây, trạng thái đã diễn ra trong `30 phút` qua.
+
+- Trong trường hợp này là Centos 7 tắt quá 10 phút
 
 <p align="center">
 <img src=https://i.imgur.com/XS4MCLc.png>
