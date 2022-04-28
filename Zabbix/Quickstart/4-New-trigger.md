@@ -2,6 +2,10 @@
 
 <h2> Mục lục</h2>
 
+- [1. Tổng quan](#1-tổng-quan)
+- [2. Thêm trigger](#2-thêm-trigger)
+- [3. Hiển thị trạng thái trigger](#3-hiển-thị-trạng-thái-trigger)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1. Tổng quan
 - Các `item` chỉ thu thập dữ liệu. Để tự động đánh giá dữ liệu đến cần xác định các `trigger`. 
