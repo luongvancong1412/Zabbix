@@ -39,7 +39,9 @@
   - [5.2 New hosts](Zabbix/Quickstart/2-New-host.md)
   - [5.3 New item](Zabbix/Quickstart/3-New-item.md)
   - [5.4 New trigger](Zabbix/Quickstart/4-New-trigger.md)
-  - Updating...
+  - [5.5 Nhận báo cáo sự cố](Zabbix/Configuration/5-Event-correlation.md)s
+  - [5.6 New template](Zabbix/Quickstart/6-New-template.md)
+  - Updating
 
 - [6. Configuration]()
   - [6.1 Host và host group](Zabbix/Configuration/1-Host&host-groups.md)
