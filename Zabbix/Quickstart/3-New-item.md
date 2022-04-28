@@ -75,13 +75,18 @@
 # 3. Xem dữ liệu
 - Để xem một item `có thu thập dữ liệu không`, Chuyển đến `Monitoring` → `Latest data` , chọn `host` vừa thêm trong filter và  click vào `Apply`.
 
-https://i.imgur.com/GbuFT02.png
+<p align="center">
+<img src=https://i.imgur.com/GbuFT02.png>
+</p>
+
 
 - Theo mặc định cần 60s (chu kỳ) server đọc các thay đổi cấu hình và chọn các item mới để thực thi (execute).
 
 - Nếu không thấy giá trị nào trong cột `Change`, có thể cho đến giờ bạn chỉ nhận được một giá trị. Chờ 30s để giá trị khác đến.
 
-https://i.imgur.com/j92Ylo0.png
+<p align="center">
+<img src=https://i.imgur.com/j92Ylo0.png>
+</p>
 
 - Nếu bạn không thấy thông tin về item như trong ảnh chụp màn hình, hãy đảm bảo rằng:
 
