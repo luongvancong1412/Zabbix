@@ -13,7 +13,7 @@
 - `Không có` item, sẽ không có `dữ liệu` - vì một `item` xác định một chỉ số `duy nhất` hoặc `loại dữ liệu` cần thu thập từ host.
 
 # 2. Thêm item
-- Tất cả các item được nhóm xung quanh các host. Đó là lý do tại sao để cấu hình một item mẫu, vào `Configuration` → `Hosts` và tìm host vừa tạo hoặc host đã tạo.
+- Tất cả các `item` được nhóm xung quanh các host. Đó là lý do tại sao để cấu hình một `item mẫu`, vào `Configuration` → `Hosts` và tìm host vừa tạo hoặc host đã tạo.
 
 <p align="center">
 <img src=https://i.imgur.com/SSOtKG4.png>
@@ -34,7 +34,7 @@
 
 - Tất cả các trường `bắt buộc` được đánh dấu bằng dấu hoa thị `*` màu đỏ.
 
-Đối với `item` mẫu, thông tin cơ bản cần thiết là: Name, Key và Type of information
+Đối với `item` mẫu, thông tin cơ bản cần thiết là: `Name`, `Key` và `Type of information`
 
 <p align="center">
 <img src=https://i.imgur.com/Sccv6KG.png>
@@ -44,18 +44,18 @@
 <h3> Name</h3>
 
 - Đây là `tên item` sẽ `được hiển thị` trong danh sách và các nơi khác.
-- Nhập tải CPU làm giá trị. 
+- Ví dụ Nhập `CPU load`. 
 
 <h3>Key</h3>
 
-- Nhập system.cpu.load theo cách thủ công làm giá trị. 
+- Trong hình nhập: `system.cpu.load` theo cách thủ công làm giá trị. 
 - Đây là tên kỹ thuật (`technical name`) của một item x`ác định loại thông tin` sẽ được `thu thập`.
 - Key cụ thể (`particular key`) chỉ là một trong các` key được xác định trước` đi `kèm với Agent` Zabbix.
 
 <h3>Type of information</h3>
 
 - Thuộc tính này `xác định định dạng` của `dữ liệu` mong đợi. 
-- Đối với khóa system.cpu.load , trường này sẽ tự động được đặt thành Numeric (float) .
+- Đối với khóa `system.cpu.load` , trường này sẽ tự động được đặt thành `Numeric (float)` .
  
 > Note:Bạn cũng có thể muốn giảm số ngày lịch sử mục sẽ được lưu giữ, xuống còn 7 hoặc 14. Đây là một phương pháp hay để cơ sở dữ liệu không lưu giữ nhiều giá trị lịch sử.
 
@@ -68,8 +68,6 @@
 <p align="center">
 <img src=https://i.imgur.com/c082cVU.png>
 </p>
-
-
 
 
 # 3. Xem dữ liệu
@@ -99,7 +97,7 @@
 - Với item hoạt động trong một thời gian, đã đến lúc cần nhìn thấy thứ gì đó trực quan. 
 - `Simple graphs` có sẵn cho bất kỳ item được giám sát nào mà không cần bất kỳ cấu hình bổ sung nào.
 
-- Để xem biểu đồ, chuyển đến Monitoring → Latest data và click vào liên kết `Graph` bên cạnh item.
+- Để xem biểu đồ, chuyển đến `Monitoring` → `Latest data` và click vào liên kết `Graph` bên cạnh item.
 
 <p align="center">
 <img src=https://i.imgur.com/wnnjrqc.png>
