@@ -212,7 +212,7 @@ Ví dụ: Trong hình:
 STT|Tham số|Mô tả
 |:---:|---|---|
 1|`Group name`|Nhập `tên nhóm` host duy nhất.<br>Sử dụng dấu phân tách dấu gạch chéo `/` để tạo một `nhóm host lồng nhau`, Ví dụ `HaNoi/ThanhTri/Zabbix servers`.<br>Có thể tạo nhóm này ngay cả khi `không` có nhóm nào trong `2 nhóm host chính` (HaNoi/ThanhTri) tồn tại.<br>Việc tạo các `nhóm host mẹ` này là `tùy thuộc` vào người dùng (không được tạo tự động).<br>Không được phép sử dụng các dấu `/` ở đầu và sau cùng hoặc nhiều dấu `gạch chéo liên tiếp`.<br>Nhóm lồng nhau được` hỗ trợ` kể từ `Zabbix 3.2.0`.
-2|`Apply permissions and tag filters to all subgroups`|Áp dụng quyền và bộ lọc thẻ cho tất cả các `nhóm con` .Checkbox chỉ khả dụng cho người dùng Super Admin và chỉ khi chỉnh sửa nhóm host hiện có.<br>Đánh dấu `checkbox` và nhấp vào `Update` để áp dụng cùng một cấp `permissions/tag filters` cho tất cả `các nhóm host lồng nhau`. Đối với các nhóm người dùng có thể có các quyền khác nhau trên các nhóm host lồng nhau, cấp độ quyền của nhóm host mẹ sẽ được thực thi trên các nhóm lồng nhau.<br>Đây là tùy chọn một lần không được lưu trong cơ sở dữ liệu.<br>Tùy chọn này được hỗ trợ kể từ `Zabbix 3.4.0`.|
+2|`Apply permissions and tag filters to all subgroups`|Áp dụng quyền và bộ lọc thẻ cho tất cả các `nhóm con` .Checkbox chỉ khả dụng cho người dùng Super Admin và chỉ khi chỉnh sửa nhóm host hiện có.<br>Đánh dấu `checkbox` và nhấp vào `Update` để áp dụng cùng một cấp `permissions/tag filters` cho tất cả `các nhóm host lồng nhau`. Đối với các nhóm người dùng có thể có các quyền khác nhau trên các nhóm host lồng nhau, cấp độ quyền của nhóm host mẹ sẽ được thực thi trên các nhóm lồng nhau.<br>Tùy chọn này được hỗ trợ kể từ `Zabbix 3.4.0`.|
 
 
 
