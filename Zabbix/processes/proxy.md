@@ -1,6 +1,6 @@
 <h1> Proxy </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Quản lý proxy](#2-quản-lý-proxy)
@@ -16,11 +16,11 @@
 # 1. Tổng quan
 - Zabbix proxy là:
   - Một quy trình thu thập dữ liệu giám sát từ một hoặc nhiều thiết bị được giám sát
-  - và gửi thông tin đến máy chủ Zabbix.
-- Về cơ bản hoạt động thay mặt cho máy chủ. 
-  - Tất cả dữ liệu thu thập được sẽ được lưu vào bộ đệm cục bộ và sau đó được chuyển đến máy chủ Zabbix mà proxy thuộc về.
+  - và gửi thông tin đến host Zabbix.
+- Về cơ bản hoạt động thay mặt cho host. 
+  - Tất cả dữ liệu thu thập được sẽ được lưu vào bộ đệm cục bộ và sau đó được chuyển đến host Zabbix mà proxy thuộc về.
 
-- Triển khai proxy là tùy chọn, nhưng có thể rất có lợi khi phân phối tải của một máy chủ Zabbix. 
+- Triển khai proxy là tùy chọn, nhưng có thể rất có lợi khi phân phối tải của một host Zabbix. 
   - Nếu chỉ có proxy thu thập dữ liệu, quá trình xử lý trên server sẽ sử dụng ít CPU hơn và disk I/O hungry.
 
 - Là giải pháp lý tưởng để giám sát tập trung các vị trí, chi nhánh và mạng từ xa mà không có quản trị viên cục bộ.
@@ -79,10 +79,10 @@ Option|	Mô tả	|
 |---|---|
 config_cache_reload|Tải lại bộ đệm cấu hình. 	
 Diaginfo [= < target >]|	Thu thập thông tin chẩn đoán trong tệp nhật ký proxy.
-snmp_cache_reload	|Tải lại bộ đệm SNMP, xóa các thuộc tính SNMP (thời gian động cơ, khởi động động cơ, id động cơ, thông tin đăng nhập) cho tất cả các máy chủ.	
+snmp_cache_reload	|Tải lại bộ đệm SNMP, xóa các thuộc tính SNMP (thời gian động cơ, khởi động động cơ, id động cơ, thông tin đăng nhập) cho tất cả các host.	
 housekeeper_execute|	Bắt đầu thủ tục dọn phòng.
-log_level_increase [= < target >]	|Tăng mức độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.
-log_level_decrease [= < target >]|	Giảm cấp độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu mục tiêu không được chỉ định.|
+log_level_increase [= < target >]	|Tăng mức độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu item tiêu không được chỉ định.
+log_level_decrease [= < target >]|	Giảm cấp độ nhật ký, ảnh hưởng đến tất cả các quá trình nếu item tiêu không được chỉ định.|
 
 Ví dụ:
 - Tải lại bộ đệm ẩn cấu hình proxy:
@@ -157,7 +157,7 @@ shell> zabbix_proxy -c /usr/local/etc/zabbix_proxy.conf -R log_level_decrease="h
 - Có thể giám sát nhiều loại quy trình proxy Zabbix bằng cách sử dụng item nội bộ zabbix [ process, < type>, < mode>, < state>] .
 
 # 4. Nền tảng được hỗ trợ
-- Zabbix proxy chạy trên cùng danh sách các nền tảng được hỗ trợ như máy chủ Zabbix.
+- Zabbix proxy chạy trên cùng danh sách các nền tảng được hỗ trợ như host Zabbix.
 
 # 5. Ngôn ngữ
 - proxy yêu cầu ngôn ngữ UTF-8

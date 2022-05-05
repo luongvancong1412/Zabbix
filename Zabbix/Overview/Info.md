@@ -1,6 +1,6 @@
 <h1> Tổng quan về Zabbix 6.0 </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Zabbix là gì](#1-zabbix-là-gì)
 - [2. Lịch sử phát triển và các phiên bản](#2-lịch-sử-phát-triển-và-các-phiên-bản)
@@ -15,10 +15,10 @@
 # 1. Zabbix là gì
 - Zabbix là một giải pháp giám sát phân tán mã nguồn mở cấp doanh nghiệp.
 - Zabbix được tạo ra bởi Alexei Vladishev và hiện đang được Zabbix SIA phát triển và hỗ trợ.
-- Zabbix là một phần mềm giám sát nhiều thông số của mạng cũng như tình trạng và tính toàn vẹn của máy chủ, máy ảo, ứng dụng, dịch vụ, cơ sở dữ liệu, trang web, đám mây,...
-- Zabbix sử dụng cơ chế thông báo linh hoạt cho phép người dùng định cấu hình cảnh báo dựa trên e-mail cho hầu như mọi sự kiện. Điều này cho phép phản ứng nhanh với các sự cố máy chủ. 
+- Zabbix là một phần mềm giám sát nhiều thông số của mạng cũng như tình trạng và tính toàn vẹn của host, máy ảo, ứng dụng, dịch vụ, cơ sở dữ liệu, trang web, đám mây,...
+- Zabbix sử dụng cơ chế thông báo linh hoạt cho phép người dùng định cấu hình cảnh báo dựa trên e-mail cho hầu như mọi sự kiện. Điều này cho phép phản ứng nhanh với các sự cố host. 
 
-- Tất cả các báo cáo và thống kê của Zabbix, cũng như các thông số cấu hình, đều được truy cập thông qua giao diện người dùng dựa trên web. Giao diện người dùng dựa trên web đảm bảo rằng trạng thái của mạng và tình trạng của máy chủ có thể được đánh giá từ bất kỳ vị trí nào.
+- Tất cả các báo cáo và thống kê của Zabbix, cũng như các thông số cấu hình, đều được truy cập thông qua giao diện người dùng dựa trên web. Giao diện người dùng dựa trên web đảm bảo rằng trạng thái của mạng và tình trạng của host có thể được đánh giá từ bất kỳ vị trí nào.
 - Zabbix là phần mềm miễn phí, được phát hành theo GPL Giấy phép Công cộng phiên bản 2 (General Public License version 2).
 # 2. Lịch sử phát triển và các phiên bản
 ## 2.1 Lịch sử phát triển
@@ -98,15 +98,15 @@ Zabbix:
     - Lập lịch thu thập số liệu
     - Điều chỉnh dữ liệu để giám sát tần số cao
   - Theo dõi file log:
-    - Thu thập và lọc các mục (entry) trong file log
-    - Truy xuất số lượng mục nhập (entry) trong file log
+    - Thu thập và lọc các item (entry) trong file log
+    - Truy xuất số lượng item nhập (entry) trong file log
 
 ![Imgur](https://i.imgur.com/7LprwW7.png)
 
 
 <h3>Định nghĩa ngưỡng linh hoạt</h3>
 
-- Có thể xác định các ngưỡng sự cố rất linh hoạt, được gọi là trình kích hoạt (triggers), tham chiếu các giá trị từ cơ sở dữ liệu phụ trợ (backend database)
+- Có thể xác định các ngưỡng sự cố rất linh hoạt, được gọi là trigger (triggers), tham chiếu các giá trị từ cơ sở dữ liệu phụ trợ (backend database)
 
 <h3>Cấu hình cảnh báo</h3>
 
@@ -114,7 +114,7 @@ Zabbix:
 
 <h3>Đồ thị thời gian thực</h3>
 
-- Các mục (items) được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp (built-in graphing functionality)
+- Các item (items) được giám sát ngay lập tức được lập biểu đồ bằng cách sử dụng chức năng vẽ đồ thị tích hợp (built-in graphing functionality)
 
 ![Imgur](https://i.imgur.com/seA19wH.png)
 
@@ -124,7 +124,7 @@ Zabbix:
 
 <h3>Các tùy chọn hình ảnh hóa mở rộng</h3>
 
-- Khả năng tạo các biểu đồ tùy chỉnh có thể kết hợp nhiều mục vào một chế độ xem duy nhất
+- Khả năng tạo các biểu đồ tùy chỉnh có thể kết hợp nhiều item vào một chế độ xem duy nhất
 - Bản đồ mạng (network maps)
 - Trình chiếu tổng quan kiểu bảng điều khiển
 - Báo cáo
@@ -138,7 +138,7 @@ Zabbix:
 
 <h3>Cấu hình dễ dàng</h3>
 
-- Thêm các thiết bị được giám sát làm máy chủ (host)
+- Thêm các thiết bị được giám sát làm host (host)
 - Hosts được chọn để theo dõi, một khi trong cơ sở dữ liệu
 - Áp dụng các mẫu (templates) cho các thiết bị được giám sát
 
@@ -161,7 +161,7 @@ Zabbix:
 
 <h3>API Zabbix</h3>
 
-- Zabbix API cung cấp giao diện lập trình cho Zabbix để thao tác hàng loạt, tích hợp phần mềm của bên thứ 3 (3rd party software integration) và các mục đích khác.
+- Zabbix API cung cấp giao diện lập trình cho Zabbix để thao tác hàng loạt, tích hợp phần mềm của bên thứ 3 (3rd party software integration) và các item đích khác.
 
 <h3>Hệ thống quyền</h3>
 
@@ -170,7 +170,7 @@ Zabbix:
 
 <h3>Agent có đầy đủ tính năng và dễ dàng mở rộng</h3>
 
-- Triển khai trên các mục tiêu giám sát
+- Triển khai trên các item tiêu giám sát
 - Có thể được triển khai trên cả Linux và Windows
 
 <h3>Binary daemons</h3>
@@ -201,18 +201,18 @@ Zabbix:
 <h3>Web interface</h3>
 
 - Để dễ dàng truy cập Zabbix từ mọi nơi và từ bất kỳ nền tảng nào qua web interface PHP. 
-- Interface là một phần của máy chủ Zabbix và thường (nhưng không nhất thiết) chạy trên cùng một máy vật lý với máy server.
+- Interface là một phần của host Zabbix và thường (nhưng không nhất thiết) chạy trên cùng một máy vật lý với máy server.
 
 <h3>Proxy</h3>
 
-- Zabbix proxy có thể thu thập dữ liệu hiệu suất và tính khả dụng thay mặt cho máy chủ Zabbix. 
+- Zabbix proxy có thể thu thập dữ liệu hiệu suất và tính khả dụng thay mặt cho host Zabbix. 
 - Tất cả các dữ liệu thu thập được sẽ được chuyển tiếp đến server Zabbix.
 - Proxy là một phần tùy chọn của việc triển khai Zabbix
 
 <h3>Agent</h3>
 
-- Các Agent Zabbix được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng máy khách 
-- Báo cáo dữ liệu thu thập được cho máy chủ Zabbix. 
+- Các Agent Zabbix được triển khai trên các item tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng máy khách 
+- Báo cáo dữ liệu thu thập được cho host Zabbix. 
 - Kể từ Zabbix 4.4, có hai loại Agent có sẵn: 
   - Agent Zabbix (nhẹ, được hỗ trợ trên nhiều nền tảng, được viết bằng C) 
   - và Agent Zabbix 2 (cực kỳ linh hoạt, có thể mở rộng dễ dàng với các plugin, được viết bằng Go).
@@ -220,7 +220,7 @@ Zabbix:
 # 5. Ưu điểm của Zabbix
 - Giám sát cả Server và thiết bị mạng
 - Cấu hình thông qua giao diện web dễ dàng
-- Hỗ trợ máy chủ Linux,...
+- Hỗ trợ host Linux,...
 - Thông báo sự cố qua email, ...
 - Biểu đồ theo dõi và báo cáo
 - Mã nguồn mở
@@ -243,7 +243,7 @@ Zabbix:
 ![Imgur](https://i.imgur.com/WN9QjO5.png)
 
 - Cải thiện hiệu suất
-  - Cải thiện hiệu suất proxy Zabbix, sử dụng bộ nhớ, máy chủ và giao diện người dùng.
+  - Cải thiện hiệu suất proxy Zabbix, sử dụng bộ nhớ, host và giao diện người dùng.
   - Giảm kích thước bảng lịch sử
 # Tài liệu tham khảo
 

@@ -43,14 +43,14 @@ Một số thuật ngữ thường được sử dụng trong Zabbix
 
 # Host group
 
-- Một nhóm logic của các máy chủ; chứa các máy chủ và mẫu. Máy chủ vào mẫu không được liên kết với nhau theo bất kỳ cách nào.
-- Sử dụng nhóm máy chủ khi cần gán quyền truy cập vào máy chủ cho các nhóm người dùng khác nhau.
+- Một nhóm logic của các host; chứa các host và mẫu. host vào mẫu không được liên kết với nhau theo bất kỳ cách nào.
+- Sử dụng nhóm host khi cần gán quyền truy cập vào host cho các nhóm người dùng khác nhau.
 (*a logical grouping of hosts; it may contain hosts and templates. Hosts and templates within a host group are not in any way linked to each other. Host groups are used when assigning access rights to hosts for different user groups.*)
 
 # Item
 
 
-- Một phần dữ liệu cụ thể mà bạn muốn nhận từ một máy chủ lư trữ.
+- Một phần dữ liệu cụ thể mà bạn muốn nhận từ một host lư trữ.
 (*a particular piece of data that you want to receive off of a host, a metric of data.*)
 
 # Value preprocessing
@@ -124,12 +124,12 @@ Một số thuật ngữ thường được sử dụng trong Zabbix
 
 # Template
 
-- Một tập hợp các thực thể (items, triggers, đồ thị, quy tắc khám phá cấp thấp, kịch bản web) có thể áp dụng cho 1 hoặc một số máy chủ.
+- Một tập hợp các thực thể (items, triggers, đồ thị, quy tắc khám phá cấp thấp, kịch bản web) có thể áp dụng cho 1 hoặc một số host.
 (*a set of entities (items, triggers, graphs, low-level discovery rules, web scenarios) ready to be applied to one or several hosts.*)
 
 - Công việc của các template là
-  - Tăng tốc độ triển khai các nhiệm vụ giám sát trên máy chủ lưu trữ;
-  - Giúp việc áp dụng các thay đổi hàng loạt vào các nhiệm vụ giám sát dễ dàng hơn. Các template được liên kết trực tiếp với các máy chủ riêng lẻ.
+  - Tăng tốc độ triển khai các nhiệm vụ giám sát trên host lưu trữ;
+  - Giúp việc áp dụng các thay đổi hàng loạt vào các nhiệm vụ giám sát dễ dàng hơn. Các template được liên kết trực tiếp với các host riêng lẻ.
 (*The job of templates is to speed up the deployment of monitoring tasks on a host; also to make it easier to apply mass changes to monitoring tasks. Templates are linked directly to individual hosts.*)
 
 # Web scenario
@@ -153,7 +153,7 @@ Một số thuật ngữ thường được sử dụng trong Zabbix
 
 # Zabbix API
 
-- Zabbix API cho phép bạn sử dụng giao thức JSON RPC để tạo, cập nhật và tìm nạp các đối tượng Zabbix (như máy chủ, mục, đồ thị và các đối tượng khác) hoặc thực hiện bất kỳ tác vụ tùy chỉnh nào khác.
+- Zabbix API cho phép bạn sử dụng giao thức JSON RPC để tạo, cập nhật và tìm nạp các đối tượng Zabbix (như host, item, đồ thị và các đối tượng khác) hoặc thực hiện bất kỳ tác vụ tùy chỉnh nào khác.
 - (*Zabbix API allows you to use the JSON RPC protocol to create, update and fetch Zabbix objects (like hosts, items, graphs and others) or perform any other custom tasks.*)
 
 # Zabbix server
@@ -166,7 +166,7 @@ Một số thuật ngữ thường được sử dụng trong Zabbix
 - (*a process that may collect data on behalf of Zabbix server, taking some processing load off of the server.*)
 
 # Zabbix agent
-- một quy trình được triển khai trên các mục tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ của thiết bị đó.
+- một quy trình được triển khai trên các item tiêu giám sát để chủ động giám sát các tài nguyên và ứng dụng cục bộ của thiết bị đó.
 - (*a process deployed on monitoring targets to actively monitor local resources and applications.*)
 
 # Zabbix agent 2
@@ -211,7 +211,7 @@ Prototypes of some other Zabbix entities are also in use in low-level discovery 
 
 # Agent autoregistration
 
-- Quy trình Agent Zabbix tự động đăng ký làm máy chủ lưu trữ và bắt đầu giám sát.
+- Quy trình Agent Zabbix tự động đăng ký làm host lưu trữ và bắt đầu giám sát.
 - (*automated process whereby a Zabbix agent itself is registered as a host and started to monitor.*)
 
 # Tài liệu tham khảo

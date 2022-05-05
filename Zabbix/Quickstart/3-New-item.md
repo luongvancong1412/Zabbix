@@ -1,6 +1,6 @@
 <h1> Thêm Item </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Thêm item](#2-thêm-item)
@@ -57,7 +57,7 @@
 - Thuộc tính này `xác định định dạng` của `dữ liệu` mong đợi. 
 - Đối với khóa `system.cpu.load` , trường này sẽ tự động được đặt thành `Numeric (float)` .
  
-> Note:Bạn cũng có thể muốn giảm số ngày lịch sử mục sẽ được lưu giữ, xuống còn 7 hoặc 14. Đây là một phương pháp hay để cơ sở dữ liệu không lưu giữ nhiều giá trị lịch sử.
+> Note:Bạn cũng có thể muốn giảm số ngày lịch sử item sẽ được lưu giữ, xuống còn 7 hoặc 14. Đây là một phương pháp hay để cơ sở dữ liệu không lưu giữ nhiều giá trị lịch sử.
 
 - Các `tùy chọn khác để mặc định` (phù hợp trong phần Quickstart)
 

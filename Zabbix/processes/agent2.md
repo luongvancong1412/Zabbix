@@ -1,6 +1,6 @@
 <h1> Agent 2</h2>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
   - [1.1 Kiểm tra đồng thời](#11-kiểm-tra-đồng-thời)
@@ -12,7 +12,7 @@
 - Zabbix agent 2 là một thế hệ mới của Zabbix agent
 - Có thể được sử dụng thay cho Zabbix agent
 
-- Mục đích phát triển Agent 2:
+- item đích phát triển Agent 2:
   - Giảm số lượng kết nối TCP
   - Cung cấp cải tiến của checks
   - Có thể dễ dàng mở rộng với các plugin (công cụ). Một plugin sẽ có thể:

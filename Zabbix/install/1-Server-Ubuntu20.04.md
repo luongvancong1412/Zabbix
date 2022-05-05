@@ -1,6 +1,6 @@
 <h1> Zabbix 6.0 LTS: install</h1>
 
-<h2> Mục lục</h2>
+<h2> item lục</h2>
 
 - [1. Mô hình mạng](#1-mô-hình-mạng)
 - [2. Cài đặt Zabbix Server](#2-cài-đặt-zabbix-server)
@@ -149,7 +149,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 
 ![Imgur](https://i.imgur.com/UbL5kQJ.png)
 
-- Kiểm tra điều kiện: Đảm bảo tất cả các mục đều `[OK]`, Chọn `Next step` để sang bước tiếp theo:
+- Kiểm tra điều kiện: Đảm bảo tất cả các item đều `[OK]`, Chọn `Next step` để sang bước tiếp theo:
 
 ![Imgur](https://i.imgur.com/wRqbM7h.png)
 
@@ -158,7 +158,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 
 ![Imgur](https://i.imgur.com/8wxtJOd.png)
 
-- Cài đặt tên máy chủ, múi giờ và chủ đề cho giao diện người dùng:
+- Cài đặt tên host, múi giờ và chủ đề cho giao diện người dùng:
 
 ![Imgur](https://i.imgur.com/VApJZjK.png)
 

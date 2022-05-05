@@ -1,6 +1,6 @@
 <h1> Nhận thông báo sự cố </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Cài đặt e-mail](#2-cài-đặt-e-mail)
@@ -122,7 +122,7 @@ cat /dev/urandom | md5sum
 > Nếu thông báo không hoạt động:
 > - xác minh lại một lần nữa rằng cả cài đặt e-mail và hành động đã được định cấu hình đúng cách
 > - đảm bảo rằng người dùng đã tạo ít nhất có quyền đọc trên host đã tạo ra event.
-> User, là một phần của nhóm người dùng `Zabbix administrator` ít nhất phải có quyền truy cập đọc vào nhóm máy chủ "máy chủ Linux".
+> User, là một phần của nhóm người dùng `Zabbix administrator` ít nhất phải có quyền truy cập đọc vào nhóm host "host Linux".
 > - Ngoài ra, bạn có thể xem action log bằng cách đi tới `Reports` → `Action log`.
 
 <p align="center">

@@ -1,6 +1,6 @@
 <h1> Thêm mẫu mới <h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Thêm mẫu](#2-thêm-mẫu)
@@ -72,11 +72,11 @@ Nếu bây giờ bạn đi tới Configuration → Template , Mẫu mới sẽ c
 
 - Nhấp vào Update trong biểu mẫu để lưu các thay đổi. Mẫu hiện đã được thêm vào host, với tất cả các thực thể mà nó nắm giữ.
 
-- Có thể áp dụng cho bất kỳ máy chủ nào khác. Bất kỳ thay đổi nào đối với các item, trigger và các thực thể khác ở cấp mẫu sẽ truyền đến các host mà mẫu được link.
+- Có thể áp dụng cho bất kỳ host nào khác. Bất kỳ thay đổi nào đối với các item, trigger và các thực thể khác ở cấp mẫu sẽ truyền đến các host mà mẫu được link.
 
 # 5. Liên kết các template được xác định trước với hosts
 - Zabbix đi kèm với một tập hợp các mẫu được xác định trước cho các hệ điều hành, thiết bị và ứng dụng khác nhau. 
-- Để bắt đầu giám sát nhanh chóng, bạn có thể liên kết một trong số chúng thích hợp với một máy chủ lưu trữ.
+- Để bắt đầu giám sát nhanh chóng, bạn có thể liên kết một trong số chúng thích hợp với một host lưu trữ.
 - Lưu ý rằng các mẫu này cần được tinh chỉnh cho phù hợp với môi trường của bạn. 
 - Một số kiểm tra có thể không cần thiết và khoảng thời gian bỏ phiếu có thể quá thường xuyên.
 

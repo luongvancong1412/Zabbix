@@ -1,6 +1,6 @@
 <h1> Network Monitor </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Giám sát mạng là gì](#1-giám-sát-mạng-là-gì)
 - [2. Các loại giám sát](#2-các-loại-giám-sát)
@@ -89,7 +89,7 @@ Nhìn chung: Phân tích tuyến đường làm:
 - Cũng giúp cắt giảm chi phí và tăng năng suất của nhân viên.
 
 ## 2.3 Website monitoring
-- Giám sát cung cấp trạng thái máy chủ:
+- Giám sát cung cấp trạng thái host:
     - Đo tính khả dụng (availability)
     - Hiệu suất (performance)
     - Kết nối (connectivity)
@@ -132,8 +132,8 @@ Với việc sử dụng các công cụ giám sát mạng, các quản trị vi
 
 ## 3.2 Giám sát dựa trên Agent (Agent-based)
 - Giám sát Agent-based bao gồm một phần mềm được gọi là Agent
-- Agent là một ứng dụng được cài đặt cục bộ trên máy chủ và các thiết bị mạng khác. 
-- Mục tiêu của nó là giám sát hiệu suất mạng. Nếu một số lỗi xảy ra, một thông báo cảnh báo sẽ được tạo. 
+- Agent là một ứng dụng được cài đặt cục bộ trên host và các thiết bị mạng khác. 
+- item tiêu của nó là giám sát hiệu suất mạng. Nếu một số lỗi xảy ra, một thông báo cảnh báo sẽ được tạo. 
 - Ngoài ra,Agent có thể khắc phục một số lỗi.
 - Agent là một ứng dụng nhẹ. Tuy nhiên, một số trong số chúng có thể tiêu tốn nhiều mạng tài nguyên. Đó là tại sao tác nhân nhẹ ( lightweight agent) hay còn gọi là tác nhân "vô hình" ("invisible" agent) đang trở nên phổ biến hiện nay.
 - Ưu điểm chính của nó so với kiểu truyền thống là không ảnh hưởng đến hiệu suất mạng và vẫn đáp ứng hiệu suất giám sát.

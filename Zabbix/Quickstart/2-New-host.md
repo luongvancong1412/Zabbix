@@ -1,14 +1,14 @@
 <h1> Thêm hosts </h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 
 # 1. Tổng quan
 
-Bài này viết về cách thiết lập một máy chủ mới (new host).
+Bài này viết về cách thiết lập một host mới (new host).
 
 - Host trong Zabbix là một thực thể (`entity`) được `nối mạng` (Physical, virtual) mà bạn muốn `giám sát`.
-- Nó có thể là một máy chủ vật lý (`physical server`), một bộ chuyển mạch (`a network switch`), một máy ảo (`a virtual machine`) hoặc một số ứng dụng (`some application`).
+- Nó có thể là một host vật lý (`physical server`), một bộ chuyển mạch (`a network switch`), một máy ảo (`a virtual machine`) hoặc một số ứng dụng (`some application`).
 
 # 2. Thêm host
 - `Thông tin` về các `host` được cấu hình trong Zabbix: `Configuration` → `Hosts` và `Monitoring` → `Hosts` . 

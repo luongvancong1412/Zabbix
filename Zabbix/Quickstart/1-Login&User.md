@@ -1,6 +1,6 @@
 <h1> Đăng nhập và Quản lý người dùng</h1>
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Đăng nhập](#1-đăng-nhập)
   - [1.1 Đăng nhập giao diện web:](#11-đăng-nhập-giao-diện-web)
@@ -83,19 +83,19 @@
 </p>
 
 ## 2.2 Thêm quyền
-Theo mặc định, user mới không có quyền truy cập máy chủ. Để cấp Groups (trong trường hợp này là 'quản trị viên Zabbix'). Trong biểu mẫu thuộc tính nhóm, hãy chuyển đến tab Quyền .
+Theo mặc định, user mới không có quyền truy cập host. Để cấp Groups (trong trường hợp này là 'quản trị viên Zabbix'). Trong biểu mẫu thuộc tính nhóm, hãy chuyển đến tab Quyền .
 
 <p align="center">
 <img src=https://i.imgur.com/0SOioFZ.png>
 </p>
 
-Người dùng này phải có quyền truy cập chỉ đọc vào nhóm máy chủ Linux , vì vậy hãy nhấp vào Chọn bên cạnh trường lựa chọn nhóm người dùng.
+Người dùng này phải có quyền truy cập chỉ đọc vào nhóm host Linux , vì vậy hãy nhấp vào Chọn bên cạnh trường lựa chọn nhóm người dùng.
 
 <p align="center">
 <img src=https://i.imgur.com/ljihJCl.png>
 </p>
 
-- Trong cửa sổ bật lên này, hãy đánh dấu hộp kiểm bên cạnh `Linux servers`, sau đó nhấp vào `Select` . Máy chủ Linux sẽ được hiển thị trong trường lựa chọn.
+- Trong cửa sổ bật lên này, hãy đánh dấu hộp kiểm bên cạnh `Linux servers`, sau đó nhấp vào `Select` . host Linux sẽ được hiển thị trong trường lựa chọn.
 
 <p align="center">
 <img src=https://i.imgur.com/AzECYfm.png>
@@ -103,7 +103,7 @@ Người dùng này phải có quyền truy cập chỉ đọc vào nhóm máy c
 
 - Nhấp vào nút `Read` để đặt cấp độ quyền và sau đó Add để thêm Group vào danh sách quyền. Trong biểu mẫu thuộc tính nhóm người dùng, bấm `Update` .
 
-- Trong Zabbix, quyền truy cập vào máy chủ được chỉ định cho các nhóm người dùng , không phải người dùng cá nhân.
+- Trong Zabbix, quyền truy cập vào host được chỉ định cho các nhóm người dùng , không phải người dùng cá nhân.
 
 
 # Tài liệu tham khảo

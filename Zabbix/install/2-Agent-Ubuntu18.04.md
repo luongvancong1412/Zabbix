@@ -1,7 +1,7 @@
 <h1> Install Agent Ubuntu 18.04 </h1>
 
 
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Mô hình mạng](#1-mô-hình-mạng)
 - [2. Cài đặt Agent trên Ubuntu 18.04](#2-cài-đặt-agent-trên-ubuntu-1804)

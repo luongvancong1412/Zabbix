@@ -1,6 +1,6 @@
 <h1> Thêm Trigger</h1>
 
-<h2> Mục lục</h2>
+<h2> item lục</h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Thêm trigger](#2-thêm-trigger)

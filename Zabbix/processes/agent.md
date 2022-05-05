@@ -1,7 +1,7 @@
 <h1> Agent </h1>
 
 ---
-<h2> Mục lục </h2>
+<h2> item lục </h2>
 
 - [1. Tổng quan](#1-tổng-quan)
 - [2. Check passive và check active](#2-check-passive-và-check-active)
@@ -25,7 +25,7 @@
 # 1. Tổng quan
 - `Agent Zabbix` được triển khai trên `thiết bị giám sát` để chủ động `giám sát các tài nguyên` và `ứng dụng cục bộ` (ổ cứng, bộ nhớ, thống kê bộ xử lý, v.v.).
 
-- Trong trường hợp có lỗi , máy chủ Zabbix có thể chủ động cảnh báo cho quản trị viên của máy cụ thể đã báo cáo lỗi.
+- Trong trường hợp có lỗi , host Zabbix có thể chủ động cảnh báo cho quản trị viên của máy cụ thể đã báo cáo lỗi.
 
 - Các Agent Zabbix cực kỳ hiệu quả vì sử dụng các lệnh gọi hệ thống tự nhiên (native system calls) để thu thập thông tin thống kê.
 - Sử dụng tốt trên các máy tính có tài nguyên thấp
@@ -38,7 +38,7 @@
 
 - Trong check passive , Server Zabbix (hoặc proxy) yêu cầu dữ liệu, Agent phản hồi lại yêu cầu dữ liệu đó.
 
-- Check active phức tạp hơn. Trước tiên, nhân viên truy xuất danh sách các `item` từ máy chủ Zabbix để xử lý. Sau đó, nó sẽ định kỳ gửi các giá trị mới đến server.
+- Check active phức tạp hơn. Trước tiên, nhân viên truy xuất danh sách các `item` từ host Zabbix để xử lý. Sau đó, nó sẽ định kỳ gửi các giá trị mới đến server.
 
 - Việc kiểm tra passive hay active đượ cấu hình bằng cách chọn loại item giám sát:
   - *Zabbix agent* - Nếu check passive
@@ -137,7 +137,7 @@ shell> zabbix_agentd
 
 ## 5.1 Chuẩn bị
 - Agent Zabbix được phân phối dưới dạng một kho lưu trữ zip (a zip archive).
-- Sau khi tải xuống bản lưu trữ, cần giải nén nó. Chọn bất kỳ thư mục nào để lưu trữ Agent Zabbix và tệp configuration, ví dụ:
+- Sau khi tải xuống bản lưu trữ, cần giải nén nó. Chọn bất kỳ thư item nào để lưu trữ Agent Zabbix và tệp configuration, ví dụ:
 ```
 C:\zabbix
 ```
@@ -155,7 +155,7 @@ C:\> c:\zabbix\zabbix_agentd.exe -c c:\zabbix\zabbix_agentd.conf -i
 - [Xem thêm](https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent#installing-agent-as-windows-service) chi tiết về cài đặt và chạy Agent Zabbix trên Windows.
 
 # 6 Các option Agent khác
-- Có thể chạy nhiều phiên bản của Agent trên một máy chủ.
+- Có thể chạy nhiều phiên bản của Agent trên một host.
 - Nếu sử dụng một phiên bản duy nhất có thể sử dụng tệp cấu hình mặc định hoặc tệp cấu hình được chỉ định trong dòng lệnh.
 - Trong trường hợp có nhiều cá thể, mỗi cá thể Agent phải có tệp cấu hình riêng (một trong các phiên bản đó có thể sử dụng tệp cấu hình mặc định).
 
@@ -166,8 +166,8 @@ Các tham số dòng lệnh sau có thể được sử dụng với Agent Zabbi
 Tham số|Mô tả tả|
 |---|---|
 |`-c --config <config-file>`|Đường dẫn đến tệp cấu hình.<br>Sử dụng tùy chọn này để chỉ định tệp cấu hình mà không sử dụng tệp mặc định.<br>Trên UNIX, mặc định là `/usr/local/etc/zabbix_agentd.conf` hoặc được đặt bởi các biến thời gian biên dịch `--sysconfdir` hoặc `--prefix`.<br>Trên Windows, mặc định là `c:\zabbix_agentd.conf`
-`-p --print`|	In các mục đã biết và thoát.<br>Lưu ý : Để trả về kết quả tham số người dùng , phải chỉ định tệp cấu hình (nếu tệp không nằm ở vị trí mặc định).
-`-t --test <item key>`|Kiểm tra mục đã chỉ định và thoát.<br>Lưu ý : Để trả về kết quả tham số người dùng , bạn phải chỉ định tệp cấu hình (nếu tệp không nằm ở vị trí mặc định).
+`-p --print`|	In các item đã biết và thoát.<br>Lưu ý : Để trả về kết quả tham số người dùng , phải chỉ định tệp cấu hình (nếu tệp không nằm ở vị trí mặc định).
+`-t --test <item key>`|Kiểm tra item đã chỉ định và thoát.<br>Lưu ý : Để trả về kết quả tham số người dùng , bạn phải chỉ định tệp cấu hình (nếu tệp không nằm ở vị trí mặc định).
 `-h --help`|Hiển thị thông tin trợ giúp
 `-V --version`|Hiển thị số phiên bản
 
@@ -197,7 +197,7 @@ Ví dụ cụ thể về việc sử dụng các tham số dòng lệnh:
 - in tất cả các item Agnet được tích hợp sẵn với các giá trị
 - Kiểm tra thông số người dùng với key "mysql.ping" được xác định trong tệp cấu hình được chỉ định
 - Cài đặt dịch vụ "Zabbix Agent" cho Windows bằng đường dẫn mặc định đến tệp cấu hình `c:\zabbix_agentd.conf`
-- Cài đặt dịch vụ "Zabbix Agent [Hostname]" cho Windows bằng cách sử dụng tệp cấu hình zabbix_agentd.conf nằm trong cùng thư mục với tệp thực thi Agent và đặt tên dịch vụ duy nhất bằng cách mở rộng nó theo giá trị Hostname từ tệp cấu hình.
+- Cài đặt dịch vụ "Zabbix Agent [Hostname]" cho Windows bằng cách sử dụng tệp cấu hình zabbix_agentd.conf nằm trong cùng thư item với tệp thực thi Agent và đặt tên dịch vụ duy nhất bằng cách mở rộng nó theo giá trị Hostname từ tệp cấu hình.
 ```
 shell> zabbix_agentd --print
 shell> zabbix_agentd -t "mysql.ping" -c /etc/zabbix/zabbix_agentd.conf
@@ -207,10 +207,10 @@ shell> zabbix_agentd.exe -i -m -c zabbix_agentd.conf
 # 7. Kiểm soát thời gian chạy
 Với các tùy chọn Runtime control, bạn có thể thay đổi cấp độ nhật ký của các quy trình Agent.
 
-Option|	Mô tả|	Mục tiêu
+Option|	Mô tả|	item tiêu
 |---|---|---|
-`log_level_increase [= <target>]`	|Tăng cấp độ nhật ký.<br>Nếu mục tiêu không được chỉ định, tất cả các quá trình sẽ bị ảnh hưởng.	|Mục tiêu có thể được chỉ định là:<br>Loại quy trình - tất cả các quy trình thuộc loại được chỉ định (ví dụ: trình nghe).<br>loại quy trình, N - loại quy trình và số (ví dụ: bộ nghe, 3) <br>pid - số nhận dạng quy trình (1 đến 65535). Đối với các giá trị lớn hơn, hãy chỉ định mục tiêu là 'process-type, N'.
-`log_level_decrease [= <target>]`|	Giảm cấp độ nhật ký.<br>Nếu mục tiêu không được chỉ định, tất cả các quá trình sẽ bị ảnh hưởng.
+`log_level_increase [= <target>]`	|Tăng cấp độ nhật ký.<br>Nếu item tiêu không được chỉ định, tất cả các quá trình sẽ bị ảnh hưởng.	|item tiêu có thể được chỉ định là:<br>Loại quy trình - tất cả các quy trình thuộc loại được chỉ định (ví dụ: trình nghe).<br>loại quy trình, N - loại quy trình và số (ví dụ: bộ nghe, 3) <br>pid - số nhận dạng quy trình (1 đến 65535). Đối với các giá trị lớn hơn, hãy chỉ định item tiêu là 'process-type, N'.
+`log_level_decrease [= <target>]`|	Giảm cấp độ nhật ký.<br>Nếu item tiêu không được chỉ định, tất cả các quá trình sẽ bị ảnh hưởng.
 `userparameter_reload`	|Tải lại thông số người dùng từ tệp cấu hình hiện tại.<br> Lưu ý rằng UserParameter là tùy chọn cấu hình Agent duy nhất sẽ được tải lại.|
 
 Ví dụ:
