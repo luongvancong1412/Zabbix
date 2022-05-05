@@ -73,6 +73,11 @@ STT|Tham số <br>Parameter|Mô tả|
 
 Tab `IPMI` chứa các thuộc tính để quản lý IPMI .
 
+
+<p align="center">
+<img src=https://i.imgur.com/GRQmt2y.png>
+</p>
+
 STT|Tham số|Mô tả
 |:---:|:---:|---|
 1|`Authentication algorithm`|Thuật toán xác thực.<br>Chọn thuật toán xác thực.
@@ -83,6 +88,10 @@ STT|Tham số|Mô tả
 ### 2.3 Tab Tags
 
 Tab `Tags` cho phép xác định các thẻ host-level . Tất cả các `problems` (vấn đề) của host sẽ `được tag` (gắn thẻ) với các `giá trị` được nhập ở tab Tags.
+
+<p align="center">
+<img src=https://i.imgur.com/TcT0Roy.png>
+</p>
 
 
 Các thẻ được hỗ trợ:
@@ -98,6 +107,12 @@ Các thẻ được hỗ trợ:
 ### 2.4 Tab Macros
 
 - Tab `Macro` cho phép bạn xác định `host-level` người dùng macro dưới dạng một cặp `tên-giá` trị.
+
+<p align="center">
+<img src=https://i.imgur.com/sYhNojm.png>
+</p>
+
+
 - Lưu ý: các giá trị macro có thể được giữ dưới dạng: 
   - văn bản thuần túy
   - văn bản bí mật 
@@ -136,6 +151,11 @@ Nếu `bật` Inventory (`Manual` hoặc `automatic`),sẽ xuất hiện một `
 ### 2.5 Encryption - Mã hóa</h3>
 
 Tab `Encryption` cho phép bạn yêu cầu các kết nối được `mã hóa` với host.
+
+<p align="center">
+<img src=https://i.imgur.com/sW80N60.png>
+</p>
+
 
 STT|Parameter|Description|
 |:---:|:---:|---|
@@ -191,7 +211,7 @@ Ví dụ: Trong hình:
 
 STT|Tham số|Mô tả
 |:---:|---|---|
-1|Group name|Nhập `tên nhóm` host duy nhất.<br>Sử dụng dấu phân tách dấu gạch chéo `/` để tạo một `nhóm host lồng nhau`, Ví dụ `HaNoi/ThanhTri/Zabbix servers`.<br>Có thể tạo nhóm này ngay cả khi `không` có nhóm nào trong `2 nhóm host chính` (HaNoi/ThanhTri) tồn tại.<br>Việc tạo các `nhóm host mẹ` này là `tùy thuộc` vào người dùng (không được tạo tự động).<br>Không được phép sử dụng các dấu `/` ở đầu và sau cùng hoặc nhiều dấu `gạch chéo liên tiếp`.<br>Nhóm lồng nhau được` hỗ trợ` kể từ `Zabbix 3.2.0`.
+1|`Group name`|Nhập `tên nhóm` host duy nhất.<br>Sử dụng dấu phân tách dấu gạch chéo `/` để tạo một `nhóm host lồng nhau`, Ví dụ `HaNoi/ThanhTri/Zabbix servers`.<br>Có thể tạo nhóm này ngay cả khi `không` có nhóm nào trong `2 nhóm host chính` (HaNoi/ThanhTri) tồn tại.<br>Việc tạo các `nhóm host mẹ` này là `tùy thuộc` vào người dùng (không được tạo tự động).<br>Không được phép sử dụng các dấu `/` ở đầu và sau cùng hoặc nhiều dấu `gạch chéo liên tiếp`.<br>Nhóm lồng nhau được` hỗ trợ` kể từ `Zabbix 3.2.0`.
 2|`Apply permissions and tag filters to all subgroups`|Áp dụng quyền và bộ lọc thẻ cho tất cả các `nhóm con`	|Checkbox chỉ khả dụng cho người dùng Super Admin và chỉ khi chỉnh sửa nhóm host hiện có.<br>Đánh dấu `checkbox` và nhấp vào `Update` để áp dụng cùng một cấp `permissions/tag filters` cho tất cả `các nhóm host lồng nhau`. Đối với các nhóm người dùng có thể có các quyền khác nhau trên các nhóm host lồng nhau, cấp độ quyền của nhóm host mẹ sẽ được thực thi trên các nhóm lồng nhau.<br>Đây là tùy chọn một lần không được lưu trong cơ sở dữ liệu.<br>Tùy chọn này được hỗ trợ kể từ `Zabbix 3.4.0`.|
 
 
