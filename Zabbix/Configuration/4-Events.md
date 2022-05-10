@@ -20,7 +20,7 @@
   - [4.2 Cấu hình](#42-cấu-hình)
     - [4.2.1 Trigger configuration](#421-trigger-configuration)
     - [4.2.2 Problem update window](#422-problem-update-window)
-    - [4.3 Xác minh](#43-xác-minh)
+  - [4.3 Xác minh](#43-xác-minh)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1. Tổng quan
@@ -163,7 +163,7 @@ Cần có hai bước để Close Problem theo cách thủ công.
 
 - Yêu cầu được server Zabbix xử lý . Thông thường sẽ mất một vài giây để đóng problem. Trong quá trình đó `CLOSING` được hiển thị trong `Monitoring` → `Problem` là trạng thái của Problem.
 
-### 4.3 Xác minh
+## 4.3 Xác minh
 - Có thể xác minh rằng Problem đã được đóng theo cách thủ công:
   - Trong chi tiết event, thông qua `Monitoring` → `Problem` ;
   - Sử dụng macro {EVENT.UPDATE.HISTORY} trong các tin nhắn thông báo sẽ cung cấp thông tin này.
