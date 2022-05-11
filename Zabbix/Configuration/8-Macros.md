@@ -9,6 +9,9 @@
     - [`fmtnum (<digits>)`](#fmtnum-digits)
     - [`fmttime (<format>, <time_shift>)`](#fmttime-format-time_shift)
     - [`iregsub (<pattern>, <output>)`](#iregsub-pattern-output)
+    - [`regsub (<pattern>, <output>)`](#regsub-pattern-output)
+  - [3. Example](#3-example)
+    - [3.1 Làm tròn](#31-làm-tròn)
 
 # 1.Tổng quan
 - Zabbix hỗ trợ một số macro mẫu có thể được sử dụng trong các trường hợp khác nhau.
@@ -65,36 +68,30 @@ Ví dụ:
 |Description|Parameters|Supported for|
 |---|---|---|
 |Định dạng thời gian.|	`format` - bắt buộc, tương thích với định dạng `time_shift` của hàm `strftime`.<br>`time_shift`- dịch chuyển thời gian; nên bắt đầu bằng<br>`-<N><time_unit>hoặc +<N><time_unit>` <br>Trong đó:<br>+`N` - số đơn vị thời gian muốn dịch chuyển để cộng hoặc trừ;<br>`time_unit` - `h` (hour - giờ), `d` (day - ngày), `w` (week - tuần), `M` (month - tháng) hoặc `y` (year - năm).<br>Kể từ Zabbix 5.4, tham số time_shift hỗ trợ multi-step time và có thể bao gồm `/<time_unit>` (`/d`- nửa đêm, `/w`- ngày đầu tiên trong tuần (thứ Hai), `/M`- ngày đầu tiên của tháng, v.v.). Ví dụ:<br>`-1w` - chính xác 7 ngày trở lại đây;<br>`-1w/w` - Thứ hai của tuần trước;<br>`-1w/w+1d` - Thứ Ba của tuần trước.<br>`-1M/M` - Ngày đầu tiên của tháng trước<br>Các phép toán thời gian được tính từ `trái sang phải`, `không` có thứ tự `ưu tiên`.<br>Ví dụ: `-1M/d+1h/w` sẽ được phân tích cú pháp như `((-1M/d)+1h)/w`.|	{TIME}
+
 ### `iregsub (<pattern>, <output>)`
 
 |Description|Parameters|Supported for|
-|---|---|---|
-Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|mẫu - biểu thức chính quy để khớp với
-đầu ra - các tùy chọn đầu ra. \ 1 - \ 9 trình giữ chỗ được hỗ trợ để chụp các nhóm. \ 0 trả về văn bản phù hợp.	{ITEM.VALUE}
-{ITEM.LASTVALUE}
-Macro khám phá cấp thấp (ngoại trừ trong bộ lọc quy tắc khám phá cấp thấp)
-regsub (<pattern>, <output>)
-Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (phân biệt chữ hoa chữ thường).	mẫu - biểu thức chính quy để khớp với
-đầu ra - các tùy chọn đầu ra. \ 1 - \ 9 trình giữ chỗ được hỗ trợ để chụp các nhóm. \ 0 trả về văn bản phù hợp.	{ITEM.VALUE}
-{ITEM.LASTVALUE}
-Macro khám phá cấp thấp (ngoại trừ trong bộ lọc quy tắc khám phá cấp thấp)
-Nếu một chức năng được sử dụng ở một vị trí được hỗ trợ , nhưng được áp dụng cho một macro không hỗ trợ các chức năng macro, thì macro sẽ đánh giá thành 'UNKNOWN'.
+|---|---|:---:|
+Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+`output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
 
-Nếu mẫu không phải là một biểu thức chính quy chính xác thì macro sẽ đánh giá thành 'UNKNOWN' (không bao gồm macro khám phá cấp thấp trong đó hàm sẽ bị bỏ qua trong trường hợp đó và macro sẽ vẫn không được mở rộng)
+### `regsub (<pattern>, <output>)`
+|Description|Parameters|Supported for|
+|---|---|:---:|
+Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+`output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
 
-Nếu một chức năng macro được áp dụng cho macro ở những vị trí không hỗ trợ chức năng macro thì chức năng đó sẽ bị bỏ qua.
+## 3. Example
 
-Các ví dụ
-Các cách mà các hàm macro có thể được sử dụng để tùy chỉnh các giá trị macro được minh họa trong các ví dụ sau về các giá trị đã nhận:
-
-Giá trị nhận được	Macro	Đầu ra
-24.3413523	{{ITEM.VALUE}.fmtnum(2)}	24.34
-24.3413523	{{ITEM.VALUE}.fmtnum(0)}	24
-12:36:01	{{TIME}.fmttime(%B)}	October
-12:36:01	{{TIME}.fmttime(%d %B,-1M/M)}	1 September
-123Log line	{{ITEM.VALUE}.regsub(^[0-9]+, Problem)}	Problem
-123 Log line	{{ITEM.VALUE}.regsub("^([0-9]+)", "Problem")}	Problem
-123 Log line	{{ITEM.VALUE}.regsub("^([0-9]+)", Problem ID: \1)}	Problem ID: 123
+### 3.1 Làm tròn
+STT|Received value|Macro|Output|
+|:---:|---|---|:---:|
+1|24.3413523|{{ITEM.VALUE}.fmtnum(2)}|24.34
+2|24.3413523|{{ITEM.VALUE}.fmtnum(0)}|24
+3|12:36:01|{{TIME}.fmttime(%B)}|October
+4|12:36:01|{{TIME}.fmttime(%d %B,-1M/M)}|1 September
+5|123Log line|{{ITEM.VALUE}.regsub(^[0-9]+, Problem)}|Problem
+6|123 Log line|{{ITEM.VALUE}.regsub("^([0-9]+)", "Problem")}	|Problem
+7|123 Log line|	{{ITEM.VALUE}.regsub("^([0-9]+)", Problem ID: \1)}|Problem ID: 123
 Log line	{{ITEM.VALUE}.regsub(".*", "Problem ID: \1")}	'' ID sự cố: ''
 MySQL crashed errno 123	{{ITEM.VALUE}.regsub("^(\w+).*?([0-9]+)", " Problem ID: \1_\2 ")}	'' ID sự cố: MySQL_123 ''
 123 Log line	{{ITEM.VALUE}.regsub("([1-9]+", "Problem ID: \1")}	*UNKNOWN*(biểu thức chính quy không hợp lệ)
