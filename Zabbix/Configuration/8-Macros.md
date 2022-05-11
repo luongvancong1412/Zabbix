@@ -14,6 +14,7 @@
     - [3.1 Làm tròn](#31-làm-tròn)
     - [3.2 Tính toán thời gian](#32-tính-toán-thời-gian)
     - [3.3 Regsub](#33-regsub)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 # 1.Tổng quan
 - Zabbix hỗ trợ một số macro mẫu có thể được sử dụng trong các trường hợp khác nhau.
@@ -109,6 +110,6 @@ STT|Received value|Macro|Output|
 8|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+)", \2)}`|1
 9|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`(invalid regular expression)
 
-
-
-
+- Updating ...
+# Tài liệu tham khảo
+1. https://www.zabbix.com/documentation/current/en/manual/config/macros

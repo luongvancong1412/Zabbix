@@ -41,10 +41,14 @@
   - [5.4 New trigger](Zabbix/Quickstart/4-New-trigger.md)
   - [5.5 Nhận báo cáo sự cố](Zabbix/Quickstart/5-Receiving-Problem-notification.md)
   - [5.6 New template](Zabbix/Quickstart/6-New-template.md)
-  - Updating
+  - Updating...
 
 - [6. Configuration]()
   - [6.1 Host và host group](Zabbix/Configuration/1-Host&host-groups.md)
+  - [6.2 Items](Zabbix/Configuration/2-Items.md)
+  - [6.3 Triggers](Zabbix/Configuration/3-Triggers.md)
+  - [6.4 Events](Zabbix/Configuration/4-Events.md)
+  - [6.5 Macros](Zabbix/Configuration/8-Macros.md)
   - Updating...
 
 - [7. Service monitoring](Zabbix/Service-monitoring)
