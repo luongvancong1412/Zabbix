@@ -105,9 +105,9 @@ STT|Received value|Macro|Output|
 4|Log line|`{{ITEM.VALUE}.regsub(".*", "Problem ID: \1")}`|" Problem ID:"
 5|MySQL crashed errno 123|`{{ITEM.VALUE}.regsub("^(\w+).*?([0-9]+)", " Problem ID: \1_\2 ")}`|"Problem ID: MySQL_123"
 6|123 Log line|`{{ITEM.VALUE}.regsub("([1-9]+", "Problem ID: \1")}`|`*UNKNOWN*`(invalid regular expression - biểu thức chính quy không hợp lệ)
-|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+)", \1)}`|customername
-7|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+)", \2)}`|1
-customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`(invalid regular expression)
+7|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+)", \1)}`|customername
+8|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+)", \2)}`|1
+9|customername_1|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`|`{{#IFALIAS}.regsub("(.*)_([0-9]+", \1)}`(invalid regular expression)
 
 
 
