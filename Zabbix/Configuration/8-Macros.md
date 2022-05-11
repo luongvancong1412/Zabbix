@@ -75,12 +75,12 @@ Ví dụ:
 
 |Description|Parameters|Supported for|
 |---|---|:---:|
-Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+`output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
+Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+ `output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
 
 ### `regsub (<pattern>, <output>)`
 |Description|Parameters|Supported for|
 |---|---|:---:|
-Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+`output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
+Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|+ `pattern` (mẫu) - biểu thức chính quy để khớp với<br>+ `output` (đầu ra) - các tùy chọn đầu ra. `\1` - `\9` trình giữ chỗ được hỗ trợ để chụp các nhóm. `\0` trả về văn bản phù hợp.	|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>[Low-level discoverey macros](https://www.zabbix.com/documentation/current/en/manual/config/macros/lld_macros)
 
 ## 3. Example
 
