@@ -7,6 +7,8 @@
   - [2.1 Tổng quan](#21-tổng-quan)
   - [2.2 Các macro function được hỗ trợ](#22-các-macro-function-được-hỗ-trợ)
     - [`fmtnum (<digits>)`](#fmtnum-digits)
+    - [`fmttime (<format>, <time_shift>)`](#fmttime-format-time_shift)
+    - [`iregsub (<pattern>, <output>)`](#iregsub-pattern-output)
 
 # 1.Tổng quan
 - Zabbix hỗ trợ một số macro mẫu có thể được sử dụng trong các trường hợp khác nhau.
@@ -58,10 +60,16 @@ Ví dụ:
 ### `fmtnum (<digits>)`
 |Description|Parameters|Supported for|
 |---|---|---|
-|ĐKiểm soát số chữ số được in sau dấu thập phân.|Digits (chữ số) - số chữ số sau dấu thập phân.<br> Nếu không có sẽ thêm số `0` sau dấu phẩy|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>Expression macros
-`fmttime (<format>, <time_shift>)`|Định dạng thời gian.|	`format` - bắt buộc, tương thích với định dạng `time_shift` của hàm `strftime`.<br>`time_shift`- dịch chuyển thời gian; nên bắt đầu bằng<br>`-<N><time_unit>hoặc +<N><time_unit>` <br>Trong đó:<br>+`N` - số đơn vị thời gian muốn dịch chuyển để cộng hoặc trừ;<br>`time_unit` - `h` (hour - giờ), `d` (day - ngày), `w` (week - tuần), `M` (month - tháng) hoặc `y` (year - năm).<br>Kể từ Zabbix 5.4, tham số time_shift hỗ trợ multi-step time và có thể bao gồm `/<time_unit>` (`/d`- nửa đêm, `/w`- ngày đầu tiên trong tuần (thứ Hai), `/M`- ngày đầu tiên của tháng, v.v.). Ví dụ:<br>`-1w` - chính xác 7 ngày trở lại đây;<br>`-1w/w` - Thứ hai của tuần trước;<br>`-1w/w+1d` - Thứ Ba của tuần trước.<br>`-1M/M` - Ngày đầu tiên của tháng trước<br>Các phép toán thời gian được tính từ `trái sang phải`, `không` có thứ tự `ưu tiên`.<br>Ví dụ: `-1M/d+1h/w` sẽ được phân tích cú pháp như `((-1M/d)+1h)/w`.|	{TIME}
-iregsub (<pattern>, <output>)
-Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).	mẫu - biểu thức chính quy để khớp với
+|Kiểm soát số chữ số được in sau dấu thập phân.|`Digits` (chữ số) - số chữ số sau dấu thập phân.<br> Nếu không có sẽ thêm số `0` sau dấu phẩy|{ITEM.VALUE}<br>{ITEM.LASTVALUE}<br>Expression macros
+### `fmttime (<format>, <time_shift>)`
+|Description|Parameters|Supported for|
+|---|---|---|
+|Định dạng thời gian.|	`format` - bắt buộc, tương thích với định dạng `time_shift` của hàm `strftime`.<br>`time_shift`- dịch chuyển thời gian; nên bắt đầu bằng<br>`-<N><time_unit>hoặc +<N><time_unit>` <br>Trong đó:<br>+`N` - số đơn vị thời gian muốn dịch chuyển để cộng hoặc trừ;<br>`time_unit` - `h` (hour - giờ), `d` (day - ngày), `w` (week - tuần), `M` (month - tháng) hoặc `y` (year - năm).<br>Kể từ Zabbix 5.4, tham số time_shift hỗ trợ multi-step time và có thể bao gồm `/<time_unit>` (`/d`- nửa đêm, `/w`- ngày đầu tiên trong tuần (thứ Hai), `/M`- ngày đầu tiên của tháng, v.v.). Ví dụ:<br>`-1w` - chính xác 7 ngày trở lại đây;<br>`-1w/w` - Thứ hai của tuần trước;<br>`-1w/w+1d` - Thứ Ba của tuần trước.<br>`-1M/M` - Ngày đầu tiên của tháng trước<br>Các phép toán thời gian được tính từ `trái sang phải`, `không` có thứ tự `ưu tiên`.<br>Ví dụ: `-1M/d+1h/w` sẽ được phân tích cú pháp như `((-1M/d)+1h)/w`.|	{TIME}
+### `iregsub (<pattern>, <output>)`
+
+|Description|Parameters|Supported for|
+|---|---|---|
+Trích xuất chuỗi con bằng một đối sánh biểu thức chính quy (không phân biệt chữ hoa chữ thường).|mẫu - biểu thức chính quy để khớp với
 đầu ra - các tùy chọn đầu ra. \ 1 - \ 9 trình giữ chỗ được hỗ trợ để chụp các nhóm. \ 0 trả về văn bản phù hợp.	{ITEM.VALUE}
 {ITEM.LASTVALUE}
 Macro khám phá cấp thấp (ngoại trừ trong bộ lọc quy tắc khám phá cấp thấp)
