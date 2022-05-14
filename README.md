@@ -33,6 +33,7 @@
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/1-Server-Ubuntu20.04.md)
   - [4.2 Cài đặt Agent trên Ubuntu 18.04](Zabbix/install/2-Agent-Ubuntu18.04.md)
   - [4.3 Cài đặt Agent trên Centos 7](Zabbix/install/3-Agent-Centos7.md)
+  - [4.4 Cài đặt Agent trên Windows Server](Zabbix/install/4-Agent-WinSRV2016.md)
   - Updating...
 - [5. Quickstart](Zabbix/Quickstart)
   - [5.1 Login và Quản lý user](Zabbix/Quickstart/1-Login&User.md)
@@ -49,7 +50,10 @@
   - [6.3 Triggers](Zabbix/Configuration/3-Triggers.md)
   - [6.4 Events](Zabbix/Configuration/4-Events.md)
   - [6.5 Macros](Zabbix/Configuration/8-Macros.md)
+  - [6.6 Templates](Zabbix/Configuration/9-Templates.md)
+  - [6.7 Visualization](Zabbix/Configuration/7-Visualization.md)
   - Updating...
 
 - [7. Service monitoring](Zabbix/Service-monitoring)
+- [8. Biểu thức chính quy](Zabbix/bieu-thuc-chinh-quy.md)
 - Updating...
