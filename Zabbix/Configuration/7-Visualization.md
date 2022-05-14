@@ -89,36 +89,6 @@
 
 ### 1.2.4 Trigger lines
 
-- Trình kích hoạt đơn giản được hiển thị dưới dạng các đường có dấu gạch ngang màu đen trên màu mức độ nghiêm trọng của trigger - lưu ý đường màu xanh lam trên biểu đồ và thông tin kích hoạt được hiển thị trong chú giải. Có thể hiển thị tối đa 3 đường kích hoạt trên biểu đồ; nếu có nhiều trigger hơn thì các trigger có mức độ nghiêm trọng thấp hơn sẽ được ưu tiên. Trình kích hoạt luôn được hiển thị dưới dạng đồ thị đơn giản, trong khi việc hiển thị chúng trong đồ thị tùy chỉnh là tùy chọn của người dùng.
-
-simple_graph_trigger.png
-
-Tạo ra từ lịch sử / xu hướng
-Biểu đồ có thể được vẽ dựa trên lịch sử hoặc xu hướng của mặt hàng .
-
-Đối với những người dùng đã kích hoạt chế độ gỡ lỗi giao diện người dùng , chú thích dọc, màu xám được hiển thị ở dưới cùng bên phải của biểu đồ cho biết dữ liệu đến từ đâu.
-
-Một số yếu tố ảnh hưởng đến việc lịch sử của các xu hướng có được sử dụng hay không:
-
-tuổi thọ của lịch sử vật phẩm. Ví dụ, lịch sử item có thể được giữ trong 14 ngày. Trong trường hợp đó, bất kỳ dữ liệu nào cũ hơn mười bốn ngày sẽ đến từ các xu hướng.
-tắc nghẽn dữ liệu trong đồ thị. Nếu số giây hiển thị trong pixel biểu đồ ngang vượt quá 3600/16, dữ liệu xu hướng sẽ được hiển thị (ngay cả khi lịch sử item vẫn có sẵn trong cùng khoảng thời gian).
-nếu xu hướng bị tắt, lịch sử item sẽ được sử dụng để xây dựng biểu đồ - nếu có sẵn cho khoảng thời gian đó. Điều này được hỗ trợ bắt đầu từ Zabbix 2.2.1 (trước đây, các xu hướng bị vô hiệu hóa có nghĩa là một biểu đồ trống trong khoảng thời gian ngay cả khi có sẵn lịch sử mặt hàng).
-Thiếu dữ liệu
-Đối với các mặt hàng có khoảng thời gian cập nhật thường xuyên, không có gì được hiển thị trong biểu đồ nếu dữ liệu mặt hàng không được thu thập.
-
-Tuy nhiên, đối với các mặt hàng của bộ đánh dấu và các mặt hàng có khoảng thời gian cập nhật theo lịch trình (và khoảng thời gian cập nhật thường xuyên được đặt thành 0), một đường thẳng được vẽ dẫn đến giá trị được thu thập đầu tiên và từ giá trị được thu thập cuối cùng đến cuối biểu đồ; dòng nằm trên mức của giá trị đầu tiên / cuối cùng tương ứng.
-
-Chuyển sang giá trị thô
-Một menu thả xuống ở phía trên bên phải cho phép chuyển từ biểu đồ đơn giản sang danh sách Giá trị / 500 giá trị mới nhất . Điều này có thể hữu ích để xem các giá trị số tạo nên biểu đồ.
-
-Các giá trị được đại diện ở đây là thô, tức là không có đơn vị hoặc quá trình xử lý sau của giá trị nào được sử dụng. Tuy nhiên, ánh xạ giá trị được áp dụng.
-
-Các vấn đề đã biết
-Xem các vấn đề đã biết đối với đồ thị.
-
-
-
-
 # Tài liệu tham khảo
 
 1. 
