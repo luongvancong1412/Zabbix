@@ -33,7 +33,7 @@
   - [4.1 Cài đặt Zabbix trên Ubuntu 20.04](Zabbix/install/1-Server-Ubuntu20.04.md)
   - [4.2 Cài đặt Agent trên Ubuntu 18.04](Zabbix/install/2-Agent-Ubuntu18.04.md)
   - [4.3 Cài đặt Agent trên Centos 7](Zabbix/install/3-Agent-Centos7.md)
-  - [4.4 Cài đặt Agent trên Windows Server](Zabbix/install/4-Agent-WinSRV2016.md)
+  - [4.4 Cài đặt Agent trên Windows Server](Zabbix/install/4-Agent-WinSRV2012.md)
   - Updating...
 - [5. Quickstart](Zabbix/Quickstart)
   - [5.1 Login và Quản lý user](Zabbix/Quickstart/1-Login&User.md)
