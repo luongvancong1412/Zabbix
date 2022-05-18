@@ -22,7 +22,7 @@ sudo apt -y install snmpd
 - Khởi động và cấu hình khởi động cùng hệ thống:
 ```
 sudo systemctl start snmpd
-sudo systemctl enabled snmpd
+sudo systemctl enable snmpd
 ```
 
 - Backup file cấu hình:
