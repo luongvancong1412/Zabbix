@@ -4,6 +4,7 @@
 
 - [I. Cài đặt SNMP](#i-cài-đặt-snmp)
   - [1. Trên Ubuntu](#1-trên-ubuntu)
+  - [2. Trên Centos 7](#2-trên-centos-7)
 - [II. Thêm host trên Zabbix frontend:](#ii-thêm-host-trên-zabbix-frontend)
   - [1. Kiểm tra trên Zabbix server](#1-kiểm-tra-trên-zabbix-server)
   - [2. Thêm host trên zabbix frontend](#2-thêm-host-trên-zabbix-frontend)
@@ -37,6 +38,8 @@ sudo sed -i 's/agentAddress  udp:127.0.0.1:161/agentAddress udp:161,udp6:[::1]:1
 ```
 sudo systemctl restart snmpd
 ```
+## 2. Trên Centos 7
+- Updating ...
 # II. Thêm host trên Zabbix frontend:
 ## 1. Kiểm tra trên Zabbix server
 
@@ -53,7 +56,10 @@ snmpwalk -v2c -c public 192.168.77.135
 - Truy cập: http://ip_server_zabbix/zabbix
   - Ví dụ: http://192.168.77.130/zabbix
 - Đăng nhập
-- Chọn: Administritor > Hosts
+- Chọn: `Administritor` > `Hosts`
+
+!![Imgur](https://i.imgur.com/4Add1Sn.png)
+
 - Chọn `Create host` trên góc bên phải
 - Nhập thông tin:
   - `Host name`: Tên host giám sát
@@ -71,7 +77,7 @@ snmpwalk -v2c -c public 192.168.77.135
 - Chọn `Add` để thêm
 - Trạng thái trường `Availability` chuyển sang xanh là OK
 
-![Imgur](https://i.imgur.com/4Add1Sn.png)
+![Imgur](https://i.imgur.com/IDY6Zdh.png)
 
 # Tài liệu tham khảo
 1. https://www.zabbix.com/documentation/current/it/manual/config/items/itemtypes/snmp
