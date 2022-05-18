@@ -6,6 +6,7 @@
   - [1. Trên Ubuntu](#1-trên-ubuntu)
 - [II. Thêm host trên Zabbix frontend:](#ii-thêm-host-trên-zabbix-frontend)
   - [1. Kiểm tra trên Zabbix server](#1-kiểm-tra-trên-zabbix-server)
+  - [2. Thêm host trên zabbix frontend](#2-thêm-host-trên-zabbix-frontend)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 
@@ -25,21 +26,13 @@ sudo systemctl enabled snmpd
 
 - Backup file cấu hình:
 ```
-cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.bak
+sudo cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.bak
 ```
 - Sửa cấu hình:
 ```
-sed -i 's/agentAddress  udp:127.0.0.1:161/agentAddress udp:161,udp6:[::1]:161/g' /etc/snmp/snmpd.conf
-```
-    Hoặc
-```
-sed -i 's/agentAddress  udp:127.0.0.1:161/agentAddress udp:192.168.77.130:161/g' /etc/snmp/snmpd.conf
+sudo sed -i 's/agentAddress  udp:127.0.0.1:161/agentAddress udp:161,udp6:[::1]:161/g' /etc/snmp/snmpd.conf
 ```
 
-- Thêm dòng vào cuối file:
-```
-echo 'rocommunity Conglv' >> /etc/snmp/snmpd.conf
-```
 - Khởi động lại dịch vụ:
 ```
 sudo systemctl restart snmpd
@@ -49,9 +42,37 @@ sudo systemctl restart snmpd
 
 - Sử dụng câu lệnh:
 ```
-snmpwalk -v2c -c Conglv 192.168.77.135
+snmpwalk -v2c -c public 192.168.77.135
 ```
--
+- Thành công chuyển sang bước tiếp theo
+
+![Imgur](https://i.imgur.com/r233Nhs.png)
+
+## 2. Thêm host trên zabbix frontend
+
+- Truy cập: http://ip_server_zabbix/zabbix
+  - Ví dụ: http://192.168.77.130/zabbix
+- Đăng nhập
+- Chọn: Administritor > Hosts
+- Chọn `Create host` trên góc bên phải
+- Nhập thông tin:
+  - `Host name`: Tên host giám sát
+  - `Templates`: Mẫu áp dụng cho host
+  - `Groups`: Thêm host vào nhóm
+  - `Interface`: chọn SNMP và nhập địa chỉ IP host
+
+![Imgur](https://i.imgur.com/ZyRrGzC.png)
+
+- Sang Tab `Macros`:
+  - Nhập thông tin `rocommunity` mặc định là `public`
+
+![Imgur](https://i.imgur.com/lI4LEcE.png)
+
+- Chọn `Add` để thêm
+- Trạng thái trường `Availability` chuyển sang xanh là OK
+
+![Imgur](https://i.imgur.com/4Add1Sn.png)
+
 # Tài liệu tham khảo
 1. https://www.zabbix.com/documentation/current/it/manual/config/items/itemtypes/snmp
 2. 
