@@ -91,7 +91,7 @@ snmp set location="100TK-TT-HN"
 - Trên Zabbix server, cài đặt và kiểm tra kết nối SNMP:
 ```
 sudo apt-get install snmp
-snmpwalk -v2c - Conglv 192.168.77.133
+snmpwalk -v2c -c Conglv 192.168.77.133
 ```
 
 Trong đó: 
