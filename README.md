@@ -41,6 +41,8 @@
   - [5.3 New item](Zabbix/Quickstart/3-New-item.md)
   - [5.4 New trigger](Zabbix/Quickstart/4-New-trigger.md)
   - [5.5 Nhận báo cáo sự cố](Zabbix/Quickstart/5-Receiving-Problem-notification.md)
+    - [Telegram](Zabbix/Configuration/10-Alert-Telegram.md#i-telegram-webhook)
+    - [Gmail](Zabbix/Configuration/10-Alert-Telegram.md#ii-gmail)
   - [5.6 New template](Zabbix/Quickstart/6-New-template.md)
   - Updating...
 
@@ -58,4 +60,5 @@
 - [8. Biểu thức chính quy](Zabbix/bieu-thuc-chinh-quy.md)
 - [9. Agentless](Zabbix/Agentless/)
   - [9.1 Giám sát Linux sử dụng SNMP](Zabbix/Agentless/1-Monitor-Linux-SNMP.md)
+  - [9.2 Giám sát Router MikroTik](Zabbix/Agentless/2-Monitor-Mikrotik.md)
 - Updating...
