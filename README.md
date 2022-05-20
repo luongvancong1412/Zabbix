@@ -7,14 +7,12 @@
 
 <h2>Summary</h2>
 
-[I. Network Monitor](Network-Monitor/Network-monitor.md)
-
+### I. Network Monitor
 - [1. Giám sát mạng là gì](Network-Monitor/Network-monitor.md#1-giám-sát-mạng-là-gì)
 - [2. Các loại giám sát](Network-Monitor/Network-monitor.md#2-các-loại-giám-sát)
 - [3. Thông tin thêm](Network-Monitor/Network-monitor.md#3-thông-tin-thêm)
 
-[II. Zabbix](Zabbix)
-
+### II. Zabbix
 - [1. Tổng quan về Zabbix](Zabbix/Overview/Info.md)
   - [1.1. Zabbix là gì?](Zabbix/Overview/Info.md#1-zabbix-là-gì)
   - [1.2. Lịch sử phát triển và các phiên bản](Zabbix/Overview/Info.md#2-lịch-sử-phát-triển-và-các-phiên-bản)
@@ -57,8 +55,10 @@
   - Updating...
 
 - [7. Service monitoring](Zabbix/Service-monitoring)
-- [8. Biểu thức chính quy](Zabbix/bieu-thuc-chinh-quy.md)
 - [9. Agentless](Zabbix/Agentless/)
   - [9.1 Giám sát Linux sử dụng SNMP](Zabbix/Agentless/1-Monitor-Linux-SNMP.md)
   - [9.2 Giám sát Router MikroTik](Zabbix/Agentless/2-Monitor-Mikrotik.md)
 - Updating...
+- [10. Khác](Zabbix/Other)
+  - [10.2 Biểu thức chính quy](Zabbix/Other/1-bieu-thuc-chinh-quy.md)
+  - [10.1 Protocols](Zabbix/Other/2-protocol.md)
