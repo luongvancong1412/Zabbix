@@ -79,11 +79,17 @@ Message:
 - Problem:
 
 ![Imgur](https://i.imgur.com/X0JfXGa.png)
+- Kết quả:
+
+![Imgur](https://i.imgur.com/X6Zi8I6.png)
 
 - Recovery:
 
 ![Imgur](https://i.imgur.com/14YruSY.png)
 
+- Kết quả:
+
+![Imgur](https://i.imgur.com/Ga0lto8.png)
 # 3. Khác
 - [Gửi cảnh báo đồ thị tới telegram](https://github.com/ableev/Zabbix-in-Telegram)
 
