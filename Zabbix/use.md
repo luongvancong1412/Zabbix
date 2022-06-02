@@ -244,5 +244,47 @@ snmpwalk -v2c -c public 172.16.10.3
 ```
 apt-get install snmp
 ```
+
+|Hardware||
+|---|---|
+CPU| AMD RyzenTM V1500B quad-core 2.2 GHz
+Hardware encryption engine| Yes (AES-NI)
+Memory |4 GB DDR4 ECC SODIMM (expandable up to 32 GB)
+Compatible drive types|8 x 3.5" or 2.5" SATA HDD/SSD (drives not included)
+Hot swappable drives |Yes
+External ports |• 2 x USB 3.2 Gen 1 ports<br>• 1 x Expansion port (eSATA)
+Form factor |Rackmount 2U
+Size (HxWxD) |• RS1221+: 88 x 482 x 306.6 mm (with server handles)<br>• RS1221RP+: 88 x 482 x 407.5 mm (with server handles)
+Weight |• RS1221+: 6.9 kg<br>• RS1221RP+: 8.4 kg
+Rack installation support |• RS1221+: 2-post 19" rack (direct mounting), 4-post 19" rack<br>• RS1221RP+: 4-post 19" rack
+LAN ports |4 x 1GbE RJ-45
+Wake on LAN/WAN |Yes
+PCIe 3.0 slots |• 1 x 4-lane x8 slot<br>• Supports 10GbE/25GbE network interface cards2 and M.2 NVMe SSD adapter cards for SSD cache8
+Scheduled power on/off| Yes
+System fans| 2 x (80 x 80 x 25 mm)
+AC input power voltage| 100 V to 240 V AC
+Power consumption| • RS1221+: 49.98 W (Access), 22.64 W (HDD Hibernation)<br>• RS1221RP+: 61.94 W (Access), 29.98 W (HDD Hibernation)
+Power frequency| 50/60 Hz, single phase
+Operating temperature| 0°C to 35°C (32°F to 95°F)
+Storage temperature| -20°C to 60°C (-5°F to 140°F)
+Relative humidity| 5% to 95% RH 
+Maximum operating altitude| 5,000 m (16,400 ft)
+General DSM Specification|
+Networking protocols| SMB, AFP, NFS, FTP, WebDAV, CalDAV, iSCSI, Telnet, SSH, SNMP, VPN (PPTP, OpenVPN™, L2TP)
+File systems| • Internal: Btrfs, ext4<br>• External: Btrfs, ext4, ext3, FAT32, NTFS, HFS+, exFAT9
+Supported RAID types |Synology Hybrid RAID (SHR), Basic, JBOD, RAID 0, RAID 1, RAID 5, RAID 6, RAID 10
+Storage management|<br>• Maximum single volume size: 108 TB<br>• Maximum system snapshots: 65,53610<br>• Maximum internal volumes: 64
+SSD cache|<br>• Read/write cache support<br>• 2.5" SATA SSD support<br>• M.2 NVMe SSD support8
+File sharing capabilities|<br>• Maximum local user accounts: 2,048<br>• Maximum local groups: 256<br>• Maximum shared folders: 512<br>• Maximum concurrent SMB/NFS/AFP/FTP connections: 1,00011
+Privileges| Windows® Access Control List (ACL), application privileges
+Directory services| Connects with Windows® AD/LDAP servers enabling domain users to login via SMB/NFS/AFP/FTP/File Station using their existing credentials.
+Virtualization| VMware vSphere® 6.5, Microsoft Hyper-V®, Citrix®, OpenStack®
+Security| Firewall, shared folder encryption, SMB encryption, FTP over SSL/TLS, SFTP, rsync over SSH, login auto block, Let's Encrypt support, HTTPS (customizable cipher suite)
+Supported clients| Windows® 7 onwards, macOS® 10.12 onwards
+Supported browsers| Chrome®, Firefox®, Edge®, Internet Explorer® 10 onwards, Safari® 10 onwards, Safari (iOS 10 onwards), Chrome (Android™ 6.0 onwards) on tablets
+
+
+
+
 # Tài liệu tham khảo
 1. 
