@@ -60,7 +60,7 @@ Zabbix hỗ trợ `Template` cho các nhà cung cấp:
 - Bảng chi tiết:
 
 STT|Hãng| Support to|Port|Request|
-|:---:|:---:|:---:|---|---|---|
+|:---:|:---:|:---:|---|---|
 1|Brocade|SNMP|161,162|- IP Address <br>- Community string|
 2|Cisco|SNMP|161,162|- IP Address <br>- Community string 
 3|Dell|HTTP, SNMP|161,162|- IP Address <br>- Community string
