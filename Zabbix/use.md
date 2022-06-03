@@ -1,8 +1,8 @@
-<h1> Sử dụng Zabbix để ... </h1>
+<h1> Danh sách các thiết bị zabbix giám sát được </h1>
 
 <h2> Mục lục </h2>
 
-- [1. Network monitoring](#1-network-monitoring)
+- [1. Network](#1-network)
   - [1.1 Brocade](#11-brocade)
   - [1.2 Cisco](#12-cisco)
   - [1.3 Monitoring Dell iDRAC](#13-monitoring-dell-idrac)
@@ -18,62 +18,19 @@
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 
-Monitor anything
-- Network monitoring
-- Server monitoring
-- Cloud monitoring
-- Application monitoring
-- Services monitoring
+<h2>Monitor anything:</h2>
 
-# 1. Network monitoring
+![Imgur](https://i.imgur.com/jkJBzZi.png)
+
+# 1. Network
 Giám sát hiệu suất và sự cố có thể có trong mạng:
-<h4> Hiệu suất mạng </h4>
-
-  - Sử dụng băng thông mạng
-  - Tỷ lệ mất gói
-  - Tỷ lệ lỗi interface
-  - CPU hoặc Memory cao
-  - Số lượng kết nối tcp cao bất thường vào 1 ngày trong tuần
-  - Aggregate throughput of core routers is low
-<h4> Network health </h4>
-
-- Link is down
-- System status ở trang thái warning/critical
-- Nhiệt độ thiết bị (Quá cao/thấp)
-- Nguồn điện (Power supply) ở trạng thái state
-- Dung lượng ổ đĩa sắp hết
-- Fan ở trạng thái critical
-- No SNMP data collection (Không thu thập dữ liệu SNMP)
-
-<h4> Khi cấu hình thay đổi </h4>
-
-- Thêm hoặc xoá thiết bị
-- Module mạng được thêm, xoá hoặc thay thế
-- Firmware được nâng cấp
-- Số Serial thiết bị thay đổi
-- Interface thay đổi chế độ tốc độ thấp hơn (lower speed) hoặc half-duplex mode (bán song công)
+|<h4> Hiệu suất mạng </h4>|<h4> Network health </h4>|<h4> Khi cấu hình thay đổi </h4>|
+|---|---|---|
+|- Sử dụng băng thông mạng<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi interface<br>- CPU hoặc Memory cao<br>- Số lượng kết nối tcp cao bất thường vào 1 ngày trong tuần<br>- Aggregate throughput of core routers is low|- Link is down<br>- System status ở trang thái warning/critical<br>- Nhiệt độ thiết bị (Quá cao/thấp)<br>- Nguồn điện (Power supply) ở trạng thái state<br>- Dung lượng ổ đĩa sắp hết<br>- Fan ở trạng thái critical<br>- No SNMP data collection (Không thu thập dữ liệu SNMP)|- Thêm hoặc xoá thiết bị<br>- Module mạng được thêm, xoá hoặc thay thế<br>- Firmware được nâng cấp<br>- Số Serial thiết bị thay đổi<br>- Interface thay đổi chế độ tốc độ thấp hơn (lower speed) hoặc half-duplex mode (bán song công)
 
 
 Zabbix hỗ trợ `Template` cho các nhà cung cấp:
 ![Imgur](https://i.imgur.com/0psqUab.png)
-
-- Bảng chi tiết:
-
-STT|Hãng| Support to|Port|Request|
-|:---:|:---:|:---:|---|---|
-1|Brocade|SNMP|161,162|- IP Address <br>- Community string|
-2|Cisco|SNMP|161,162|- IP Address <br>- Community string 
-3|Dell|HTTP, SNMP|161,162|- IP Address <br>- Community string
-4|D-Link|SNMP|161,162|- IP Address <br>- Community string
-5| Netgear|SNMP|161,162|- IP Address <br>- Community string
-6| Intel|IPMI|623|
-7|Juniper|SNMP|161,162|- IP Address <br>- Community string
-8|TP-Link|SNMP|161,162|- IP Address <br>- Community string
-9| QTech|SNMP|161,162|- IP Address <br>- Community string
-10| Extreme|SNMP|161,162|- IP Address <br>- Community string
-11|Alcatel Lucent|SNMP|161,162|- IP Address <br>- Community string
-12|Mikrotik|SNMP|161,162|- IP Address <br>- Community string
-13|Ubiquiti|SNMP|161,162|- IP Address <br>- Community string
 
 ## 1.1 Brocade
 - Dữ liệu thu thập:
