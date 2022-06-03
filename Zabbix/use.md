@@ -5,7 +5,7 @@
 - [1. Network](#1-network)
   - [1.1 Brocade](#11-brocade)
   - [1.2 Cisco](#12-cisco)
-  - [1.3 Monitoring Dell iDRAC](#13-monitoring-dell-idrac)
+  - [1.3 Dell hardware](#13-dell-hardware)
 - [2. Server Monitorings](#2-server-monitorings)
 - [3. Databases monitoring](#3-databases-monitoring)
   - [3.1 MySQL](#31-mysql)
@@ -23,35 +23,53 @@
 ![Imgur](https://i.imgur.com/jkJBzZi.png)
 
 # 1. Network
-Giám sát hiệu suất và sự cố có thể có trong mạng:
+<h3>Giám sát hiệu suất và sự cố có thể có trong mạng:</h3>
+
 |<h4> Hiệu suất mạng </h4>|<h4> Network health </h4>|<h4> Khi cấu hình thay đổi </h4>|
 |---|---|---|
 |- Sử dụng băng thông mạng<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi interface<br>- CPU hoặc Memory cao<br>- Số lượng kết nối tcp cao bất thường vào 1 ngày trong tuần<br>- Aggregate throughput of core routers is low|- Link is down<br>- System status ở trang thái warning/critical<br>- Nhiệt độ thiết bị (Quá cao/thấp)<br>- Nguồn điện (Power supply) ở trạng thái state<br>- Dung lượng ổ đĩa sắp hết<br>- Fan ở trạng thái critical<br>- No SNMP data collection (Không thu thập dữ liệu SNMP)|- Thêm hoặc xoá thiết bị<br>- Module mạng được thêm, xoá hoặc thay thế<br>- Firmware được nâng cấp<br>- Số Serial thiết bị thay đổi<br>- Interface thay đổi chế độ tốc độ thấp hơn (lower speed) hoặc half-duplex mode (bán song công)
 
 
-Zabbix hỗ trợ `Template` cho các nhà cung cấp:
+<h3>Zabbix hỗ trợ `Template` cho các nhà cung cấp:</h3>
+
 ![Imgur](https://i.imgur.com/0psqUab.png)
 
+- Các thiết bị sử dụng giao thức SNMP
+- Port: 161
+- Sử dụng `Community string` như password để truy cập (`đối với version v2c`)
+
+- Các thông tin cần thiết để giám sát:
+  - Địa chỉ IP của thiết bị
+  - Mở port 161
+  - chuỗi  `community` trên thiết bị
 ## 1.1 Brocade
+<a href="https://imgur.com/HMWtN8j"><img src="https://i.imgur.com/HMWtN8j.png" width=250 align="left" title="source: imgur.com" /></a>
+
+Brocade Communications Systems, Inc. (công ty con của Broadcom Inc.) chuyên về các sản phẩm mạng lưu trữ và dữ liệu, bao gồm routers và network switches cho môi trường Data center, campus và nhà cung cấp dịch vụ, IP và Fibre Channel, Chức năng mạng ảo hóa (Network Functions Virtualization- NFV) , mạng do phần mềm xác định (software-defined networking - SDN), phần mềm quản lý mạng.
+
+- Các Templates có sẵn trên bản 6.0:
+  - Brocade FC SNMP
+  - Brocade_Foundry Nonstackable SNMP
+  - Brocade_Foundry Performance SNMP
+  - Brocade_Foundry Stackable SNMP
+
 - Dữ liệu thu thập:
-```
-CPU utilization
-Firmware version
-Hardware serial number
-ICMP loss
-ICMP ping
-ICMP response time
-Memory utilization
-Overall system health status
-SNMP agent availability
-SNMP traps (fallback)		
-System contact details		
-System description		
-System location		
-System name
-System object ID		
-Uptime
-```
+  - Mức sử dụng CPU của hệ thống (%)
+  - Trạng thái Fan
+  - Vị trí hệ thống (location)
+  - Người liên hệ (system contact details)
+  - Tên system
+  - system description
+  - Hardware serial number
+  - Firmware version
+  - Memory utilization (%)
+  - interface: trạng thái hoạt động, loại, tốc độ
+  - Power supply status
+  - Overall system health status
+  - Uptime (thời gian hoạt động)
+  - ICMP (ping, loss, response time)
+  - Temperature	(Nhiệt độ)
+
 - Cấu hình SNMP trên Brocade, sử dụng lệnh và làm theo mẫu:
 ```
 snmpconfig --set snmpv1
@@ -59,24 +77,37 @@ or
 snmpconfig --set snmpv2
 ```
 ## 1.2 Cisco
-- Dữ liệu thu thập: (Templates default: Cisco IOS SNMP)
-```
-Hardware model name		
-Hardware serial number
-ICMP loss
-ICMP ping
-ICMP response time
-Operating system
-SNMP agent availability
-SNMP traps (fallback)		
-System contact details		
-System description		
-System location		
-System name
-System object ID		
-Uptime
-```
-- Cấu hình SNMP trên switch Cisco, sử dụng lệnh và làm theo mẫu:
+
+<a href="https://imgur.com/yO2Nw6a"><img src="https://i.imgur.com/yO2Nw6a.png" title="source: imgur.com" width=250 align=left /></a>
+
+Cisco Systems, Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ phát triển, sản xuất và bán phần cứng mạng, thiết bị viễn thông cũng như các dịch vụ và sản phẩm công nghệ cao khác.
+
+- Các Templates có sẵn trên bản 6.0:
+  - Cisco ASAv SNMP
+  - Cisco Catalyst 3750V2-24FS SNMP
+  - Cisco Catalyst 3750V2-24PS SNMP
+  - Cisco Catalyst 3750V2-24TS SNMP
+  - Cisco Catalyst 3750V2-48PS SNMP
+  - Cisco Catalyst 3750V2-48TS SNMP
+  - Cisco IOS SNMP
+- Mẫu chung cho các thiết bị của Cisco: `Cisco IOS SNMP`
+
+- Dữ liệu thu thập:
+  - Sử dụng CPU
+  - Trạng thái FAN
+  - Vị trí hệ thống (Do người cấu hình thiết bị cấu hình)
+  - Chi tiết liên hệ hệ thống (có thể là mail, sdt do người cấu hình thiết bị cấu hình)
+  - 	Tên hệ thống
+  - Hardware model name
+  - Hardware serial number
+  - Operating system
+  - Bộ nhớ đã sử dụng, trống, mức độ sử dụng bộ nhớ %
+  - Network interface: Trạng thái hoạt động, loại interface,...
+  - Power supply; trạng thái nguồn điện
+  - Uptime: thời gian hoạt động
+  - ICMP: ping, loss, response time
+  - Temperature: nhiệt độ
+- SNMP trên switch Cisco, sử dụng lệnh và làm theo mẫu:
 ```
 # Set chuỗi community
 snmp-server community <chuỗi community> ro
@@ -90,36 +121,37 @@ snmp-server location “vi tri”
 #Khai báo thông tin zabbix server (IP của zabbix server, public là chuỗi SNMP đã khai báo ở trên )
 snmp-server host 172.16.4.180 version 2c public udp-port 162
 ```
-## 1.3 Monitoring Dell iDRAC
+
+## 1.3 Dell hardware
+
+<a href="https://imgur.com/BwUlMvl"><img src="https://i.imgur.com/BwUlMvl.png" title="source: imgur.com" width=150 align=left /></a>
+
+<br>
+Dell là công ty công nghệ máy tính phát triển, bán, sửa chữa và hỗ trợ máy tính cũng như các sản phẩm và dịch vụ liên quan.
+
+
+<br></br>
+- Các Templates có sẵn trên bản 6.0:
+  - Dell Force S-Series SNMP
+  - Dell iDRAC SNMP
+  - DELL PowerEdge R720 by HTTP
+  - DELL PowerEdge R720 SNMP
+  - DELL PowerEdge R740 by HTTP
+  - DELL PowerEdge R740 SNMP
+  - DELL PowerEdge R820 by HTTP
+  - DELL PowerEdge R820 SNMP
+  - DELL PowerEdge R840 by HTTP
+  - DELL PowerEdge R840 SNMP
+
+- Mẫu dùng chung: DELL PowerEdge R720 SNMP
+- Dữ liệu thu thập:
+
 # 2. Server Monitorings
 Giám sát sự cố và chỉ số hiệu suất máy chủ:
-<h4> Hiệu suất server </h4>
-
-- Sử dụng CPU/Memory cao
-- Sử dụng băng thông
-- Tỷ lệ mất gói
-- Tỷ lệ lỗi interface
-- Số lượng kết nối tcp cao bất thường
-- Aggregate throughput of core routers is low
-
-<h4> Tính khả dụng của máy chủ </h4>
-
-- Dung lượng Disk sắp hết
-- System status ở trạng thái  warning/critical
-- Nhiệt độ thiết bị quá cao/thấp
-- Power supply, Fan ở trạng thái critical
-- No SNMP data collection
-- Network connection is down
-
-<h4> Khi cấu hình thay đổi </h4>
-
-- Các thành phần (components) mới thêm/xoá
-- Thêm, xoá hoặc thay thế Network module
-- Firmware được nâng cấp
-- Số serial thiết bị thay đổi
-- Interface thay đổi chế độ: lower speed hoặc half-duplex
-
-<h3> Danh sách các máy chủ và hệ điều hành có sẵn Template </h3>
+|<h4> Hiệu suất server </h4>|<h4> Tính khả dụng của máy chủ </h4>|<h4> Khi cấu hình thay đổi </h4>|
+|---|---|---|
+|- Sử dụng CPU/Memory cao<br>- Sử dụng băng thông<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi interface<br>- Số lượng kết nối tcp cao bất thường <br>- Aggregate throughput of core routers is low|- Dung lượng Disk sắp hết<br>- System status ở trạng thái  warning/critical<br>- Nhiệt độ thiết bị quá cao/thấp<br>- Power supply, Fan ở trạng thái critical<br>- No SNMP data collection<br>- Network connection is down|- Các thành phần (components) mới thêm/xoá<br>- Thêm, xoá hoặc thay thế Network module<br>- Firmware được nâng cấp<br>- Số serial thiết bị thay đổi
+<br>- Interface thay đổi chế độ: lower speed hoặc half-duplex<h3> Danh sách các máy chủ và hệ điều hành có sẵn Template </h3>
 
 ![Imgur](https://i.imgur.com/6szozW8.png)
 
