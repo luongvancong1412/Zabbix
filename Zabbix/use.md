@@ -43,7 +43,7 @@
   - Mở port 161
   - chuỗi  `community` trên thiết bị
 ## 1.1 Brocade
-<a href="https://imgur.com/HMWtN8j"><img src="https://i.imgur.com/HMWtN8j.png" width=250 align="left" title="source: imgur.com" /></a>
+<a href="https://imgur.com/HMWtN8j"><img src="https://i.imgur.com/HMWtN8j.png" width=100 align="left" title="source: imgur.com" /></a>
 
 Brocade Communications Systems, Inc. (công ty con của Broadcom Inc.) chuyên về các sản phẩm mạng lưu trữ và dữ liệu, bao gồm routers và network switches cho môi trường Data center, campus và nhà cung cấp dịch vụ, IP và Fibre Channel, Chức năng mạng ảo hóa (Network Functions Virtualization- NFV) , mạng do phần mềm xác định (software-defined networking - SDN), phần mềm quản lý mạng.
 
@@ -78,7 +78,7 @@ snmpconfig --set snmpv2
 ```
 ## 1.2 Cisco
 
-<a href="https://imgur.com/yO2Nw6a"><img src="https://i.imgur.com/yO2Nw6a.png" title="source: imgur.com" width=250 align=left /></a>
+<a href="https://imgur.com/yO2Nw6a"><img src="https://i.imgur.com/yO2Nw6a.png" title="source: imgur.com" width=100 align=left /></a>
 
 Cisco Systems, Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ phát triển, sản xuất và bán phần cứng mạng, thiết bị viễn thông cũng như các dịch vụ và sản phẩm công nghệ cao khác.
 
@@ -124,7 +124,7 @@ snmp-server host 172.16.4.180 version 2c public udp-port 162
 
 ## 1.3 Dell hardware
 
-<a href="https://imgur.com/BwUlMvl"><img src="https://i.imgur.com/BwUlMvl.png" title="source: imgur.com" width=150 align=left /></a>
+<a href="https://imgur.com/BwUlMvl"><img src="https://i.imgur.com/BwUlMvl.png" title="source: imgur.com" width=100 align=left /></a>
 
 <br>
 Dell là công ty công nghệ máy tính phát triển, bán, sửa chữa và hỗ trợ máy tính cũng như các sản phẩm và dịch vụ liên quan.
