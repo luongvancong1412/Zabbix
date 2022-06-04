@@ -62,3 +62,4 @@
 - [10. Khác](Zabbix/Other)
   - [10.2 Biểu thức chính quy](Zabbix/Other/1-bieu-thuc-chinh-quy.md)
   - [10.1 Protocols](Zabbix/Other/2-protocol.md)
+  - [10.3 Danh sách các thiết bị có thể giám sát](Zabbix/use.md)

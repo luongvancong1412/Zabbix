@@ -146,7 +146,8 @@ Dell là công ty công nghệ máy tính phát triển, bán, sửa chữa và 
 - Mẫu dùng chung: DELL PowerEdge R720 SNMP
 - Dữ liệu thu thập:
   - Disk arrays (Trạng thái, Model, Trạng thái pin )
-  - 
+
+- Updating...
 # 2. Server Monitorings
 Giám sát sự cố và chỉ số hiệu suất máy chủ:
 |<h4> Hiệu suất server </h4>|<h4> Tính khả dụng của máy chủ </h4>|<h4> Khi cấu hình thay đổi </h4>|
@@ -165,6 +166,7 @@ Giám sát sự cố và chỉ số hiệu suất máy chủ:
   - Địa chỉ IP của thiết bị
   - Mở port 10050,10051
 
+- Updating...
 # 3. Databases monitoring
 
 |<h4>Hiệu suất cơ sở dữ liệu</h4>|<h4>Tính khả dụng của công cụ cơ sở dữ liệu</h4>|<h4>Thay đổi cấu hình</h4>|
@@ -200,11 +202,15 @@ password='<password>'
  - Note: user và password trùng với user vừa tạo ở bước 3.
  - Khởi động lại Agent
 
+- Updating...
 ### 3.1.2 Sử dụng ODBC
-
+- Updating...
 # 3. Cloud monitoring
+- Updating...
 # 4. Application monitoring
+- Updating...
 # 5. Services monitoring
+- Updating...
 
 # Bổ sung
 - Lệnh kiểm tra kết nối SNMP trên server Zabbix
@@ -217,6 +223,6 @@ snmpwalk -v2c -c public 172.16.10.3
 ```
 apt-get install snmp
 ```
-
+- Updating...
 # Tài liệu tham khảo
 1. https://www.zabbix.com/solutions
