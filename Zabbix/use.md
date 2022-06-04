@@ -145,48 +145,32 @@ Dell là công ty công nghệ máy tính phát triển, bán, sửa chữa và 
 
 - Mẫu dùng chung: DELL PowerEdge R720 SNMP
 - Dữ liệu thu thập:
-
+  - Disk arrays (Trạng thái, Model, Trạng thái pin )
+  - 
 # 2. Server Monitorings
 Giám sát sự cố và chỉ số hiệu suất máy chủ:
 |<h4> Hiệu suất server </h4>|<h4> Tính khả dụng của máy chủ </h4>|<h4> Khi cấu hình thay đổi </h4>|
 |---|---|---|
-|- Sử dụng CPU/Memory cao<br>- Sử dụng băng thông<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi interface<br>- Số lượng kết nối tcp cao bất thường <br>- Aggregate throughput of core routers is low|- Dung lượng Disk sắp hết<br>- System status ở trạng thái  warning/critical<br>- Nhiệt độ thiết bị quá cao/thấp<br>- Power supply, Fan ở trạng thái critical<br>- No SNMP data collection<br>- Network connection is down|- Các thành phần (components) mới thêm/xoá<br>- Thêm, xoá hoặc thay thế Network module<br>- Firmware được nâng cấp<br>- Số serial thiết bị thay đổi
-<br>- Interface thay đổi chế độ: lower speed hoặc half-duplex<h3> Danh sách các máy chủ và hệ điều hành có sẵn Template </h3>
+|- Sử dụng CPU/Memory cao<br>- Sử dụng băng thông<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi interface<br>- Số lượng kết nối tcp cao bất thường <br>- Aggregate throughput of core routers is low|- Dung lượng Disk sắp hết<br>- System status ở trạng thái  warning/critical<br>- Nhiệt độ thiết bị quá cao/thấp<br>- Power supply, Fan ở trạng thái critical<br>- No SNMP data collection<br>- Network connection is down|- Các thành phần (components) mới thêm/xoá<br>- Thêm, xoá hoặc thay thế Network module<br>- Firmware được nâng cấp<br>- Số serial thiết bị thay đổi<br>- Interface thay đổi chế độ: lower speed hoặc half-duplex
+
+
+<h3> Danh sách các máy chủ và hệ điều hành có sẵn Template </h3>
 
 ![Imgur](https://i.imgur.com/6szozW8.png)
 
-| use|Port default|Request|
-|:---:|:---:|---|
-|Agent|10050,10051|- IP Address <br>- Port|
+- Các thiết bị sử dụng `Agent` để giám sát
+- Port: 10050,10051
+
+- Các thông tin cần thiết để giám sát:
+  - Địa chỉ IP của thiết bị
+  - Mở port 10050,10051
 
 # 3. Databases monitoring
 
-<h4>Hiệu suất cơ sở dữ liệu</h4>
+|<h4>Hiệu suất cơ sở dữ liệu</h4>|<h4>Tính khả dụng của công cụ cơ sở dữ liệu</h4>|<h4>Thay đổi cấu hình</h4>|
+|---|---|---|
+|- Sử dụng CPU hoặc bộ nhớ cao<br>- Sử dụng băng thông mạng<br>- Tỷ lệ mất gói<br>- Tỷ lệ lỗi giao diện<br>- Số lượng kết nối tcp cao bất thường vào ngày này trong tuần<br>- Thông lượng tổng hợp của các bộ định tuyến lõi thấp|- Dung lượng đĩa trống sắp hết<br>- Trạng thái hệ thống ở trạng thái cảnh báo / quan trọng<br>- Nhiệt độ thiết bị quá cao / quá thấp<br>- Nguồn điện đang ở trạng thái quan trọng<br>- Quạt đang ở trạng thái nguy kịch<br>- Không thu thập dữ liệu SNMP<br>- Kết nối mạng bị ngắt|- Các thành phần mới được thêm vào hoặc loại bỏ<br>- Mô-đun mạng được thêm, xóa hoặc thay thế<br>- Phần mềm cơ sở đã được nâng cấp<br>- Số sê-ri thiết bị đã thay đổi<br>- Giao diện đã thay đổi thành tốc độ thấp hơn hoặc chế độ bán song công
 
-- Sử dụng CPU hoặc bộ nhớ cao
-- Sử dụng băng thông mạng
-- Tỷ lệ mất gói
-- Tỷ lệ lỗi giao diện
-- Số lượng kết nối tcp cao bất thường vào ngày này trong tuần
-- Thông lượng tổng hợp của các bộ định tuyến lõi thấp
-
-<h4>Tính khả dụng của công cụ cơ sở dữ liệu</h4>
-
-- Dung lượng đĩa trống sắp hết
-- Trạng thái hệ thống ở trạng thái cảnh báo / quan trọng
-- Nhiệt độ thiết bị quá cao / quá thấp
-- Nguồn điện đang ở trạng thái quan trọng
-- Quạt đang ở trạng thái nguy kịch
-- Không thu thập dữ liệu SNMP
-- Kết nối mạng bị ngắt
-
-<h4>Thay đổi cấu hình</h4>
-
-- Các thành phần mới được thêm vào hoặc loại bỏ
-- Mô-đun mạng được thêm, xóa hoặc thay thế
-- Phần mềm cơ sở đã được nâng cấp
-- Số sê-ri thiết bị đã thay đổi
-- Giao diện đã thay đổi thành tốc độ thấp hơn hoặc chế độ bán song công
 
 ![Imgur](https://i.imgur.com/74R2Iah.png)
 
@@ -235,4 +219,4 @@ apt-get install snmp
 ```
 
 # Tài liệu tham khảo
-1. 
+1. https://www.zabbix.com/solutions
